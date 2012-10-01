@@ -1,0 +1,13 @@
+#### unity files
+
+*.meta
+
+#### visual studio files
+
+*.csproj
+*.sln
+
+#### directories
+
+obj/
+Library/
