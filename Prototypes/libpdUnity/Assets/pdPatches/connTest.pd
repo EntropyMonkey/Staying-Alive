@@ -1,0 +1,14 @@
+#N canvas 931 172 618 534 10;
+#X obj 137 422 print received;
+#X obj 188 208 netsend 1;
+#X msg 114 111 connect localhost 3001;
+#X obj 137 364 netreceive 3001 1;
+#X obj 385 93 metro 500;
+#X msg 276 144 send MyText and;
+#X obj 376 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 4 0;
