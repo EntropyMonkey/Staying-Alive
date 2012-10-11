@@ -2,6 +2,4 @@
 *.sln
 *.suo
 
-Library\
 obj\
-Temp\
