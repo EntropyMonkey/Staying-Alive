@@ -13,7 +13,7 @@ public class PFallState : FSMState<Player>
 
 	public override void Execute(Player player)
 	{
-		if (player.Grounded && Input.GetKey(KeyCode.W))
+		if (player.Grounded && Input.GetKey(KeyCode.L))
 		{
 			player.FSM.ChangeState(player.JumpState);
 		}
