@@ -9,18 +9,34 @@ public class PFallState : FSMState<Player>
 {
 	public override void Enter(Player player)
 	{
+		player.renderer.material.color = new Color(1, 0, 0);
 	}
 
 	public override void Execute(Player player)
 	{
-		if (player.Grounded && Input.GetKey(KeyCode.L))
+		if (player.Grounded)
 		{
-			player.FSM.ChangeState(player.JumpState);
+			player.FSM.ChangeState(player.StandState);
 		}
-		
-		if (!player.Grounded && Input.GetKey(KeyCode.E))
+		else if (Input.GetKey(KeyCode.E))
 		{
 			player.FSM.ChangeState(player.FloatState);
+		}
+	}
+
+	public override void ExecuteFixed(Player player)
+	{
+		if (Input.GetKey(KeyCode.D))
+		{
+			player.rigidbody.AddForce(
+				Vector3.right * player.settings.jumpSpeed.x * Time.deltaTime,
+				ForceMode.Impulse);
+		}
+		else if (Input.GetKey(KeyCode.A))
+		{
+			player.rigidbody.AddForce(
+				Vector3.left * player.settings.jumpSpeed.x * Time.deltaTime,
+				ForceMode.Impulse);
 		}
 	}
 

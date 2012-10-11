@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PFloatState : FSMState<Player>
+public class PFloatState : PWalkState
 {
 	public override void Enter(Player player)
 	{
+		player.renderer.material.color = new Color(1, 1, 0);
+
 		player.rigidbody.useGravity = false;
 		Vector3 newVel = player.rigidbody.velocity;
 		newVel.y = 0;
@@ -13,6 +15,8 @@ public class PFloatState : FSMState<Player>
 
 	public override void Execute(Player player)
 	{
+		// dont execute walkstate execute, because there the state change to the jump state happens
+
 		player.rigidbody.AddForce(
 			Vector3.down * player.settings.floatDownSpeed * Time.deltaTime,
 			ForceMode.Impulse);
@@ -26,8 +30,14 @@ public class PFloatState : FSMState<Player>
 
 		if (!Input.GetKey(KeyCode.E))
 		{
-			player.FSM.ChangeState(player.FallState);
+			player.FSM.ChangeState(player.JumpState);
 		}
+	}
+
+	public override void ExecuteFixed(Player player)
+	{
+		// sideways movement in PWalkState
+		base.ExecuteFixed(player);
 	}
 
 	public override void Exit(Player player)

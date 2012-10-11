@@ -57,12 +57,9 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		// global states - need to be able to move right or left all the 
-		// time, even when in air
 		StandState = ScriptableObject.CreateInstance<PStandState>();
 		WalkState = ScriptableObject.CreateInstance<PWalkState>();
 
-		// not global states
 		JumpState = ScriptableObject.CreateInstance<PJumpState>();
 		FallState = ScriptableObject.CreateInstance<PFallState>();
 		FloatState = ScriptableObject.CreateInstance<PFloatState>();
@@ -70,7 +67,7 @@ public class Player : MonoBehaviour
 		// create the finite state machine
 		FSM = new FiniteStateMachine<Player>();
 		// configure it so that the player first falls and does not move r/l
-		FSM.Configure(this, FallState, StandState);
+		FSM.Configure(this, FallState, null);
 	}
 
 	// used for game logic stuff
