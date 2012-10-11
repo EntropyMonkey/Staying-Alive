@@ -1,7 +1,3 @@
-#### unity files
-
-*.meta
-
 #### visual studio files
 
 *.csproj
@@ -11,4 +7,5 @@
 #### directories
 
 obj/
+Temp/
 Library/

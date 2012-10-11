@@ -2,6 +2,6 @@
 *.sln
 *.suo
 
-Library\
 obj\
 Temp\
+Library\

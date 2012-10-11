@@ -27,7 +27,7 @@ public class PJumpState : FSMState<Player>
 
 	public override void ExecuteFixed(Player player)
 	{
-		if (Input.GetKey(KeyCode.W))
+		if (Input.GetKey(KeyCode.L))
 		{
 			player.rigidbody.AddForce(
 				Vector3.up * player.settings.jumpSpeed * Time.deltaTime,
