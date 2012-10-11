@@ -7,6 +7,7 @@ public class PJumpState : FSMState<Player>
 
 	public override void Enter(Player player)
 	{
+		player.renderer.material.color = new Color(1, 0, 1);
 		jumpTimer = 0;
 	}
 
@@ -14,7 +15,7 @@ public class PJumpState : FSMState<Player>
 	{
 		jumpTimer += Time.deltaTime;
 
-		if (jumpTimer > player.settings.maxJumpTime)
+		if (jumpTimer > player.settings.maxJumpTime || !Input.GetKey(KeyCode.L))
 		{
 			player.FSM.ChangeState(player.FallState);
 		}
@@ -27,15 +28,21 @@ public class PJumpState : FSMState<Player>
 
 	public override void ExecuteFixed(Player player)
 	{
-		if (Input.GetKey(KeyCode.L))
+		player.rigidbody.AddForce(
+			Vector3.up * player.settings.jumpSpeed.y * Time.deltaTime,
+			ForceMode.Impulse);
+
+		if (Input.GetKey(KeyCode.D))
 		{
 			player.rigidbody.AddForce(
-				Vector3.up * player.settings.jumpSpeed * Time.deltaTime,
+				Vector3.right * player.settings.jumpSpeed.x * Time.deltaTime,
 				ForceMode.Impulse);
 		}
-		else
+		else if (Input.GetKey(KeyCode.A))
 		{
-			player.FSM.ChangeState(player.FallState);
+			player.rigidbody.AddForce(
+				Vector3.left * player.settings.jumpSpeed.x * Time.deltaTime,
+				ForceMode.Impulse);
 		}
 	}
 

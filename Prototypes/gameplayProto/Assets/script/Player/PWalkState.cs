@@ -5,10 +5,29 @@ public class PWalkState : FSMState<Player>
 {
 	public override void Enter(Player player)
 	{
+		player.renderer.material.color = new Color(0, 1, 1);
 	}
 
 	public override void Execute(Player player)
 	{
+		// transition to jump state
+		if (Input.GetKey(KeyCode.L))
+		{
+			player.FSM.ChangeState(player.JumpState);
+		}
+
+		// transition to stand state
+		float epsilon = 0.1f;
+		if (Mathf.Abs(player.rigidbody.velocity.x) < epsilon)
+		{
+			player.FSM.ChangeState(player.StandState);
+		}
+
+		// transition to fall state
+		if (!player.Grounded)
+		{
+			player.FSM.ChangeState(player.FallState);
+		}
 	}
 
 	public override void ExecuteFixed(Player player)
@@ -32,7 +51,7 @@ public class PWalkState : FSMState<Player>
 			player.rigidbody.AddForce(
 				Vector3.right * player.settings.movementSpeed * Time.deltaTime,
 				ForceMode.Impulse);
-			
+
 			if (player.rigidbody.velocity.x > player.settings.maxMovementSpeed)
 			{
 				Vector3 vel = player.rigidbody.velocity;
