@@ -130,7 +130,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 927030501}
   m_GameObject: {fileID: 51498439}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &51498443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -248,6 +248,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_10
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 938179307}
@@ -709,7 +713,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1531003143}
   m_GameObject: {fileID: 407863983}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &407863987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1036,7 +1040,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 2103332247}
   m_GameObject: {fileID: 603585824}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &603585828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1157,6 +1161,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_5
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 1530772063}
@@ -1218,7 +1226,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1907751527}
   m_GameObject: {fileID: 624163351}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &624163355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1352,7 +1360,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1274591050}
   m_GameObject: {fileID: 653741334}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &653741338
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1506,7 +1514,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1874523448}
   m_GameObject: {fileID: 685164777}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &685164781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1593,7 +1601,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1203907348}
   m_GameObject: {fileID: 689660659}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &689660663
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1935,7 +1943,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1825876399}
   m_GameObject: {fileID: 802294626}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!111 &802294630
 Animation:
   m_ObjectHideFlags: 0
@@ -2056,6 +2064,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_7
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 1244093083}
@@ -2104,6 +2116,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_15
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 51498439}
@@ -2165,7 +2181,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 105849807}
   m_GameObject: {fileID: 938179307}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &938179311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2422,7 +2438,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1350772800}
   m_GameObject: {fileID: 1159038016}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &1159038020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2590,6 +2606,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_14
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 689660659}
@@ -2698,7 +2718,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1265386079}
   m_GameObject: {fileID: 1218981060}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &1218981064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2785,7 +2805,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1830348658}
   m_GameObject: {fileID: 1223104366}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &1223104370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2872,7 +2892,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 878099284}
   m_GameObject: {fileID: 1244093083}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &1244093087
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3013,6 +3033,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_4
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 1218981060}
@@ -3061,6 +3085,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_6
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 653741334}
@@ -3156,6 +3184,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_11
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 1159038016}
@@ -3217,7 +3249,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1465320312}
   m_GameObject: {fileID: 1398131779}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &1398131783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3429,6 +3461,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_9
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 1398131779}
@@ -3669,7 +3705,7 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 618340750}
   m_GameObject: {fileID: 1530772063}
-  m_Mesh: {fileID: 4300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
 --- !u!65 &1530772067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3743,6 +3779,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_13
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 407863983}
@@ -4116,6 +4156,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 802294626}
@@ -4164,6 +4208,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_12
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 1223104366}
@@ -4212,6 +4260,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_2
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 685164777}
@@ -4260,6 +4312,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_3
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 624163351}
@@ -4589,6 +4645,10 @@ Prefab:
       propertyPath: m_Name
       value: plattform_8
       objectReference: {fileID: 0}
+    - target: {fileID: 3300000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 0c6d2b10b1614be4982905d2332a0807, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 680031b294427134ca6228971c2fbbd3, type: 3}
   m_RootGameObject: {fileID: 603585824}
