@@ -11,7 +11,7 @@ public class PWalkState : FSMState<Player>
 	public override void Execute(Player player)
 	{
 		// transition to jump state
-		if (Input.GetKey(KeyCode.L))
+		if (Input.GetKey(player.settings.KeyJump))
 		{
 			player.FSM.ChangeState(player.JumpState);
 		}
@@ -33,29 +33,29 @@ public class PWalkState : FSMState<Player>
 	public override void ExecuteFixed(Player player)
 	{
 		// move r/l
-		if (Input.GetKey(KeyCode.A))
+		if (Input.GetKey(player.settings.KeyLeft))
 		{
 			player.rigidbody.AddForce(
-				Vector3.left * player.settings.movementAcceleration * Time.deltaTime, 
+				Vector3.left * player.settings.MovementAcceleration * Time.deltaTime, 
 				ForceMode.Impulse);
 
-			if (player.rigidbody.velocity.x < -player.settings.maxMovementVelocity)
+			if (player.rigidbody.velocity.x < -player.settings.MaxMovementVelocity)
 			{
 				Vector3 vel = player.rigidbody.velocity;
-				vel.x = -player.settings.maxMovementVelocity;
+				vel.x = -player.settings.MaxMovementVelocity;
 				player.rigidbody.velocity = vel;
 			}
 		}
-		else if (Input.GetKey(KeyCode.D))
+		else if (Input.GetKey(player.settings.KeyRight))
 		{
 			player.rigidbody.AddForce(
-				Vector3.right * player.settings.movementAcceleration * Time.deltaTime,
+				Vector3.right * player.settings.MovementAcceleration * Time.deltaTime,
 				ForceMode.Impulse);
 
-			if (player.rigidbody.velocity.x > player.settings.maxMovementVelocity)
+			if (player.rigidbody.velocity.x > player.settings.MaxMovementVelocity)
 			{
 				Vector3 vel = player.rigidbody.velocity;
-				vel.x = player.settings.maxMovementVelocity;
+				vel.x = player.settings.MaxMovementVelocity;
 				player.rigidbody.velocity = vel;
 			}
 		}

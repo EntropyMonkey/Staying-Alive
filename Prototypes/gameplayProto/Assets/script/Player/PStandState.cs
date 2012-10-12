@@ -10,11 +10,11 @@ public class PStandState : FSMState<Player>
 
 	public override void Execute(Player player)
 	{
-		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+		if (Input.GetKey(player.settings.KeyLeft) || Input.GetKey(player.settings.KeyRight))
 		{
 			player.FSM.ChangeState(player.WalkState);
 		}
-		else if(Input.GetKey(KeyCode.L))
+		else if(Input.GetKey(player.settings.KeyJump))
 		{
 			player.FSM.ChangeState(player.JumpState);
 		}

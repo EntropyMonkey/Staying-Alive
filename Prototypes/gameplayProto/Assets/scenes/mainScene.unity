@@ -985,14 +985,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4da919eb4b4ab440951ca88ba5dd60d, type: 1}
   m_Name: 
   settings:
-    jumpAcceleration: {x: 5, y: 5}
-    maxHorizontalJumpVelocity: 2
-    maxJumpTime: .400000006
-    horizontalFallAcceleration: 5
-    movementAcceleration: 8
-    maxMovementVelocity: 8
-    verticalFloatAcceleration: 1
-    maxVerticalFloatVelocity: 1
+    JumpAcceleration: {x: 5, y: 5}
+    MaxHorizontalJumpVelocity: 2
+    MaxJumpTime: .400000006
+    HorizontalFallAcceleration: 5
+    MovementAcceleration: 8
+    MaxMovementVelocity: 8
+    VerticalFloatAcceleration: 1
+    MaxVerticalFloatVelocity: 1
+    JumpKeys: 
+    WalkRightKeys: 
+    WalkLeftKeys: 
+    DEBUG_FloatKeys: 
 --- !u!1 &1983069213
 GameObject:
   m_ObjectHideFlags: 0

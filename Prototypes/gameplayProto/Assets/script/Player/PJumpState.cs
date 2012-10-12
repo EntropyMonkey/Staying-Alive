@@ -11,7 +11,7 @@ public class PJumpState : FSMState<Player>
 		jumpTimer = 0;
 
 		Vector3 vel = player.rigidbody.velocity;
-		vel.y = player.settings.jumpAcceleration.y;
+		vel.y = player.settings.JumpAcceleration.y;
 		player.rigidbody.velocity = vel;
 	}
 
@@ -19,12 +19,12 @@ public class PJumpState : FSMState<Player>
 	{
 		jumpTimer += Time.deltaTime;
 
-		if (jumpTimer > player.settings.maxJumpTime || !Input.GetKey(KeyCode.L))
+		if (jumpTimer > player.settings.MaxJumpTime || !Input.GetKey(player.settings.KeyJump))
 		{
 			player.FSM.ChangeState(player.FallState);
 		}
 
-		if (Input.GetKey(KeyCode.E))
+		if (Input.GetKey(player.settings.DEBUG_KeyFloat))
 		{
 			player.FSM.ChangeState(player.FloatState);
 		}
@@ -36,23 +36,23 @@ public class PJumpState : FSMState<Player>
 		//    Vector3.up * player.settings.jumpSpeed.y * Time.deltaTime,
 		//    ForceMode.Impulse);
 
-		if (Input.GetKey(KeyCode.D))
+		if (Input.GetKey(player.settings.KeyRight))
 		{
 			player.rigidbody.AddForce(
-				Vector3.right * player.settings.jumpAcceleration.x * Time.deltaTime,
+				Vector3.right * player.settings.JumpAcceleration.x * Time.deltaTime,
 				ForceMode.Impulse);
 		}
-		else if (Input.GetKey(KeyCode.A))
+		else if (Input.GetKey(player.settings.KeyLeft))
 		{
 			player.rigidbody.AddForce(
-				Vector3.left * player.settings.jumpAcceleration.x * Time.deltaTime,
+				Vector3.left * player.settings.JumpAcceleration.x * Time.deltaTime,
 				ForceMode.Impulse);
 		}
 
-		if (Mathf.Abs(player.rigidbody.velocity.x) > player.settings.maxHorizontalJumpVelocity)
+		if (Mathf.Abs(player.rigidbody.velocity.x) > player.settings.MaxHorizontalJumpVelocity)
 		{
 			Vector3 vel = player.rigidbody.velocity;
-			vel.x = player.settings.maxHorizontalJumpVelocity * (player.rigidbody.velocity.x > 0 ? 1 : -1);
+			vel.x = player.settings.MaxHorizontalJumpVelocity * (player.rigidbody.velocity.x > 0 ? 1 : -1);
 			player.rigidbody.velocity = vel;
 		}
 

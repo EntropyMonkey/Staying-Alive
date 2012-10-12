@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour 
 {
@@ -50,6 +51,8 @@ public class Player : MonoBehaviour
 	}
 	#endregion
 
+	private List<Collider> currentFloorColliders;
+
 	void Awake()
 	{
 	}
@@ -68,6 +71,8 @@ public class Player : MonoBehaviour
 		FSM = new FiniteStateMachine<Player>();
 		// configure it so that the player first falls and does not move r/l
 		FSM.Configure(this, FallState, null);
+
+		currentFloorColliders = new List<Collider>();
 	}
 
 	// used for game logic stuff
@@ -94,19 +99,35 @@ public class Player : MonoBehaviour
 
 	void OnCollisionStay(Collision collision)
 	{
-		if (collision.collider.transform.position.y < transform.position.y)
+		// test all contacts for the right collision angle
+		bool foundAngle = false;
+		for (int i = 0; i < collision.contacts.Length; i++)
+		{
+			float angle = Vector3.Angle(collision.contacts[i].normal, Vector3.up);
+			Debug.Log(angle);
+
+			if (angle > -settings.MaxFloorAngle && angle < settings.MaxFloorAngle)
+			{
+				currentFloorColliders.Add(collision.contacts[i].otherCollider);
+				foundAngle = true;
+			}
+		}
+
+		if (foundAngle)
 		{
 			Grounded = true;
 		}
 		else
 		{
 			Grounded = false;
+			if (FSM.CurrentState == JumpState)
+				FSM.ChangeState(FallState);
 		}
 	}
 
 	void OnCollisionExit(Collision collision)
 	{
-		if (collision.collider.transform.position.y < transform.position.y)
+		if (currentFloorColliders.Remove(collision.collider))
 		{
 			Grounded = false;
 		}
