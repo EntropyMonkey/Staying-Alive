@@ -29,14 +29,21 @@ public class PFallState : FSMState<Player>
 		if (Input.GetKey(KeyCode.D))
 		{
 			player.rigidbody.AddForce(
-				Vector3.right * player.settings.jumpSpeed.x * Time.deltaTime,
+				Vector3.right * player.settings.horizontalFallAcceleration * Time.deltaTime,
 				ForceMode.Impulse);
 		}
 		else if (Input.GetKey(KeyCode.A))
 		{
 			player.rigidbody.AddForce(
-				Vector3.left * player.settings.jumpSpeed.x * Time.deltaTime,
+				Vector3.left * player.settings.horizontalFallAcceleration * Time.deltaTime,
 				ForceMode.Impulse);
+		}
+
+		if (Mathf.Abs(player.rigidbody.velocity.x) > player.settings.maxHorizontalJumpVelocity)
+		{
+			Vector3 vel = player.rigidbody.velocity;
+			vel.x = player.settings.maxHorizontalJumpVelocity * (player.rigidbody.velocity.x > 0 ? 1 : -1);
+			player.rigidbody.velocity = vel;
 		}
 	}
 

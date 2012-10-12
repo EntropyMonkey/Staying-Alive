@@ -36,26 +36,26 @@ public class PWalkState : FSMState<Player>
 		if (Input.GetKey(KeyCode.A))
 		{
 			player.rigidbody.AddForce(
-				Vector3.left * player.settings.movementSpeed * Time.deltaTime, 
+				Vector3.left * player.settings.movementAcceleration * Time.deltaTime, 
 				ForceMode.Impulse);
 
-			if (player.rigidbody.velocity.x < -player.settings.maxMovementSpeed)
+			if (player.rigidbody.velocity.x < -player.settings.maxMovementVelocity)
 			{
 				Vector3 vel = player.rigidbody.velocity;
-				vel.x = -player.settings.maxMovementSpeed;
+				vel.x = -player.settings.maxMovementVelocity;
 				player.rigidbody.velocity = vel;
 			}
 		}
 		else if (Input.GetKey(KeyCode.D))
 		{
 			player.rigidbody.AddForce(
-				Vector3.right * player.settings.movementSpeed * Time.deltaTime,
+				Vector3.right * player.settings.movementAcceleration * Time.deltaTime,
 				ForceMode.Impulse);
 
-			if (player.rigidbody.velocity.x > player.settings.maxMovementSpeed)
+			if (player.rigidbody.velocity.x > player.settings.maxMovementVelocity)
 			{
 				Vector3 vel = player.rigidbody.velocity;
-				vel.x = player.settings.maxMovementSpeed;
+				vel.x = player.settings.maxMovementVelocity;
 				player.rigidbody.velocity = vel;
 			}
 		}
