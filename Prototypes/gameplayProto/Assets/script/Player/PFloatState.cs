@@ -18,19 +18,19 @@ public class PFloatState : PWalkState
 		// dont execute walkstate execute, because there the state change to the jump state happens
 
 		player.rigidbody.AddForce(
-			Vector3.down * player.settings.verticalFloatAcceleration * Time.deltaTime,
+			Vector3.down * player.settings.VerticalFloatAcceleration * Time.deltaTime,
 			ForceMode.Impulse);
 
-		if (player.rigidbody.velocity.y < -player.settings.maxVerticalFloatVelocity)
+		if (player.rigidbody.velocity.y < -player.settings.MaxVerticalFloatVelocity)
 		{
 			Vector3 vel = player.rigidbody.velocity;
-			vel.y = -player.settings.maxVerticalFloatVelocity;
+			vel.y = -player.settings.MaxVerticalFloatVelocity;
 			player.rigidbody.velocity = vel;
 		}
 
-		if (!Input.GetKey(KeyCode.E))
+		if (!Input.GetKey(player.settings.DEBUG_KeyFloat))
 		{
-			player.FSM.ChangeState(player.JumpState);
+			player.FSM.ChangeState(player.FallState);
 		}
 	}
 
