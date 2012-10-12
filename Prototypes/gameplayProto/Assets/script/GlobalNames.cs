@@ -9,6 +9,6 @@ public class GlobalNames
 {
 	public class TAG
 	{
-		public const string floor = "floor";
+		public const string Player = "Player";
 	}
 }

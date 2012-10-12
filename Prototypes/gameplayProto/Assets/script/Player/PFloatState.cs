@@ -30,7 +30,7 @@ public class PFloatState : PWalkState
 
 		if (!Input.GetKey(player.settings.DEBUG_KeyFloat))
 		{
-			player.FSM.ChangeState(player.JumpState);
+			player.FSM.ChangeState(player.FallState);
 		}
 	}
 

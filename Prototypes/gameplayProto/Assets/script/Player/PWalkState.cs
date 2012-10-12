@@ -11,7 +11,7 @@ public class PWalkState : FSMState<Player>
 	public override void Execute(Player player)
 	{
 		// transition to jump state
-		if (Input.GetKey(player.settings.KeyJump))
+		if (player.CanJump && Input.GetKey(player.settings.KeyJump))
 		{
 			player.FSM.ChangeState(player.JumpState);
 		}

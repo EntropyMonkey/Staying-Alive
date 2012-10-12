@@ -53,6 +53,9 @@ public class Player : MonoBehaviour
 
 	private List<Collider> currentFloorColliders;
 
+	// used to avoid bunnyhop
+	public bool CanJump;
+
 	void Awake()
 	{
 	}
@@ -60,6 +63,7 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		// initialize states
 		StandState = ScriptableObject.CreateInstance<PStandState>();
 		WalkState = ScriptableObject.CreateInstance<PWalkState>();
 
@@ -73,12 +77,23 @@ public class Player : MonoBehaviour
 		FSM.Configure(this, FallState, null);
 
 		currentFloorColliders = new List<Collider>();
+
+		// set tag
+		tag = GlobalNames.TAG.Player;
+
+		// used for bunnyhop avoidance
+		CanJump = true;
 	}
 
 	// used for game logic stuff
 	void Update ()
 	{
 		FSM.Update();
+
+		if (Input.GetKeyUp(settings.KeyJump))
+		{
+			CanJump = true;
+		}
 	}
 
 	// do physics stuff here!
@@ -104,8 +119,7 @@ public class Player : MonoBehaviour
 		for (int i = 0; i < collision.contacts.Length; i++)
 		{
 			float angle = Vector3.Angle(collision.contacts[i].normal, Vector3.up);
-			Debug.Log(angle);
-
+			
 			if (angle > -settings.MaxFloorAngle && angle < settings.MaxFloorAngle)
 			{
 				currentFloorColliders.Add(collision.contacts[i].otherCollider);

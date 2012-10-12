@@ -13,6 +13,8 @@ public class PJumpState : FSMState<Player>
 		Vector3 vel = player.rigidbody.velocity;
 		vel.y = player.settings.JumpAcceleration.y;
 		player.rigidbody.velocity = vel;
+
+		player.CanJump = false;
 	}
 
 	public override void Execute(Player player)

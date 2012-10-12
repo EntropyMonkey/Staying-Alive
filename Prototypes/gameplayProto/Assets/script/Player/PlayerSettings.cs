@@ -13,6 +13,7 @@ public class PlayerSettings
 	// After this time, the jump is aborted, player cannot jump for as long
 	// as he wants to
 	public float			MaxJumpTime = 0.4f;
+	public float			JumpTimeout = 0.2f;
 
 	// the player can influence the horizontal movement while falling down
 	public float			HorizontalFallAcceleration = 5;

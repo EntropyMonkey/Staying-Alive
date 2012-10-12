@@ -14,7 +14,7 @@ public class PStandState : FSMState<Player>
 		{
 			player.FSM.ChangeState(player.WalkState);
 		}
-		else if(Input.GetKey(player.settings.KeyJump))
+		else if(player.CanJump && Input.GetKey(player.settings.KeyJump))
 		{
 			player.FSM.ChangeState(player.JumpState);
 		}
