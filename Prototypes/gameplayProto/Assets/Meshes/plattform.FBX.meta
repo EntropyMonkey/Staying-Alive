@@ -3,6 +3,7 @@ guid: 680031b294427134ca6228971c2fbbd3
 ModelImporter:
   fileIDToRecycleName:
     4300000: Object001
+    4300002: Plattform
   serializedVersion: 10
   materials:
     importMaterials: 1
