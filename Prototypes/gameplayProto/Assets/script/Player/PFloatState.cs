@@ -18,13 +18,13 @@ public class PFloatState : PWalkState
 		// dont execute walkstate execute, because there the state change to the jump state happens
 
 		player.rigidbody.AddForce(
-			Vector3.down * player.settings.floatDownSpeed * Time.deltaTime,
+			Vector3.down * player.settings.verticalFloatAcceleration * Time.deltaTime,
 			ForceMode.Impulse);
 
-		if (player.rigidbody.velocity.y < -player.settings.maxFloatDownSpeed)
+		if (player.rigidbody.velocity.y < -player.settings.maxVerticalFloatVelocity)
 		{
 			Vector3 vel = player.rigidbody.velocity;
-			vel.y = -player.settings.maxFloatDownSpeed;
+			vel.y = -player.settings.maxVerticalFloatVelocity;
 			player.rigidbody.velocity = vel;
 		}
 
