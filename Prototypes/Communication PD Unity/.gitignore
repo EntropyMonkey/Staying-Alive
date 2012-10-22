@@ -1,0 +1,12 @@
+#### visual studio files
+
+*.csproj
+*.sln
+*.suo
+*.pidb
+
+#### directories
+
+obj/
+Temp/
+Library/

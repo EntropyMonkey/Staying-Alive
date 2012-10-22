@@ -10,5 +10,6 @@ public class GlobalNames
 	public class TAG
 	{
 		public const string Player = "Player";
+		public const string StartPoint = "StartPoint";
 	}
 }

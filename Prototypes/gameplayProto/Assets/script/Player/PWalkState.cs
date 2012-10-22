@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PWalkState : FSMState<Player>
@@ -11,7 +11,7 @@ public class PWalkState : FSMState<Player>
 	public override void Execute(Player player)
 	{
 		// transition to jump state
-		if (player.CanJump && Input.GetKey(player.settings.KeyJump))
+		if (player.JumpKeyReleased && Input.GetKey(player.settings.KeyJump))
 		{
 			player.FSM.ChangeState(player.JumpState);
 		}

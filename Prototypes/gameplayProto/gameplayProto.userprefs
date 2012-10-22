@@ -1,6 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\Player\Health.cs">
+    <Files>
+      <File FileName="Assets\script\Player\Player.cs" Line="109" Column="44" />
+      <File FileName="Assets\script\Player\PJumpState.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\Player\PStandState.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\Player\PWalkState.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\Player\Health.cs" Line="32" Column="14" />
+      <File FileName="Assets\script\Player\PlayerSettings.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\LevelStuff\DamageHealth.cs" Line="12" Column="4" />
+      <File FileName="Assets\script\GlobalNames.cs" Line="13" Column="49" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

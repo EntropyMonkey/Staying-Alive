@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PStandState : FSMState<Player>
@@ -14,7 +14,7 @@ public class PStandState : FSMState<Player>
 		{
 			player.FSM.ChangeState(player.WalkState);
 		}
-		else if(player.CanJump && Input.GetKey(player.settings.KeyJump))
+		else if(player.JumpKeyReleased && Input.GetKey(player.settings.KeyJump))
 		{
 			player.FSM.ChangeState(player.JumpState);
 		}

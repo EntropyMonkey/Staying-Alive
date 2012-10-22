@@ -6,22 +6,22 @@ using System.Collections.Generic;
 public class PlayerSettings
 {
 	// influences how the player can change his velocity in midair
-	public Vector2			JumpAcceleration = new Vector2(5, 5);
+	public Vector2			JumpAcceleration = new Vector2(10, 5);
 	// the maximum horizontal speed a player can have while jumping 
 	// (influences how far the jump reaches)
-	public float			MaxHorizontalJumpVelocity = 2;
+	public float			MaxHorizontalJumpVelocity = 2.5f;
 	// After this time, the jump is aborted, player cannot jump for as long
 	// as he wants to
-	public float			MaxJumpTime = 0.4f;
+	public float			MaxJumpTime = 0.5f;
 	public float			JumpTimeout = 0.2f;
 
 	// the player can influence the horizontal movement while falling down
 	public float			HorizontalFallAcceleration = 5;
 	
 	// the movement acceleration when on the floor
-	public float			MovementAcceleration = 8;
+	public float			MovementAcceleration = 15;
 	// the maximum velocity the player can have when he is on the floor
-	public float			MaxMovementVelocity = 8;
+	public float			MaxMovementVelocity = 3;
 
 	// the downward acceleration when floating
 	public float			VerticalFloatAcceleration = 1;
@@ -35,4 +35,6 @@ public class PlayerSettings
 	public KeyCode			KeyRight = KeyCode.D;
 	public KeyCode			KeyLeft = KeyCode.A;
 	public KeyCode			DEBUG_KeyFloat = KeyCode.E;
+	
+	public float			MaxHealthPoints = 1;
 }

@@ -50,18 +50,21 @@ public class Player : MonoBehaviour
 		private set;
 	}
 	#endregion
-
-	private List<Collider> currentFloorColliders;
-
+	
 	// used to avoid bunnyhop
-	public bool CanJump;
+	[HideInInspector]
+	public bool JumpKeyReleased;
+	
+	private List<Collider> currentFloorColliders;
+	
+	private Transform startTransform;
 
 	void Awake()
 	{
 	}
 
 	// Use this for initialization
-	void Start ()
+	void Start()
 	{
 		// initialize states
 		StandState = ScriptableObject.CreateInstance<PStandState>();
@@ -75,16 +78,37 @@ public class Player : MonoBehaviour
 		FSM = new FiniteStateMachine<Player>();
 		// configure it so that the player first falls and does not move r/l
 		FSM.Configure(this, FallState, null);
-
+		
+		// counts the current floor colliders, needed for double collisions
 		currentFloorColliders = new List<Collider>();
+		
+		GameObject temp = GameObject.FindGameObjectWithTag(GlobalNames.TAG.StartPoint);
+		if (temp != null)
+		{
+			startTransform = temp.transform;
+		}
+		else
+		{
+			Debug.LogWarning("The scene does not have an object tagged with \"StartPoint\"");
+		}
 
 		// set tag
 		tag = GlobalNames.TAG.Player;
 
-		// used for bunnyhop avoidance
-		CanJump = true;
+		Reset ();
 	}
-
+	
+	public void Reset()
+	{
+		// used for bunnyhop avoidance
+		JumpKeyReleased = true;
+		
+		// reset position and velocity
+		transform.position = startTransform.position;
+		rigidbody.velocity = Vector3.zero;
+		rigidbody.angularVelocity = Vector3.zero;
+	}
+	
 	// used for game logic stuff
 	void Update ()
 	{
@@ -92,7 +116,7 @@ public class Player : MonoBehaviour
 
 		if (Input.GetKeyUp(settings.KeyJump))
 		{
-			CanJump = true;
+			JumpKeyReleased = true;
 		}
 	}
 

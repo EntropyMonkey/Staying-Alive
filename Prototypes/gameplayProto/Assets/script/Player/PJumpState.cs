@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PJumpState : FSMState<Player>
@@ -14,7 +14,7 @@ public class PJumpState : FSMState<Player>
 		vel.y = player.settings.JumpAcceleration.y;
 		player.rigidbody.velocity = vel;
 
-		player.CanJump = false;
+		player.JumpKeyReleased = false;
 	}
 
 	public override void Execute(Player player)
