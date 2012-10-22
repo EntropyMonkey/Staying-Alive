@@ -1,8 +1,12 @@
+#### visual studio files
+
 *.csproj
 *.sln
 *.suo
-*.pdib
+*.pidb
 
-obj\
-Temp\
-Library\
+#### directories
+
+obj/
+Temp/
+Library/
