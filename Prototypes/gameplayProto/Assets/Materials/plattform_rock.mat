@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Plattform
+  m_Name: plattform_rock
   m_Shader: {fileID: 4800000, guid: 404be32c8b8fc6841a0c9059555c2a4c, type: 1}
   m_SavedProperties:
     serializedVersion: 2
@@ -15,45 +15,45 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 1857a7c511a7599439b08a6b73ec648d, type: 1}
+          m_Texture: {fileID: 2800000, guid: 056c24c6b6ba5ba40b455e000c1e9935, type: 1}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _RampTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 4183fb926593ca549beb7d2f183cf0a8, type: 1}
+          m_Texture: {fileID: 2800000, guid: 6d755f01b19cb324bb5e3fc9a2cf9efd, type: 1}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _SpecularTex
         second:
-          m_Texture: {fileID: 2800000, guid: d82fdb63ea6f21f4da046d6e6089e805, type: 1}
+          m_Texture: {fileID: 2800000, guid: 1e293dcb042fb6e42b8ac51230ea7ab4, type: 1}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RampTex
+        second:
+          m_Texture: {fileID: 2800000, guid: f54f7b673f1471044a0506bb3e42c59e, type: 1}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Cutoff
-        second: .288461536
+        second: .49253732
       data:
         first:
           name: _RimPower
-        second: 20
+        second: .200000003
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: .111940324, g: .109434195, b: .109434195, a: 1}
       data:
         first:
           name: _RimColor
-        second: {r: .23880595, g: .223576814, b: .155045658, a: .749019623}
+        second: {r: .589552283, g: .531341612, b: .400367588, a: .749019623}
