@@ -145,14 +145,12 @@ public class Player : MonoBehaviour
         {
             shoutingActivatedLastFrame = false;
             ShoutTrigger.gameObject.active = false;
-			Debug.Log(1);
         }
 
         if (oscManager.Shouting)
         {
             ShoutTrigger.gameObject.active = true;
             shoutingActivatedLastFrame = true;
-			Debug.Log(3);
         }
 	}
 
