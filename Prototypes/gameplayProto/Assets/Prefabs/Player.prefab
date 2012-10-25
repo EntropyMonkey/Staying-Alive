@@ -33,6 +33,8 @@ GameObject:
   - 136: {fileID: 13600000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -75,7 +77,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.17941189, y: -3.61683583, z: 0}
+  m_LocalPosition: {x: -5.5848608, y: -3.6386323, z: 0}
   m_LocalScale: {x: .580059469, y: .580059469, z: .580059469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -203,6 +205,7 @@ MonoBehaviour:
     DEBUG_KeyFloat: 101
     MaxHealthPoints: 1
   JumpKeyReleased: 0
+  OSCTester: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,6 +234,30 @@ MonoBehaviour:
     height: 100
   standardFont: {fileID: 12800000, guid: 1c313f8d2b22a7242bea9c0879807de4, type: 1}
   fontSize: 50
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703ac898c90f26e41a7b043155c2d545, type: 1}
+  m_Name: 
+  Shouting: 0
+  Shushing: 0
+  Whistling: 0
+  Singing: 0
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9314588110f474cb58e55e32a21e86, type: 1}
+  m_Name: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
