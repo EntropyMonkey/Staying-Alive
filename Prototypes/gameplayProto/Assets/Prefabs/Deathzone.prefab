@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .080794692, y: -4.92105627, z: 0}
   m_LocalScale: {x: .627985656, y: .717713475, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -78,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc941366a1e1bdb429f4d5eb646d4b43, type: 1}
   m_Name: 
   Damage: 1
+  ShowDeathArea: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

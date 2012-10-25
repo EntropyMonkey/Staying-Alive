@@ -4,6 +4,8 @@ using System.Collections;
 public class DamageHealth : MonoBehaviour
 {
 	public float Damage = 1;
+
+	public bool ShowDeathArea = true;
 	
 	void OnTriggerEnter(Collider other)
 	{
@@ -12,5 +14,10 @@ public class DamageHealth : MonoBehaviour
 		{
 			h.HealthPoints -= Damage;
 		}
+	}
+
+	void Update()
+	{
+		renderer.enabled = ShowDeathArea;
 	}
 }

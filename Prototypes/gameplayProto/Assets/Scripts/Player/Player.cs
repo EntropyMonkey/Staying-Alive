@@ -49,6 +49,12 @@ public class Player : MonoBehaviour
 		get;
 		private set;
 	}
+
+	public float Points
+	{
+		get;
+		set;
+	}
 	#endregion
 	
 	// used to avoid bunnyhop
