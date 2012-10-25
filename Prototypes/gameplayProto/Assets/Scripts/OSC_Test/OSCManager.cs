@@ -80,7 +80,10 @@ public class OSCManager : MonoBehaviour
 			foreach (var log in newLogs)
 			{
 				var split = log.Log.Split('#');
-				Debug.Log(log.Log);
+				if (DebugMe)
+				{
+					Debug.Log(log.Log);
+				}
 
 				float shoutSize = float.Parse(split[0]);
 				float shushSize = float.Parse(split[1]);

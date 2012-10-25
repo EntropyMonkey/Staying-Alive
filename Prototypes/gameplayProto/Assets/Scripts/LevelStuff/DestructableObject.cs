@@ -1,24 +1,27 @@
 using UnityEngine;
 using System.Collections;
 
-public class DestructableObject : MonoBehaviour {
+public class DestructableObject : MonoBehaviour
+{
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start()
+	{
+
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-	    
+	void Update()
+	{
+
 	}
 
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == GlobalNames.TAG.ShoutingTrigger)
-        {
-            gameObject.active = false;
-        }
-    }
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == GlobalNames.TAG.ShoutingTrigger)
+		{
+			gameObject.active = false;
+			Debug.Log(2);
+		}
+	}
 }
