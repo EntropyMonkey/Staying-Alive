@@ -64,13 +64,13 @@ public class Player : MonoBehaviour
 	private List<Collider> currentFloorColliders;
 
     [HideInInspector]
-    public OSCTest OSCTester;
+    public OSCManager oscManager;
 	
 	private Transform startTransform;
 
 	void Awake()
 	{
-        OSCTester = GetComponent<OSCTest>();
+        oscManager = GetComponent<OSCManager>();
 	}
 
 	// Use this for initialization

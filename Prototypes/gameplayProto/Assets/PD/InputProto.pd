@@ -1,4 +1,4 @@
-#N canvas 751 34 487 403 10;
+#N canvas 780 144 487 403 10;
 #X declare -lib mrpeach;
 #X obj 85 43 output~;
 #N canvas 613 394 625 277 whistling 0;
@@ -355,7 +355,7 @@
 #X restore -49 55 pd indoorPDgraphic;
 #X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#N canvas 463 299 680 355 holdingtone 1;
+#N canvas 463 299 680 355 holdingtone 0;
 #X obj 117 25 adc~;
 #X obj 102 170 mtof;
 #X obj 106 135 fiddle 2048 1;
@@ -395,7 +395,7 @@
 #X restore 122 188 pd holdingtone;
 #X text -21 147 player 1;
 #X text 120 133 player 2;
-#N canvas 601 368 450 300 PureUnity 1;
+#N canvas 601 368 450 300 PureUnity 0;
 #X obj 330 40 import mrpeach;
 #X obj 136 109 pack f f f f;
 #X obj 188 197 packOSC;
@@ -437,7 +437,7 @@
 #X obj 314 72 env~;
 #X obj 315 103 - 100;
 #X obj 319 153 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 80 286 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 80 286 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 99 285 udpsend on/off;
 #X obj 153 23 loadbang;
@@ -447,12 +447,12 @@
 #X obj -22 172 hsl 65 20 -5 10 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 5120 1;
 #X obj 92 251 loadbang;
-#X obj 124 168 r anfangslautstärke;
+#X obj 182 116 r anfangslautstärke;
 #X floatatom 213 187 5 0 0 0 - - -;
 #X text 287 338 V. 0.2.3;
-#X obj 126 168 s lautstärke;
-#X obj 126 167 hsl 120 20 20 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8500 1;
+#X obj 203 220 s lautstärke;
+#X obj 145 153 hsl 120 20 20 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4400 1;
 #X connect 5 0 4 0;
 #X connect 10 0 9 2;
 #X connect 11 0 9 0;

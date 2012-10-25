@@ -18,7 +18,7 @@ public class PFallState : FSMState<Player>
 		{
 			player.FSM.ChangeState(player.StandState);
 		}
-        else if (player.OSCTester.Singing)
+        else if (player.oscManager.Singing)
 		{
 			player.FSM.ChangeState(player.FloatState);
 		}
