@@ -56,11 +56,15 @@ public class Player : MonoBehaviour
 	public bool JumpKeyReleased;
 	
 	private List<Collider> currentFloorColliders;
+
+    [HideInInspector]
+    public OSCTest OSCTester;
 	
 	private Transform startTransform;
 
 	void Awake()
 	{
+        OSCTester = GetComponent<OSCTest>();
 	}
 
 	// Use this for initialization

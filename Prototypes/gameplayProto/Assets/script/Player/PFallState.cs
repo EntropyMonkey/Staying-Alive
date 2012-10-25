@@ -18,7 +18,7 @@ public class PFallState : FSMState<Player>
 		{
 			player.FSM.ChangeState(player.StandState);
 		}
-		else if (Input.GetKey(player.settings.DEBUG_KeyFloat))
+        else if (player.OSCTester.Singing)
 		{
 			player.FSM.ChangeState(player.FloatState);
 		}

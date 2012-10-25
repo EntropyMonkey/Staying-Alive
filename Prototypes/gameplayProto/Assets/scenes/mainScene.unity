@@ -817,7 +817,7 @@ GameObject:
   - 23: {fileID: 1258377844}
   - 114: {fileID: 1258377847}
   m_Layer: 0
-  m_Name: Spikes
+  m_Name: Deathzone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,6 +1138,8 @@ GameObject:
   - 136: {fileID: 1955446524}
   - 114: {fileID: 1955446526}
   - 114: {fileID: 1955446527}
+  - 114: {fileID: 1955446528}
+  - 114: {fileID: 1955446529}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1242,6 +1244,7 @@ MonoBehaviour:
     DEBUG_KeyFloat: 101
     MaxHealthPoints: 1
   JumpKeyReleased: 0
+  OSCTester: {fileID: 0}
 --- !u!114 &1955446527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,6 +1255,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88591310c52a0d845bfe03fe1415cdb8, type: 1}
+  m_Name: 
+--- !u!114 &1955446528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955446520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703ac898c90f26e41a7b043155c2d545, type: 1}
+  m_Name: 
+  Shouting: 0
+  Shushing: 0
+  Whistling: 0
+  Singing: 0
+--- !u!114 &1955446529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1955446520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9314588110f474cb58e55e32a21e86, type: 1}
   m_Name: 
 --- !u!1 &1983069213
 GameObject:
