@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.32822752, y: -1.94411278, z: 0}
+  m_LocalPosition: {x: 102.9095, y: -2.17040181, z: 0}
   m_LocalScale: {x: .67521292, y: .67521292, z: .67521292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdecb7a0855b1e34f912ba35999d91f3, type: 1}
   m_Name: 
-  points: 25463
+  points: 100
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

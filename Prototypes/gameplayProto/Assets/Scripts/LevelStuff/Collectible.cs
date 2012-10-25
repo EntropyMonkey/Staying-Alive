@@ -11,6 +11,7 @@ public class Collectible : MonoBehaviour
 		{
 			Player p = other.gameObject.GetComponent<Player>();
 			p.Points += points;
+			Destroy(gameObject);
 		}
 	}
 }
