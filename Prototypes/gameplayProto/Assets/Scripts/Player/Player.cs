@@ -65,17 +65,30 @@ public class Player : MonoBehaviour
 
     [HideInInspector]
     public OSCTest OSCTester;
+
+    private bool shoutingActivatedLastFrame;
+    private BoxCollider ShoutTrigger;
 	
-	private Transform startTransform;
+	private Transform startTransform;    
 
 	void Awake()
 	{
-        OSCTester = GetComponent<OSCTest>();
 	}
 
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
 	{
+        OSCTester = GetComponent<OSCTest>();
+
+        foreach (Transform childTransform in transform)
+        {
+            BoxCollider collider = childTransform.gameObject.GetComponent<BoxCollider>();
+            if (collider != null && collider.isTrigger)
+            {
+                ShoutTrigger = collider;
+            }
+        }
+
 		// initialize states
 		StandState = ScriptableObject.CreateInstance<PStandState>();
 		WalkState = ScriptableObject.CreateInstance<PWalkState>();
@@ -128,6 +141,18 @@ public class Player : MonoBehaviour
 		{
 			JumpKeyReleased = true;
 		}
+
+        if (shoutingActivatedLastFrame)
+        {
+            shoutingActivatedLastFrame = false;
+            ShoutTrigger.gameObject.active = false;
+        }
+
+        if (OSCTester.Shouting)
+        {
+            ShoutTrigger.gameObject.active = true;
+            shoutingActivatedLastFrame = true;
+        }
 	}
 
 	// do physics stuff here!

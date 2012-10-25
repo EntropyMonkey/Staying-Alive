@@ -37,7 +37,7 @@ public class OSCTest : MonoBehaviour {
 			foreach(var log in newLogs)
 			{
 	            var split = log.Log.Split('#');
-				Debug.Log (log.Log);
+				//Debug.Log (log.Log);
 							
 				float shoutSize = float.Parse(split[0]);
 				float shushSize = float.Parse (split[1]);
@@ -48,14 +48,17 @@ public class OSCTest : MonoBehaviour {
                     Singing = true;
                 else
                     Singing = false;
+
                 if (shushSize > 0.5f)
                     Shushing = true;
                 else
                     Shushing = false;
+
                 if (shoutSize > 0.5f)
                     Shouting = true;
                 else
                     Shouting = false;
+
                 if (whistlingSize > 0.5f)
                     Whistling = true;
                 else
