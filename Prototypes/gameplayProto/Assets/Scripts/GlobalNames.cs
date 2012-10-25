@@ -11,6 +11,7 @@ public class GlobalNames
 	{
 		public const string Player = "Player";
 		public const string StartPoint = "StartPoint";
+        public const string ShoutingTrigger = "ShoutingTrigger";
 	}
 
 	public class NAME
