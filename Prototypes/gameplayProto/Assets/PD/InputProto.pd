@@ -1,12 +1,10 @@
-#N canvas 751 34 487 403 10;
+#N canvas 551 22 601 524 10;
 #X declare -lib mrpeach;
 #X obj 85 43 output~;
 #N canvas 613 394 625 277 whistling 0;
 #X obj 73 7 adc~;
 #X obj 78 99 mtof;
 #X obj 230 110 t b f;
-#X obj 75 146 expr if($f1 > 750 && $f1 < 4500 && $f2>75 \, 1 \, 0)
-;
 #X obj 78 75 fiddle~ 2048 1;
 #N canvas 184 87 1096 623 boredParticles 0;
 #X obj -61 229 gemhead;
@@ -104,17 +102,27 @@
 #X connect 43 0 16 0;
 #X restore 68 212 pd boredParticles;
 #X obj 85 180 s whistling;
-#X connect 0 0 4 0;
-#X connect 0 1 4 0;
-#X connect 1 0 3 0;
-#X connect 2 0 3 0;
-#X connect 2 1 3 1;
-#X connect 3 0 5 0;
-#X connect 3 0 6 0;
-#X connect 4 0 1 0;
-#X connect 4 3 2 0;
-#X restore -25 219 pd whistling;
-#N canvas 463 137 817 501 shushing 0;
+#X obj 75 145 expr if($f1 > 750 && $f1 < 4500 && $f2>$f3 \, 1 \, 0)
+;
+#X msg 371 114 75;
+#X obj 320 85 r lautstärkew;
+#X obj 377 58 loadbang;
+#X obj 387 148 s alautstärkew;
+#X connect 0 0 3 0;
+#X connect 0 1 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 6 0;
+#X connect 2 1 6 1;
+#X connect 3 0 1 0;
+#X connect 3 3 2 0;
+#X connect 6 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 6 2;
+#X connect 7 0 10 0;
+#X connect 8 0 6 2;
+#X connect 9 0 7 0;
+#X restore -27 261 pd whistling;
+#N canvas 399 299 817 501 shushing 0;
 #X obj 88 69 adc~;
 #X obj 14 164 gemhead;
 #X obj 14 248 translateXYZ -2 -1 0;
@@ -136,6 +144,10 @@
 #X text 467 260 took it to 3500 cause of interference with whistling
 ;
 #X obj 333 359 s shushing;
+#X msg 369 189 80;
+#X obj 371 166 loadbang;
+#X obj 369 213 s AlautstärkeS;
+#X obj 342 131 r lautstärkeS;
 #X connect 0 0 10 0;
 #X connect 0 1 10 0;
 #X connect 1 0 3 0;
@@ -156,7 +168,11 @@
 #X connect 16 0 5 0;
 #X connect 17 0 14 0;
 #X connect 17 0 19 0;
-#X restore 121 219 pd shushing;
+#X connect 20 0 15 1;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 23 0 15 1;
+#X restore 124 258 pd shushing;
 #N canvas 127 247 613 483 shouting 0;
 #X obj -15 24 gemhead;
 #X obj -14 154 translateXYZ;
@@ -355,7 +371,7 @@
 #X restore -49 55 pd indoorPDgraphic;
 #X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#N canvas 463 299 680 355 holdingtone 1;
+#N canvas 27 22 680 355 holdingtone 0;
 #X obj 117 25 adc~;
 #X obj 102 170 mtof;
 #X obj 106 135 fiddle 2048 1;
@@ -395,7 +411,7 @@
 #X restore 122 188 pd holdingtone;
 #X text -21 147 player 1;
 #X text 120 133 player 2;
-#N canvas 601 368 450 300 PureUnity 1;
+#N canvas 601 368 450 300 PureUnity 0;
 #X obj 330 40 import mrpeach;
 #X obj 136 109 pack f f f f;
 #X obj 188 197 packOSC;
@@ -426,33 +442,43 @@
 #X connect 12 0 1 3;
 #X connect 13 0 4 0;
 #X connect 14 0 13 0;
-#X restore 47 354 pd PureUnity;
-#X obj 120 330 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 97 490 pd PureUnity;
+#X obj 170 466 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj -14 326 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X text 1 323 disconnect;
-#X text 138 326 connect;
+#X obj 36 462 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 51 459 disconnect;
+#X text 188 462 connect;
 #X obj 309 39 adc~;
 #X obj 314 72 env~;
 #X obj 315 103 - 100;
 #X obj 319 153 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 80 286 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 130 422 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X text 99 285 udpsend on/off;
+#X text 149 421 udpsend on/off;
 #X obj 153 23 loadbang;
 #X msg 153 45 \; pd dsp 1;
 #X floatatom 47 194 5 0 0 0 - - -;
 #X obj -18 173 r anfang;
 #X obj -22 172 hsl 65 20 -5 10 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 5120 1;
-#X obj 92 251 loadbang;
+#X obj 142 387 loadbang;
 #X obj 124 168 r anfangslautstärke;
 #X floatatom 213 187 5 0 0 0 - - -;
-#X text 287 338 V. 0.2.3;
 #X obj 126 168 s lautstärke;
 #X obj 126 167 hsl 120 20 20 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8500 1;
+-1 -1 9966 1;
+#X floatatom 53 262 5 0 0 0 - - -;
+#X obj -24 236 s lautstärkew;
+#X obj -25 236 r alautstärkew;
+#X obj -24 234 hsl 120 20 20 120 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4700 1;
+#X obj 129 236 s lautstärkeS;
+#X floatatom 200 259 5 0 0 0 - - -;
+#X obj 128 236 r AlautstärkeS;
+#X obj 128 235 hsl 120 20 20 100 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3725 1;
+#X text 442 438 V. 0.2.4;
 #X connect 5 0 4 0;
 #X connect 10 0 9 2;
 #X connect 11 0 9 0;
@@ -467,6 +493,12 @@
 #X connect 24 0 3 0;
 #X connect 25 0 18 0;
 #X connect 25 0 10 0;
-#X connect 26 0 30 0;
-#X connect 30 0 29 0;
-#X connect 30 0 27 0;
+#X connect 26 0 29 0;
+#X connect 29 0 28 0;
+#X connect 29 0 27 0;
+#X connect 32 0 33 0;
+#X connect 33 0 30 0;
+#X connect 33 0 31 0;
+#X connect 36 0 37 0;
+#X connect 37 0 34 0;
+#X connect 37 0 35 0;
