@@ -8,6 +8,10 @@ public class DestructableObject : MonoBehaviour
 		if (other.gameObject.tag == GlobalNames.TAG.ShoutingTrigger)
 		{
 			gameObject.active = false;
+			for (int i = 0; i < transform.GetChildCount(); i++)
+			{
+				transform.GetChild(i).gameObject.active = false;		
+			}
 		}
 	}
 }
