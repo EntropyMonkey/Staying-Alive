@@ -4021,7 +4021,9 @@ MonoBehaviour:
     KeyJump: 108
     KeyRight: 100
     KeyLeft: 97
-    DEBUG_KeyFloat: 101
+    DEBUG_KeyShout: 101
+    DEBUG_KeySinging: 113
+    DEBUG_KeyWhistling: 114
     MaxHealthPoints: 1
   JumpKeyReleased: 0
   oscManager: {fileID: 0}

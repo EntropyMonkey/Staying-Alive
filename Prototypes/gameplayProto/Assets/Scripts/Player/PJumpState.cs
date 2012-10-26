@@ -26,7 +26,7 @@ public class PJumpState : FSMState<Player>
 			player.FSM.ChangeState(player.FallState);
 		}
 
-        if (player.oscManager.Singing)
+        if (player.oscManager.Singing || Input.GetKey(player.settings.DEBUG_KeySinging))
 		{
 			player.FSM.ChangeState(player.FloatState);
 		}

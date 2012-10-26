@@ -16,10 +16,7 @@ public class PFloatState : PWalkState
 	public override void Execute(Player player)
 	{
 		// dont execute walkstate execute, because there the state change to the jump state happens
-
-		player.rigidbody.AddForce(
-			Vector3.down * player.settings.VerticalFloatAcceleration * Time.deltaTime,
-			ForceMode.Impulse);
+		// and players should not be able to jump when in the float state
 
 		if (player.rigidbody.velocity.y < -player.settings.MaxVerticalFloatVelocity)
 		{
@@ -28,7 +25,7 @@ public class PFloatState : PWalkState
 			player.rigidbody.velocity = vel;
 		}
 
-        if (!player.oscManager.Singing)
+        if (!player.oscManager.Singing && !Input.GetKey(player.settings.DEBUG_KeySinging) || player.Grounded)
 		{
 			player.FSM.ChangeState(player.FallState);
 		}
@@ -37,7 +34,12 @@ public class PFloatState : PWalkState
 	public override void ExecuteFixed(Player player)
 	{
 		// sideways movement in PWalkState
-		base.ExecuteFixed(player);
+		base.ExecuteFixed(player); 
+		
+		player.rigidbody.AddForce(
+			 Vector3.down * player.settings.VerticalFloatAcceleration * Time.deltaTime,
+			 ForceMode.Impulse);
+
 	}
 
 	public override void Exit(Player player)

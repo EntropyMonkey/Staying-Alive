@@ -34,7 +34,9 @@ public class PlayerSettings
 	public KeyCode			KeyJump = KeyCode.L;
 	public KeyCode			KeyRight = KeyCode.D;
 	public KeyCode			KeyLeft = KeyCode.A;
-	public KeyCode			DEBUG_KeyFloat = KeyCode.E;
+	public KeyCode			DEBUG_KeyShout = KeyCode.E;
+	public KeyCode			DEBUG_KeySinging = KeyCode.Q;
+	public KeyCode			DEBUG_KeyWhistling = KeyCode.R;
 	
 	public float			MaxHealthPoints = 1;
 }
