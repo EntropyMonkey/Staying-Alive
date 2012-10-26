@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
             ShoutTrigger.gameObject.active = false;
         }
 
-        if (oscManager.Shouting)
+        if (oscManager.Shouting || Input.GetKey(settings.DEBUG_KeyShout))
         {
             ShoutTrigger.gameObject.active = true;
             shoutingActivatedLastFrame = true;
