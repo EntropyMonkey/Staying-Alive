@@ -102,6 +102,7 @@ GameObject:
   - 23: {fileID: 2300010}
   - 111: {fileID: 11100000}
   - 114: {fileID: 11400000}
+  - 65: {fileID: 6500010}
   m_Layer: 0
   m_Name: pillar
   m_TagString: Untagged
@@ -171,7 +172,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
-  m_LocalPosition: {x: -3.03550434, y: -4.21348524, z: -1.01514161e-07}
+  m_LocalPosition: {x: -3.03550434, y: -4.21348524, z: 0}
   m_LocalScale: {x: 4.04674149, y: 4.04674149, z: 4.04674149}
   m_Children:
   - {fileID: 400008}
@@ -390,6 +391,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .514810324, y: 4.05283546, z: 1}
   m_Center: {x: -.062433362, y: 1.52641773, z: 0}
+--- !u!65 &6500010
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .252236992, y: .246193141, z: 1.06230426}
+  m_Center: {x: .00816971436, y: .00771658309, z: .531530619}
 --- !u!111 &11100000
 Animation:
   m_ObjectHideFlags: 1
