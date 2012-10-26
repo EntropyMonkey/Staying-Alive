@@ -176,6 +176,10 @@ public class Player : MonoBehaviour
 
 	void OnCollisionEnter(Collision collision)
 	{
+		if (collision.collider.tag == GlobalNames.TAG.MovingPlatformTag)
+		{
+			transform.parent = collision.collider.transform;
+		}
 	}
 
 	void OnCollisionStay(Collision collision)
@@ -210,6 +214,11 @@ public class Player : MonoBehaviour
 		if (currentFloorColliders.Remove(collision.collider))
 		{
 			Grounded = false;
+		}
+
+		if (collision.collider.tag == GlobalNames.TAG.MovingPlatformTag)
+		{
+			transform.parent = null;
 		}
 	}
 }
