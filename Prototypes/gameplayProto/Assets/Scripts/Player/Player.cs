@@ -87,6 +87,14 @@ public class Player : MonoBehaviour
                 ShoutTrigger = collider;
             }
         }
+        if (ShoutTrigger != null)
+        {
+            ShoutTrigger.gameObject.active = false;
+        }
+        else
+        {
+            Debug.Log("Shout trigger on player wasn't found");
+        }
 
 		// initialize states
 		StandState = ScriptableObject.CreateInstance<PStandState>();
