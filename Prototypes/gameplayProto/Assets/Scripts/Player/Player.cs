@@ -66,6 +66,12 @@ public class Player : MonoBehaviour
 	// used to avoid bunnyhop
 	[HideInInspector]
 	public bool JumpKeyReleased;
+
+    public int activePlayerInput
+    {
+        get;
+        private set;
+    }
 	
 	private List<Collider> currentFloorColliders;
 
@@ -181,8 +187,23 @@ public class Player : MonoBehaviour
             ShoutTrigger.gameObject.active = false;
         }
 
+        // Update control of voice input
+        // Note that player1 input has priority over player2!
+        if (Input.GetKey(settings.KeyPlayer1Input))
+        {
+            activePlayerInput = 1;
+        }
+        else if (Input.GetKey(settings.KeyPlayer2Input))
+        {
+            activePlayerInput = 2;
+        }
+        else
+        {
+            activePlayerInput = 0;
+        }
+
         // Player1 controls the shouting
-        if ((Input.GetKey(settings.KeyPlayer1Input) && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
+        if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
         {
             ShoutTrigger.gameObject.active = true;
             shoutingActivatedLastFrame = true;
