@@ -20,4 +20,10 @@ public class GlobalNames
 		public const string OSCSenderName = "Kunigunde";
 		public const string OSCReceiverName = "Willibald";
 	}
+
+	public class SOUND
+	{
+		public const string JumpStart = "jumpStart";
+		public const string JumpExit = "jumpExit";
+	}
 }

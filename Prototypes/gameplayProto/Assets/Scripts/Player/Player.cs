@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
     private bool shoutingActivatedLastFrame;
     private BoxCollider ShoutTrigger;
 	
-	private Transform startTransform;    
+	private Transform startTransform;
 
 	void Awake()
 	{
