@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
+		// shout trigger
         foreach (Transform childTransform in transform)
         {
             BoxCollider collider = childTransform.gameObject.GetComponent<BoxCollider>();
@@ -118,6 +119,7 @@ public class Player : MonoBehaviour
 		// counts the current floor colliders, needed for double collisions
 		currentFloorColliders = new List<Collider>();
 		
+		// checkpoints & startpoint
 		GameObject temp = GameObject.FindGameObjectWithTag(GlobalNames.TAG.StartPoint);
 		if (temp != null)
 		{
@@ -146,7 +148,6 @@ public class Player : MonoBehaviour
         // Reset player and objects according to check point
         if (lastCheckpoint == null)
         {
-            Debug.Log("No checkpoint: This should only happen once, on startup!");
             // reset player position
             transform.position = startTransform.position;
         }
