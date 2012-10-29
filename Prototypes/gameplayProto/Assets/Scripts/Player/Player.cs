@@ -55,6 +55,12 @@ public class Player : MonoBehaviour
 		get;
 		set;
 	}
+
+    public GameObject lastCheckpoint
+    {
+        get;
+        set;
+    }
 	#endregion
 	
 	// used to avoid bunnyhop
@@ -133,10 +139,30 @@ public class Player : MonoBehaviour
 		// used for bunnyhop avoidance
 		JumpKeyReleased = true;
 		
-		// reset position and velocity
-		transform.position = startTransform.position;
+		// reset velocity
 		rigidbody.velocity = Vector3.zero;
 		rigidbody.angularVelocity = Vector3.zero;
+
+        // Reset player and objects according to check point
+        if (lastCheckpoint == null)
+        {
+            Debug.Log("No checkpoint: This should only happen once, on startup!");
+            // reset player position
+            transform.position = startTransform.position;
+        }
+        else
+        {
+            Checkpoint check = lastCheckpoint.GetComponent<Checkpoint>();
+            if (check != null)
+            {
+                check.loadCheckpoint(transform);
+            }
+            else
+            {
+                // reset player position
+                transform.position = startTransform.position;
+            }
+        }
 	}
 	
 	// used for game logic stuff
