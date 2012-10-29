@@ -37,6 +37,8 @@ public class PlayerSettings
 	public KeyCode			DEBUG_KeyShout = KeyCode.E;
 	public KeyCode			DEBUG_KeySinging = KeyCode.Q;
 	public KeyCode			DEBUG_KeyWhistling = KeyCode.R;
-	
+    public KeyCode          KeyPlayer1Input = KeyCode.LeftShift;
+    public KeyCode          KeyPlayer2Input = KeyCode.RightShift;
+
 	public float			MaxHealthPoints = 1;
 }
