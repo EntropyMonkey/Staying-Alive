@@ -30154,6 +30154,8 @@ MonoBehaviour:
     DEBUG_KeyShout: 101
     DEBUG_KeySinging: 113
     DEBUG_KeyWhistling: 114
+    KeyPlayer1Input: 304
+    KeyPlayer2Input: 303
     MaxHealthPoints: 1
   JumpKeyReleased: 0
   oscManager: {fileID: 0}

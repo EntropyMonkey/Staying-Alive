@@ -181,7 +181,8 @@ public class Player : MonoBehaviour
             ShoutTrigger.gameObject.active = false;
         }
 
-        if (oscManager.Shouting || Input.GetKey(settings.DEBUG_KeyShout))
+        // Player1 controls the shouting
+        if ((Input.GetKey(settings.KeyPlayer1Input) && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
         {
             ShoutTrigger.gameObject.active = true;
             shoutingActivatedLastFrame = true;
