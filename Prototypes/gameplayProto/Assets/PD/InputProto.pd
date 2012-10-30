@@ -1,4 +1,4 @@
-#N canvas 624 179 601 524 10;
+#N canvas 422 119 699 565 10;
 #X declare -lib mrpeach;
 #X obj 85 43 output~;
 #N canvas 613 394 625 277 whistling 0;
@@ -147,7 +147,7 @@
 #X connect 11 0 5 2;
 #X connect 11 0 8 0;
 #X restore -27 261 pd whistling;
-#N canvas 399 299 817 501 shushing 1;
+#N canvas 399 299 817 501 shushing 0;
 #X obj 14 164 gemhead;
 #X obj 14 248 translateXYZ -2 -1 0;
 #X obj 14 215 color 0 1 0;
@@ -339,7 +339,7 @@
 #X obj 163 259 gemwin;
 #X msg 94 107 create;
 #X msg 178 105 destroy;
-#X obj 199 134 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 199 134 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 159 8 inlet;
 #X obj 162 33 sel 0 1;
@@ -392,7 +392,7 @@
 #X connect 13 0 12 0;
 #X connect 14 0 12 0;
 #X restore -49 55 pd indoorPDgraphic;
-#X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 14 215 559 382 holdingtone 0;
 #X obj 106 169 mtof;
@@ -501,7 +501,7 @@
 #X obj 315 137 env~;
 #X obj 316 168 - 100;
 #X obj 320 218 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 130 422 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 130 422 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 149 421 udpsend on/off;
 #X obj 153 23 loadbang;
@@ -525,7 +525,7 @@
 #X floatatom 200 259 5 0 0 0 - - -;
 #X obj 128 236 r AlautstärkeS;
 #X obj 128 235 hsl 120 20 20 100 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7525 1;
+-1 -1 7437 1;
 #X obj 370 67 hsl 128 15 1 9 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X text 401 85 boost microfone input \, be carefull;
