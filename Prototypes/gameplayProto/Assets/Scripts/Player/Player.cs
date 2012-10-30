@@ -55,6 +55,12 @@ public class Player : MonoBehaviour
 		get;
 		set;
 	}
+
+    public GameObject lastCheckpoint
+    {
+        get;
+        set;
+    }
 	#endregion
 
     //Changes size depening on how long the player has been whistling
@@ -63,6 +69,12 @@ public class Player : MonoBehaviour
 	// used to avoid bunnyhop
 	[HideInInspector]
 	public bool JumpKeyReleased;
+
+    public int activePlayerInput
+    {
+        get;
+        private set;
+    }
 	
 	private List<Collider> currentFloorColliders;
 
@@ -148,10 +160,30 @@ public class Player : MonoBehaviour
 		// used for bunnyhop avoidance
 		JumpKeyReleased = true;
 		
-		// reset position and velocity
-		transform.position = startTransform.position;
+		// reset velocity
 		rigidbody.velocity = Vector3.zero;
 		rigidbody.angularVelocity = Vector3.zero;
+
+        // Reset player and objects according to check point
+        if (lastCheckpoint == null)
+        {
+            Debug.Log("No checkpoint: This should only happen once, on startup!");
+            // reset player position
+            transform.position = startTransform.position;
+        }
+        else
+        {
+            Checkpoint check = lastCheckpoint.GetComponent<Checkpoint>();
+            if (check != null)
+            {
+                check.loadCheckpoint(transform);
+            }
+            else
+            {
+                // reset player position
+                transform.position = startTransform.position;
+            }
+        }
 	}
 	
 	// used for game logic stuff
@@ -190,7 +222,23 @@ public class Player : MonoBehaviour
             shoutTrigger.gameObject.active = false;
         }
 
-        if (oscManager.Shouting || Input.GetKey(settings.DEBUG_KeyShout))
+        // Update control of voice input
+        // Note that player1 input has priority over player2!
+        if (Input.GetKey(settings.KeyPlayer1Input))
+        {
+            activePlayerInput = 1;
+        }
+        else if (Input.GetKey(settings.KeyPlayer2Input))
+        {
+            activePlayerInput = 2;
+        }
+        else
+        {
+            activePlayerInput = 0;
+        }
+
+        // Player1 controls the shouting
+        if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
         {
             shoutTrigger.gameObject.active = true;
             shoutingActivatedLastFrame = true;
