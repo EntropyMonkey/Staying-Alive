@@ -15,6 +15,13 @@ public class PlayerSettings
 	public float			MaxJumpTime = 0.5f;
 	public float			JumpTimeout = 0.2f;
 
+    //Whistling information
+    public float            MaxExpandingTime = 2F;
+    public float            MaxWhistlingScale = 22F;
+    public float            DeflateTime = 0.5F;
+    public float            RockAlphaMin = 0.3f;
+
+
 	// the player can influence the horizontal movement while falling down
 	public float			HorizontalFallAcceleration = 5;
 	
