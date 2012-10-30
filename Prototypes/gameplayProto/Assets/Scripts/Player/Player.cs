@@ -56,6 +56,9 @@ public class Player : MonoBehaviour
 		set;
 	}
 	#endregion
+
+    //Changes size depening on how long the player has been whistling
+    private float whistlingTime = 0;
 	
 	// used to avoid bunnyhop
 	[HideInInspector]
@@ -67,9 +70,10 @@ public class Player : MonoBehaviour
     public OSCManager oscManager;
 
     private bool shoutingActivatedLastFrame;
-    private BoxCollider ShoutTrigger;
+    private BoxCollider shoutTrigger;
+    private GameObject whistlingTrigger;
 	
-	private Transform startTransform;    
+	private Transform startTransform;
 
 	void Awake()
 	{
@@ -81,19 +85,30 @@ public class Player : MonoBehaviour
 	{
         foreach (Transform childTransform in transform)
         {
-            BoxCollider collider = childTransform.gameObject.GetComponent<BoxCollider>();
-            if (collider != null && collider.isTrigger)
+            if (childTransform.gameObject.CompareTag(GlobalNames.TAG.ShoutingTrigger))
             {
-                ShoutTrigger = collider;
+                shoutTrigger = childTransform.gameObject.GetComponent<BoxCollider>();
+            }else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
+            {
+                whistlingTrigger = childTransform.gameObject;
             }
         }
-        if (ShoutTrigger != null)
+        if (shoutTrigger != null)
         {
-            ShoutTrigger.gameObject.active = false;
+            shoutTrigger.gameObject.active = false;
         }
         else
         {
             Debug.Log("Shout trigger on player wasn't found");
+        }
+
+        if (whistlingTrigger != null)
+        {
+            whistlingTrigger.gameObject.active = true;
+        }
+        else
+        {
+            Debug.Log("Whistling trigger on player wasn't found");
         }
 
 		// initialize states
@@ -149,15 +164,35 @@ public class Player : MonoBehaviour
 			JumpKeyReleased = true;
 		}
 
+        if (oscManager.Whistling)
+        {
+            
+            whistlingTime += Time.deltaTime;
+        }
+        else
+        {
+            float timeRatio = settings.MaxExpandingTime / settings.DeflateTime;
+            whistlingTime -= timeRatio * Time.deltaTime;
+        }
+        whistlingTime = Mathf.Clamp(whistlingTime,0, settings.MaxExpandingTime);
+        
+        if (whistlingTime > 0.3f)
+        {
+            whistlingTrigger.active = true;
+        }
+        float scale = Mathf.Lerp(0, settings.MaxWhistlingScale, whistlingTime / settings.MaxExpandingTime);
+		
+       	whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(scale , scale, scale);
+
         if (shoutingActivatedLastFrame)
         {
             shoutingActivatedLastFrame = false;
-            ShoutTrigger.gameObject.active = false;
+            shoutTrigger.gameObject.active = false;
         }
 
         if (oscManager.Shouting || Input.GetKey(settings.DEBUG_KeyShout))
         {
-            ShoutTrigger.gameObject.active = true;
+            shoutTrigger.gameObject.active = true;
             shoutingActivatedLastFrame = true;
         }
 	}

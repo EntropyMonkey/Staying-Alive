@@ -7,7 +7,7 @@ Shader "Toon/Team Fortress 2" {
 		_BumpMap ("Normal (Normal)", 2D) = "bump" {}
 		_SpecularTex ("Specular Level (R) Gloss (G) Rim Mask (B)", 2D) = "gray" {}
 		_RampTex ("Toon Ramp (RGB)", 2D) = "white" {}
-		_Cutoff ("Alphatest Cutoff", Range(0, 1)) = 0.5
+		
 	}
 
 	SubShader{
@@ -40,20 +40,20 @@ Shader "Toon/Team Fortress 2" {
 				
 				fixed4 c;
 				c.rgb = ((s.Albedo * ramp * _LightColor0.rgb + _LightColor0.rgb * spec) * (atten * 2));
-				c.a = s.Alpha;
+				c.a = 0.2;
 				return c;
 			}
 
 			void surf (Input IN, inout SurfaceOutput o)
 			{
 				o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb;
-				o.Alpha = tex2D(_MainTex, IN.uv_MainTex).a;
+				o.Alpha = 0.1;
 				o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_MainTex));
 				float3 specGloss = tex2D(_SpecularTex, IN.uv_MainTex).rgb;
 				o.Specular = specGloss.r;
 				o.Gloss = specGloss.g;
 				
-				half3 rim = pow(max(0, dot(float3(0, 1, 0), WorldNormalVector (IN, o.Normal))), _RimPower) * _RimColor.rgb * _RimColor.a * specGloss.b;
+				half3 rim = pow(max(0, dot(float3(0, 1, 0), WorldNormalVector (IN, o.Normal))), _RimPower) * _RimColor.rgb * 0.5 * specGloss.b;
 				o.Emission = rim;
 			}
 		ENDCG
