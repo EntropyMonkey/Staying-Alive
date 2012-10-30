@@ -29,7 +29,6 @@ public class AppearingPlatform : MonoBehaviour
     {
         //Debug.Log(isPlayerInside);
         timer.Update(Time.deltaTime);
-        Debug.Log(timer.IsActive + " : " + timer.IsTimeUp);
 
         if (isTriggered && timer.IsActive)
             timer.Start(StayingActiveTime);

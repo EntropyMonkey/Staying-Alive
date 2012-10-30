@@ -5,8 +5,6 @@ public class PFloatState : PWalkState
 {
 	public override void Enter(Player player)
 	{
-		player.renderer.material.color = new Color(1, 1, 0);
-
 		player.rigidbody.useGravity = false;
 		Vector3 newVel = player.rigidbody.velocity;
 		newVel.y = 0;

@@ -62,9 +62,6 @@ public class Player : MonoBehaviour
         set;
     }
 	#endregion
-
-    //Changes size depening on how long the player has been whistling
-    private float whistlingTime = 0;
 	
 	// used to avoid bunnyhop
 	[HideInInspector]
@@ -81,10 +78,16 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public OSCManager oscManager;
 
+	// shouting
     private bool shoutingActivatedLastFrame;
     private BoxCollider shoutTrigger;
-    private GameObject whistlingTrigger;
+
+	// whistling
+	private GameObject whistlingTrigger;
+	//Changes size depening on how long the player has been whistling
+	private float whistlingTime = 0;
 	
+	// start point
 	private Transform startTransform;
 
 	void Awake()
@@ -101,7 +104,8 @@ public class Player : MonoBehaviour
             if (childTransform.gameObject.CompareTag(GlobalNames.TAG.ShoutingTrigger))
             {
                 shoutTrigger = childTransform.gameObject.GetComponent<BoxCollider>();
-            }else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
+            }
+			else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
             {
                 whistlingTrigger = childTransform.gameObject;
             }
@@ -197,25 +201,8 @@ public class Player : MonoBehaviour
 			JumpKeyReleased = true;
 		}
 
-        if (oscManager.Whistling)
-        {
-            
-            whistlingTime += Time.deltaTime;
-        }
-        else
-        {
-            float timeRatio = settings.MaxExpandingTime / settings.DeflateTime;
-            whistlingTime -= timeRatio * Time.deltaTime;
-        }
-        whistlingTime = Mathf.Clamp(whistlingTime,0, settings.MaxExpandingTime);
-        
-        if (whistlingTime > 0.3f)
-        {
-            whistlingTrigger.active = true;
-        }
-        float scale = Mathf.Lerp(0, settings.MaxWhistlingScale, whistlingTime / settings.MaxExpandingTime);
-		
-       	whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(scale , scale, scale);
+		// whistling
+		UpdateWhistling();
 
         if (shoutingActivatedLastFrame)
         {
@@ -226,15 +213,18 @@ public class Player : MonoBehaviour
         // Update control of voice input
         // Note that player1 input has priority over player2!
         if (Input.GetKey(settings.KeyPlayer1Input))
-        {
+		{
+			renderer.material.color = new Color(0, 0, 1);
             activePlayerInput = 1;
         }
         else if (Input.GetKey(settings.KeyPlayer2Input))
-        {
+		{
+			renderer.material.color = new Color(1, 0, 0);
             activePlayerInput = 2;
         }
         else
-        {
+		{
+			renderer.material.color = new Color(1, 1, 1);
             activePlayerInput = 0;
         }
 
@@ -244,6 +234,28 @@ public class Player : MonoBehaviour
             shoutTrigger.gameObject.active = true;
             shoutingActivatedLastFrame = true;
         }
+	}
+
+	void UpdateWhistling()
+	{
+		if (oscManager.Whistling)
+		{
+			whistlingTime += Time.deltaTime;
+		}
+		else
+		{
+			float timeRatio = settings.MaxExpandingTime / settings.DeflateTime;
+			whistlingTime -= timeRatio * Time.deltaTime;
+		}
+		whistlingTime = Mathf.Clamp(whistlingTime, 0, settings.MaxExpandingTime);
+
+		if (whistlingTime > 0.3f)
+		{
+			whistlingTrigger.active = true;
+		}
+		float scale = Mathf.Lerp(0, settings.MaxWhistlingScale, whistlingTime / settings.MaxExpandingTime);
+
+		whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(scale, scale, scale);
 	}
 
 	// do physics stuff here!
