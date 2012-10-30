@@ -14,6 +14,7 @@ public class GlobalNames
         public const string ShoutingTrigger = "ShoutingTrigger";
         public const string WhistlingTrigger = "WhistlingTrigger";
 		public const string MovingPlatformTag = "MovingPlatform";
+		public const string FloatParticleSystem = "FloatParticleSystem";
 	}
 
 	public class NAME

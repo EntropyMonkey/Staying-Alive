@@ -24,7 +24,7 @@ public class Checkpoint : MonoBehaviour {
             // ensure that check point can only be activated once
             gameObject.active = false;
             // update last activated check point id
-            other.gameObject.GetComponent<Player>().lastCheckpoint = gameObject;
+            other.gameObject.GetComponent<Player>().LastCheckpoint = gameObject;
         }
     }
 }

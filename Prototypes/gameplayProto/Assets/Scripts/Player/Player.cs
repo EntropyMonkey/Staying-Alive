@@ -56,22 +56,29 @@ public class Player : MonoBehaviour
 		set;
 	}
 
-    public GameObject lastCheckpoint
+    public GameObject LastCheckpoint
     {
         get;
         set;
     }
+
+	// float particle system
+	public ParticleSystem FloatParticleSystem
+	{
+		get;
+		set;
+	}
+
+	public int activePlayerInput
+	{
+		get;
+		private set;
+	}
 	#endregion
 	
 	// used to avoid bunnyhop
 	[HideInInspector]
 	public bool JumpKeyReleased;
-
-    public int activePlayerInput
-    {
-        get;
-        private set;
-    }
 	
 	private List<Collider> currentFloorColliders;
 
@@ -119,6 +126,7 @@ public class Player : MonoBehaviour
             Debug.Log("Shout trigger on player wasn't found");
         }
 
+		// whistling trigger
         if (whistlingTrigger != null)
         {
             whistlingTrigger.gameObject.active = true;
@@ -127,6 +135,19 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Whistling trigger on player wasn't found");
         }
+
+		// float particle system
+		Transform current;
+		for (int i = 0; i < transform.GetChildCount(); i++)
+		{
+			current = transform.GetChild(i);
+			if (current.gameObject.tag == GlobalNames.TAG.FloatParticleSystem)
+			{
+				FloatParticleSystem = current.gameObject.GetComponent<ParticleSystem>();
+				FloatParticleSystem.emissionRate = 0;
+				break;
+			}
+		}
 
 		// initialize states
 		StandState = ScriptableObject.CreateInstance<PStandState>();
@@ -171,14 +192,14 @@ public class Player : MonoBehaviour
 		rigidbody.angularVelocity = Vector3.zero;
 
         // Reset player and objects according to check point
-        if (lastCheckpoint == null)
+        if (LastCheckpoint == null)
         {
             // reset player position
             transform.position = startTransform.position;
         }
         else
         {
-            Checkpoint check = lastCheckpoint.GetComponent<Checkpoint>();
+            Checkpoint check = LastCheckpoint.GetComponent<Checkpoint>();
             if (check != null)
             {
                 check.loadCheckpoint(transform);
@@ -204,36 +225,47 @@ public class Player : MonoBehaviour
 		// whistling
 		UpdateWhistling();
 
-        if (shoutingActivatedLastFrame)
-        {
-            shoutingActivatedLastFrame = false;
-            shoutTrigger.gameObject.active = false;
-        }
+		// shouting
+		UpdateShouting();
 
         // Update control of voice input
-        // Note that player1 input has priority over player2!
-        if (Input.GetKey(settings.KeyPlayer1Input))
+		UpdatePlayerInputKeys();
+	}
+
+	void UpdatePlayerInputKeys()
+	{
+		// Note that player1 input has priority over player2!
+		if (Input.GetKey(settings.KeyPlayer1Input))
 		{
 			renderer.material.color = new Color(0, 0, 1);
-            activePlayerInput = 1;
-        }
-        else if (Input.GetKey(settings.KeyPlayer2Input))
+			activePlayerInput = 1;
+		}
+		else if (Input.GetKey(settings.KeyPlayer2Input))
 		{
 			renderer.material.color = new Color(1, 0, 0);
-            activePlayerInput = 2;
-        }
-        else
+			activePlayerInput = 2;
+		}
+		else
 		{
 			renderer.material.color = new Color(1, 1, 1);
-            activePlayerInput = 0;
-        }
+			activePlayerInput = 0;
+		}
+	}
 
-        // Player1 controls the shouting
-        if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
-        {
-            shoutTrigger.gameObject.active = true;
-            shoutingActivatedLastFrame = true;
-        }
+	void UpdateShouting()
+	{
+		if (shoutingActivatedLastFrame)
+		{
+			shoutingActivatedLastFrame = false;
+			shoutTrigger.gameObject.active = false;
+		}
+
+		// Player1 controls the shouting
+		if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
+		{
+			shoutTrigger.gameObject.active = true;
+			shoutingActivatedLastFrame = true;
+		}
 	}
 
 	void UpdateWhistling()
