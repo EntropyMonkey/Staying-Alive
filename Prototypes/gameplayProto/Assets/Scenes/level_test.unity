@@ -3226,7 +3226,7 @@ GameObject:
   - 33: {fileID: 173173904}
   - 23: {fileID: 173173903}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4374,7 +4374,7 @@ GameObject:
   - 33: {fileID: 184896259}
   - 23: {fileID: 184896258}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9932,7 +9932,7 @@ GameObject:
   - 33: {fileID: 433750009}
   - 23: {fileID: 433750008}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19234,7 +19234,7 @@ GameObject:
   - 33: {fileID: 811028093}
   - 23: {fileID: 811028092}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23072,7 +23072,7 @@ GameObject:
   - 33: {fileID: 1032947038}
   - 23: {fileID: 1032947037}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25904,7 +25904,7 @@ GameObject:
   - 33: {fileID: 1315233084}
   - 23: {fileID: 1315233083}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30374,7 +30374,7 @@ GameObject:
   - 33: {fileID: 1675674191}
   - 23: {fileID: 1675674190}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33479,7 +33479,7 @@ GameObject:
   - 33: {fileID: 1866808620}
   - 23: {fileID: 1866808619}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33673,7 +33673,7 @@ GameObject:
   - 33: {fileID: 1895019464}
   - 23: {fileID: 1895019463}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35138,7 +35138,7 @@ GameObject:
   - 33: {fileID: 1935744371}
   - 23: {fileID: 1935744370}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35423,7 +35423,7 @@ GameObject:
   - 33: {fileID: 1962366173}
   - 23: {fileID: 1962366172}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35806,7 +35806,7 @@ GameObject:
   - 33: {fileID: 2035268091}
   - 23: {fileID: 2035268090}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35902,7 +35902,7 @@ GameObject:
   - 33: {fileID: 2058922775}
   - 23: {fileID: 2058922774}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37249,7 +37249,7 @@ GameObject:
   - 33: {fileID: 2080066488}
   - 23: {fileID: 2080066487}
   m_Layer: 0
-  m_Name: plattform_rock
+  m_Name: AppearingPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
