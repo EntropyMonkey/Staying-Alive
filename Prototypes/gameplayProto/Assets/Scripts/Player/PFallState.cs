@@ -9,7 +9,6 @@ public class PFallState : FSMState<Player>
 {
 	public override void Enter(Player player)
 	{
-		player.renderer.material.color = new Color(1, 0, 0);
 	}
 
 	public override void Execute(Player player)

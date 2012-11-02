@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour 
 {
 	public PlayerSettings settings;
-
+     
 	#region Properties
 
 	public FiniteStateMachine<Player> FSM

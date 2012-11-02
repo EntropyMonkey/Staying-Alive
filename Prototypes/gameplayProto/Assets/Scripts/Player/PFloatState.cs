@@ -5,12 +5,12 @@ public class PFloatState : PWalkState
 {
 	public override void Enter(Player player)
 	{
-		player.renderer.material.color = new Color(1, 1, 0);
-
 		player.rigidbody.useGravity = false;
 		Vector3 newVel = player.rigidbody.velocity;
 		newVel.y = 0;
 		player.rigidbody.velocity = newVel;
+
+		player.FloatParticleSystem.emissionRate = player.settings.FloatParticleSpawnRate;
 	}
 
 	public override void Execute(Player player)
@@ -46,5 +46,6 @@ public class PFloatState : PWalkState
 	public override void Exit(Player player)
 	{
 		player.rigidbody.useGravity = true;
+		player.FloatParticleSystem.emissionRate = 0;
 	}
 }

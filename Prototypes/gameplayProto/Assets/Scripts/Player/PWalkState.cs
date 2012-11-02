@@ -5,7 +5,6 @@ public class PWalkState : FSMState<Player>
 {
 	public override void Enter(Player player)
 	{
-		player.renderer.material.color = new Color(0, 1, 1);
 	}
 
 	public override void Execute(Player player)

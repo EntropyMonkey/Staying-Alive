@@ -7,7 +7,6 @@ public class PJumpState : FSMState<Player>
 
 	public override void Enter(Player player)
 	{
-		player.renderer.material.color = new Color(1, 0, 1);
 		jumpTimer = 0;
 
 		Vector3 vel = player.rigidbody.velocity;

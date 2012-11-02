@@ -21,8 +21,8 @@ public class PlayerSettings
     public float            DeflateTime = 0.5F;
     public float            RockAlphaMin = 0.3f;
 
-    public float            ShushPauseDuration; //How long an object should be affected by the shush
-
+	//How long an object should be affected by the shush
+    public float            ShushPauseDuration; 
 
 	// the player can influence the horizontal movement while falling down
 	public float			HorizontalFallAcceleration = 5;
@@ -36,6 +36,8 @@ public class PlayerSettings
 	public float			VerticalFloatAcceleration = 1;
 	// the maximum velocity when floating down
 	public float			MaxVerticalFloatVelocity = 1;
+
+	public int				FloatParticleSpawnRate = 20;
 
 	// the maximum angle a floor can have for the player to not fall off
 	public float			MaxFloorAngle = 10;
