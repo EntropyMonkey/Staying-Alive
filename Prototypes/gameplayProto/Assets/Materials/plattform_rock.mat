@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: plattform_rock
-  m_Shader: {fileID: 33, guid: 0000000000000000e000000000000000, type: 0}
+  m_Shader: {fileID: 31, guid: 0000000000000000e000000000000000, type: 0}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:

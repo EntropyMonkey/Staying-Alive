@@ -13,6 +13,7 @@ public class GlobalNames
 		public const string StartPoint = "StartPoint";
         public const string ShoutingTrigger = "ShoutingTrigger";
         public const string WhistlingTrigger = "WhistlingTrigger";
+        public const string ShushTrigger = "ShushTrigger";
 		public const string MovingPlatformTag = "MovingPlatform";
 	}
 

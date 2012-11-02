@@ -86,7 +86,7 @@ public class AppearingPlatform : MonoBehaviour
             isFullyAppeared = false;
             justFullyActivated = false;
         }
-        if (isTriggered && justFullyActivated)
+        if (isTriggered && justFullyActivated)  
         {
             Debug.Log("Start");
             timer.Start(StayingActiveTime);

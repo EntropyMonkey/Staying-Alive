@@ -70,6 +70,9 @@ public class Player : MonoBehaviour
 	[HideInInspector]
 	public bool JumpKeyReleased;
 
+    private Timer shushTimer = new Timer(); //So the shush is an effect, not an expanding 
+    public float DelayBetweenShushes = 1F;
+
     public int activePlayerInput
     {
         get;
@@ -84,6 +87,7 @@ public class Player : MonoBehaviour
     private bool shoutingActivatedLastFrame;
     private BoxCollider shoutTrigger;
     private GameObject whistlingTrigger;
+    private GameObject shushTrigger;
 	
 	private Transform startTransform;
 
@@ -104,11 +108,15 @@ public class Player : MonoBehaviour
             {
                 whistlingTrigger = childTransform.gameObject;
             }
+            else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.ShushTrigger))
+            {
+                shushTrigger = childTransform.gameObject;
+            }
         }
         if (shoutTrigger != null)
         {
             shoutTrigger.gameObject.active = false;
-        }
+        }   
         else
         {
             Debug.Log("Shout trigger on player wasn't found");
@@ -121,6 +129,15 @@ public class Player : MonoBehaviour
         else
         {
             Debug.Log("Whistling trigger on player wasn't found");
+        }
+
+        if (shushTrigger != null)
+        {
+            shushTrigger.gameObject.active = false;
+        }
+        else
+        {
+            Debug.Log("Shush trigger on player wasn't found");
         }
 
 		// initialize states
@@ -190,6 +207,7 @@ public class Player : MonoBehaviour
 	void Update ()
 	{
 		FSM.Update();
+        shushTimer.Update(Time.deltaTime);
 
 		if (Input.GetKeyUp(settings.KeyJump))
 		{
@@ -221,6 +239,14 @@ public class Player : MonoBehaviour
             shoutingActivatedLastFrame = false;
             shoutTrigger.gameObject.active = false;
         }
+
+        if ((/*oscManager.Shushing || */Input.GetKey(settings.DEBUG_KeyShushing)) )
+        {
+            shushTrigger.active = true;
+            shushTimer.Start(DelayBetweenShushes);
+        }
+        else
+            shushTrigger.active = false;
 
         // Update control of voice input
         // Note that player1 input has priority over player2!

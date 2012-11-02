@@ -21,6 +21,8 @@ public class PlayerSettings
     public float            DeflateTime = 0.5F;
     public float            RockAlphaMin = 0.3f;
 
+    public float            ShushPauseDuration; //How long an object should be affected by the shush
+
 
 	// the player can influence the horizontal movement while falling down
 	public float			HorizontalFallAcceleration = 5;
@@ -44,6 +46,7 @@ public class PlayerSettings
 	public KeyCode			DEBUG_KeyShout = KeyCode.E;
 	public KeyCode			DEBUG_KeySinging = KeyCode.Q;
 	public KeyCode			DEBUG_KeyWhistling = KeyCode.R;
+    public KeyCode          DEBUG_KeyShushing= KeyCode.T;
     public KeyCode          KeyPlayer1Input = KeyCode.LeftShift;
     public KeyCode          KeyPlayer2Input = KeyCode.RightShift;
 
