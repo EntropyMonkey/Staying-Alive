@@ -24,11 +24,9 @@ public class RockScript : MonoBehaviour {
 
     IEnumerator Rewake()
     {
-        Debug.Log("Sleep");
         if(!isSleeping) //If already is sleeping, then the velocity would be zero and the object wouldn't move on rewake
             velocity = rigidbody.velocity;
         yield return new WaitForSeconds(ShushDelay);
-        Debug.Log("Awake");
         isSleeping = false;
         rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
         rigidbody.velocity = velocity;

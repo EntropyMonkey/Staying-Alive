@@ -5,7 +5,9 @@ public class ArrowSpawner : MonoBehaviour {
     public float DelayBetweenSpawns = 3F;
     public GameObject PrefabArrow;
 
-    Timer timer = new Timer();
+    public Vector3 ArrowFlyDirection;
+
+    Timer timer = new Timer();  
 	// Use this for initialization
 	void Start () {
 	}
@@ -24,10 +26,11 @@ public class ArrowSpawner : MonoBehaviour {
         {
             if (isChildDead)
             {
-                Quaternion rot = new Quaternion();
                 GameObject arrow = Instantiate(PrefabArrow, transform.position, transform.rotation) as GameObject;
-                arrow.GetComponent<ArrowScript>().spawnParent = this;
-                isChildDead = false;
+                var arrowScript = arrow.GetComponent<ArrowScript>();
+                arrowScript.spawnParent = this;
+                arrowScript.FlyDirection = ArrowFlyDirection;
+                isChildDead = false; 
 
             }
             timer.Start(DelayBetweenSpawns);

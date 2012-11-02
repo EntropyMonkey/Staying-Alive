@@ -84,7 +84,7 @@ MonoBehaviour:
   ShushDelay: 1
   Movespeed: 5
   spawnParent: {fileID: 0}
-  direction: {x: 0, y: 0, z: 0}
+  FlyDirection: {x: 1, y: 0, z: 0}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 		set;
 	}
 
-    public GameObject lastCheckpoint
+    public GameObject LastCheckpoint
     {
         get;
         set;
@@ -72,6 +72,13 @@ public class Player : MonoBehaviour
 
     private Timer shushTimer = new Timer(); //So the shush is an effect, not an expanding 
     public float DelayBetweenShushes = 1F;
+
+    public ParticleSystem FloatParticleSystem
+    {
+        get;
+        set;
+    }
+
 
     public int activePlayerInput
     {
@@ -140,6 +147,19 @@ public class Player : MonoBehaviour
             Debug.Log("Shush trigger on player wasn't found");
         }
 
+        // float particle system
+        Transform current;
+        for (int i = 0; i < transform.GetChildCount(); i++)
+        {
+            current = transform.GetChild(i);
+            if (current.gameObject.tag == GlobalNames.TAG.FloatParticleSystem)
+            {
+                FloatParticleSystem = current.gameObject.GetComponent<ParticleSystem>();
+                //FloatParticleSystem.emissionRate = 0;
+                break;
+            }
+        }
+
 		// initialize states
 		StandState = ScriptableObject.CreateInstance<PStandState>();
 		WalkState = ScriptableObject.CreateInstance<PWalkState>();
@@ -182,7 +202,7 @@ public class Player : MonoBehaviour
 		rigidbody.angularVelocity = Vector3.zero;
 
         // Reset player and objects according to check point
-        if (lastCheckpoint == null)
+        if (LastCheckpoint == null)
         {
             Debug.Log("No checkpoint: This should only happen once, on startup!");
             // reset player position
@@ -190,7 +210,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Checkpoint check = lastCheckpoint.GetComponent<Checkpoint>();
+            Checkpoint check = LastCheckpoint.GetComponent<Checkpoint>();
             if (check != null)
             {
                 check.loadCheckpoint(transform);
