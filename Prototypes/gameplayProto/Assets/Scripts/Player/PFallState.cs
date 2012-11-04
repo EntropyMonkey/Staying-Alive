@@ -9,6 +9,7 @@ public class PFallState : FSMState<Player>
 {
 	public override void Enter(Player player)
 	{
+		player.renderer.material.color = Color.magenta;
 	}
 
 	public override void Execute(Player player)
@@ -49,5 +50,6 @@ public class PFallState : FSMState<Player>
 
 	public override void Exit(Player player)
 	{
+		player.renderer.material.color = Color.white;
 	}
 }
