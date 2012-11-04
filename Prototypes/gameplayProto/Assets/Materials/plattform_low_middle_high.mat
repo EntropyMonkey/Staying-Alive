@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: plattform_rock_diff_3
+  m_Name: plattform_low_middle_high
   m_Shader: {fileID: 7, guid: 0000000000000000e000000000000000, type: 0}
   m_SavedProperties:
     serializedVersion: 2
@@ -23,4 +23,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .588235319, g: .588235319, b: .588235319, a: 1}
+        second: {r: .514803827, g: .679104447, b: .369959891, a: 1}

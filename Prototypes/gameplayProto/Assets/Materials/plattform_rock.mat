@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: plattform_rock
-  m_Shader: {fileID: 31, guid: 0000000000000000e000000000000000, type: 0}
+  m_Shader: {fileID: 2, guid: 0000000000000000e000000000000000, type: 0}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -48,6 +48,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _SpecMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 1e293dcb042fb6e42b8ac51230ea7ab4, type: 1}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _DecalTex
         second:
           m_Texture: {fileID: 0}
@@ -65,13 +72,6 @@ Material:
           name: _Cube
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _SpecMap
-        second:
-          m_Texture: {fileID: 2800000, guid: 1e293dcb042fb6e42b8ac51230ea7ab4, type: 1}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
