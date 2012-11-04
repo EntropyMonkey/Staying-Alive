@@ -204,7 +204,6 @@ public class Player : MonoBehaviour
         // Reset player and objects according to check point
         if (LastCheckpoint == null)
         {
-            Debug.Log("No checkpoint: This should only happen once, on startup!");
             // reset player position
             transform.position = startTransform.position;
         }
