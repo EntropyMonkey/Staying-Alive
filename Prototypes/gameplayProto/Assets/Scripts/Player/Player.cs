@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
             if (current.gameObject.tag == GlobalNames.TAG.FloatParticleSystem)
             {
                 FloatParticleSystem = current.gameObject.GetComponent<ParticleSystem>();
-                //FloatParticleSystem.emissionRate = 0;
+                FloatParticleSystem.emissionRate = 0;
                 break;
             }
         }
