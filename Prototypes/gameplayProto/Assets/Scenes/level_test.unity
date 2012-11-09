@@ -7620,7 +7620,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e3094578c246c4e4a8cc670e78b9bbdb, type: 2}
+  - {fileID: 2100000, guid: 0bd66e9bd20c66142b497a8ca86de402, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -9310,7 +9310,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e3094578c246c4e4a8cc670e78b9bbdb, type: 2}
+  - {fileID: 2100000, guid: 0bd66e9bd20c66142b497a8ca86de402, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -9748,7 +9748,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 1384815195}
   m_GameObject: {fileID: 395651050}
-  lengthInSec: 5
+  lengthInSec: .100000001
   startDelay: .300000012
   speed: 1
   randomSeed: 0
@@ -28530,7 +28530,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e3094578c246c4e4a8cc670e78b9bbdb, type: 2}
+  - {fileID: 2100000, guid: 0bd66e9bd20c66142b497a8ca86de402, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
