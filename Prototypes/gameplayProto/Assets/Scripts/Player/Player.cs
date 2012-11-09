@@ -251,10 +251,18 @@ public class Player : MonoBehaviour
 		UpdateShushing();
 
         // Update control of voice input
-        // Note that player1 input has priority over player2!
+        // Note that if both players are pressing, noone gets voice control!
         if (Input.GetKey(settings.KeyPlayer1Input))
         {
-            activePlayerInput = 1;
+            if (Input.GetKey(settings.KeyPlayer2Input))
+            {
+                // both players are pressing, noone gets voice control
+                activePlayerInput = 0;
+            }
+            else
+            {
+                activePlayerInput = 1;
+            }
         }
         else if (Input.GetKey(settings.KeyPlayer2Input))
         {
