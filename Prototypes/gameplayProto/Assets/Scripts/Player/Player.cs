@@ -272,6 +272,18 @@ public class Player : MonoBehaviour
         {
             activePlayerInput = 0;
         }
+        switch (activePlayerInput)
+        {
+            case 1:
+                this.renderer.material.color = Color.blue;
+                break;
+            case 2:
+                this.renderer.material.color = Color.red;
+                break;
+            default:
+                this.renderer.material.color = Color.white;
+                break;
+        }
 	}
 
 	void UpdateShushing()
