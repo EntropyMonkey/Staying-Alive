@@ -37,7 +37,7 @@ public class PlayerSettings
 	// the maximum velocity when floating down
 	public float			MaxVerticalFloatVelocity = 1;
 
-	public int				FloatParticleSpawnRate = 20;
+	public int				FloatParticleSpawnRate = 7;
 
 	// the maximum angle a floor can have for the player to not fall off
 	public float			MaxFloorAngle = 10;
