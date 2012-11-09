@@ -22250,7 +22250,7 @@ Transform:
   m_PrefabInternal: {fileID: 1443935832}
   m_GameObject: {fileID: 906133831}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .777887464, y: .527300298, z: -9.27313977e-08}
   m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
@@ -22548,12 +22548,12 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    cnt0: 30
-    cnt1: 30
+    cnt0: 1
+    cnt1: 1
     cnt2: 30
     cnt3: 30
     time0: 0
-    time1: .0500000007
+    time1: .100000001
     time2: 0
     time3: 0
     m_BurstCount: 2
@@ -23305,7 +23305,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 783462928a45e9b4c86f0d995f578dec, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -32438,6 +32438,34 @@ Prefab:
     - target: {fileID: 100012, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19900002, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 783462928a45e9b4c86f0d995f578dec, type: 2}
+    - target: {fileID: 19800002, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+      propertyPath: EmissionModule.cnt0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+      propertyPath: EmissionModule.cnt1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+      propertyPath: EmissionModule.time1
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400014, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .777887464
+      objectReference: {fileID: 0}
+    - target: {fileID: 400014, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .527300298
+      objectReference: {fileID: 0}
+    - target: {fileID: 400014, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.27313977e-08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c348dcf977c439a43b60e9db461cef06, type: 2}

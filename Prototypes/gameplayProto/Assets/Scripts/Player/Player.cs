@@ -263,13 +263,17 @@ public class Player : MonoBehaviour
             {
                 activePlayerInput = 1;
             }
+
+			renderer.material.color = Color.red;
         }
         else if (Input.GetKey(settings.KeyPlayer2Input))
         {
+			renderer.material.color = Color.blue;
             activePlayerInput = 2;
         }
         else
         {
+			renderer.material.color = Color.white;
             activePlayerInput = 0;
         }
 	}
@@ -358,8 +362,6 @@ public class Player : MonoBehaviour
 				foundAngle = true;
 			}
 		}
-
-		Debug.Log(currentFloorColliders.ToString());
 
 		if (foundAngle)
 		{
