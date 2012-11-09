@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5960b665c4178d9439b195bf43cc28ca
+guid: 58c0423bb345b0d4b8fec621439c7755
 ModelImporter:
   fileIDToRecycleName:
     4300000: part 6
@@ -45,26 +45,26 @@ ModelImporter:
     //RootNode:
       data:
         first: 1
-        second: ac860100
+        second: a0860100
       data:
         first: 4
-        second: 8c1a0600
+        second: 801a0600
       data:
         first: 111
         second: 605fa900
     part 1:
       data:
         first: 1
-        second: a0860100
+        second: aa860100
       data:
         first: 4
-        second: 801a0600
+        second: 8a1a0600
       data:
         first: 23
-        second: 60182300
+        second: 68182300
       data:
         first: 33
-        second: a05a3200
+        second: a85a3200
     part 2:
       data:
         first: 1
@@ -74,24 +74,11 @@ ModelImporter:
         second: 881a0600
       data:
         first: 23
-        second: 68182300
+        second: 66182300
       data:
         first: 33
-        second: a85a3200
+        second: a65a3200
     part 3:
-      data:
-        first: 1
-        second: aa860100
-      data:
-        first: 4
-        second: 8a1a0600
-      data:
-        first: 23
-        second: 6a182300
-      data:
-        first: 33
-        second: aa5a3200
-    part 4:
       data:
         first: 1
         second: a6860100
@@ -100,11 +87,11 @@ ModelImporter:
         second: 861a0600
       data:
         first: 23
-        second: 66182300
+        second: 64182300
       data:
         first: 33
-        second: a65a3200
-    part 5:
+        second: a45a3200
+    part 4:
       data:
         first: 1
         second: a4860100
@@ -113,11 +100,11 @@ ModelImporter:
         second: 841a0600
       data:
         first: 23
-        second: 64182300
+        second: 62182300
       data:
         first: 33
-        second: a45a3200
-    part 6:
+        second: a25a3200
+    part 5:
       data:
         first: 1
         second: a2860100
@@ -126,7 +113,20 @@ ModelImporter:
         second: 821a0600
       data:
         first: 23
-        second: 62182300
+        second: 60182300
       data:
         first: 33
-        second: a25a3200
+        second: a05a3200
+    part 6:
+      data:
+        first: 1
+        second: ac860100
+      data:
+        first: 4
+        second: 8c1a0600
+      data:
+        first: 23
+        second: 6a182300
+      data:
+        first: 33
+        second: aa5a3200
