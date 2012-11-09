@@ -79,6 +79,12 @@ public class Player : MonoBehaviour
         set;
     }
 
+	public ParticleSystem ShoutParticleSystem
+	{
+		get;
+		set;
+	}
+
 
     public int activePlayerInput
     {
@@ -91,7 +97,7 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public OSCManager oscManager;
 
-    private bool shoutingActivatedLastFrame;
+    private bool isShouting;
     private BoxCollider shoutTrigger;
     private GameObject whistlingTrigger;
     private GameObject shushTrigger;
@@ -155,9 +161,14 @@ public class Player : MonoBehaviour
             if (current.gameObject.tag == GlobalNames.TAG.FloatParticleSystem)
             {
                 FloatParticleSystem = current.gameObject.GetComponent<ParticleSystem>();
-                //FloatParticleSystem.emissionRate = 0;
-                break;
+                FloatParticleSystem.emissionRate = 0;
+                continue;
             }
+			else if (current.gameObject.tag == GlobalNames.TAG.ShoutParticleSystem)
+			{
+				ShoutParticleSystem = current.gameObject.GetComponent<ParticleSystem>();
+				continue;
+			}
         }
 
 		// initialize states
@@ -204,6 +215,7 @@ public class Player : MonoBehaviour
         // Reset player and objects according to check point
         if (LastCheckpoint == null)
         {
+			Debug.Log ("Only happens once, at the beginning");
             // reset player position
             transform.position = startTransform.position;
         }
@@ -226,68 +238,106 @@ public class Player : MonoBehaviour
 	void Update ()
 	{
 		FSM.Update();
-        shushTimer.Update(Time.deltaTime);
 
 		if (Input.GetKeyUp(settings.KeyJump))
 		{
 			JumpKeyReleased = true;
 		}
 
-        if (oscManager.Whistling)
-        {
-            
-            whistlingTime += Time.deltaTime;
-        }
-        else
-        {
-            float timeRatio = settings.MaxExpandingTime / settings.DeflateTime;
-            whistlingTime -= timeRatio * Time.deltaTime;
-        }
-        whistlingTime = Mathf.Clamp(whistlingTime,0, settings.MaxExpandingTime);
-        
-        if (whistlingTime > 0.3f)
-        {
-            whistlingTrigger.active = true;
-        }
-        float scale = Mathf.Lerp(0, settings.MaxWhistlingScale, whistlingTime / settings.MaxExpandingTime);
-		
-       	whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(scale , scale, scale);
+		UpdateWhistling();
 
-        if (shoutingActivatedLastFrame)
-        {
-            shoutingActivatedLastFrame = false;
-            shoutTrigger.gameObject.active = false;
-        }
+		UpdateShouting();
 
-        if ((/*oscManager.Shushing || */Input.GetKey(settings.DEBUG_KeyShushing)) )
-        {
-            shushTrigger.active = true;
-            shushTimer.Start(DelayBetweenShushes);
-        }
-        else
-            shushTrigger.active = false;
+		UpdateShushing();
 
         // Update control of voice input
-        // Note that player1 input has priority over player2!
+        // Note that if both players are pressing, noone gets voice control!
         if (Input.GetKey(settings.KeyPlayer1Input))
         {
-            activePlayerInput = 1;
+            if (Input.GetKey(settings.KeyPlayer2Input))
+            {
+                // both players are pressing, noone gets voice control
+                activePlayerInput = 0;
+            }
+            else
+            {
+                activePlayerInput = 1;
+            }
+
+			renderer.material.color = Color.red;
         }
         else if (Input.GetKey(settings.KeyPlayer2Input))
         {
+			renderer.material.color = Color.blue;
             activePlayerInput = 2;
         }
         else
         {
+			renderer.material.color = Color.white;
             activePlayerInput = 0;
         }
-
-        // Player1 controls the shouting
-        if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
+        switch (activePlayerInput)
         {
-            shoutTrigger.gameObject.active = true;
-            shoutingActivatedLastFrame = true;
+            case 1:
+                this.renderer.material.color = Color.blue;
+                break;
+            case 2:
+                this.renderer.material.color = Color.red;
+                break;
+            default:
+                this.renderer.material.color = Color.white;
+                break;
         }
+	}
+
+	void UpdateShushing()
+	{
+		shushTimer.Update(Time.deltaTime);
+
+		if ((oscManager.Shushing || Input.GetKey(settings.DEBUG_KeyShushing)))
+		{
+			shushTrigger.active = true;
+			shushTimer.Start(DelayBetweenShushes);
+		}
+		else
+			shushTrigger.active = false;
+	}
+
+	void UpdateWhistling()
+	{
+		if (oscManager.Whistling)
+		{
+
+			whistlingTime += Time.deltaTime;
+		}
+		else
+		{
+			float timeRatio = settings.MaxExpandingTime / settings.DeflateTime;
+			whistlingTime -= timeRatio * Time.deltaTime;
+		}
+		whistlingTime = Mathf.Clamp(whistlingTime, 0, settings.MaxExpandingTime);
+
+		if (whistlingTime > 0.3f)
+		{
+			whistlingTrigger.active = true;
+		}
+		float scale = Mathf.Lerp(0, settings.MaxWhistlingScale, whistlingTime / settings.MaxExpandingTime);
+
+		whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(scale, scale, scale);
+	}
+
+	void UpdateShouting()
+	{
+		// Player1 controls the shouting
+		if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
+		{
+			shoutTrigger.gameObject.active = true;
+			ShoutParticleSystem.Play();
+		}
+		else
+		{
+			shoutTrigger.gameObject.active = false;
+		}
 	}
 
 	// do physics stuff here!
