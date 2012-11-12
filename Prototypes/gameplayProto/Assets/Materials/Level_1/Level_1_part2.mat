@@ -29,7 +29,7 @@ Material:
       data:
         first:
           name: _Outline
-        second: .00499999989
+        second: .00200000009
       data:
         first:
           name: _OutlineOffset
