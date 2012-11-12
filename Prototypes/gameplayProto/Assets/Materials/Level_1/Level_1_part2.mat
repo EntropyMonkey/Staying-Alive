@@ -29,7 +29,11 @@ Material:
       data:
         first:
           name: _Outline
+<<<<<<< HEAD
         second: .00200000009
+=======
+        second: .0204626862
+>>>>>>> f1fd94e3801d7d2283c438dde7a5e0c233e53957
       data:
         first:
           name: _OutlineOffset
