@@ -31984,7 +31984,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .0685089827, y: .472971678, z: 1}
   m_Center: {x: -.465745509, y: .010327287, z: 0}
-<<<<<<< HEAD
 --- !u!1 &1657652117
 GameObject:
   m_ObjectHideFlags: 0
@@ -32068,8 +32067,6 @@ MonoBehaviour:
   m_Name: 
   Damage: 1
   ShowDeathArea: 0
-=======
->>>>>>> f1fd94e3801d7d2283c438dde7a5e0c233e53957
 --- !u!1001 &1657813457
 Prefab:
   m_ObjectHideFlags: 0
