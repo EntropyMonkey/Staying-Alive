@@ -5,8 +5,6 @@ public class RisingPlatform : MonoBehaviour {
     public float RisingDuration = 2.5f;
     public float StayingActiveDuration = 5.0f;
 
-    private float closenessForStaying = 10; //How close in % the platform should be to its trigger the delay
-
     private bool isTriggered;
     
     private Timer timer = new Timer();
