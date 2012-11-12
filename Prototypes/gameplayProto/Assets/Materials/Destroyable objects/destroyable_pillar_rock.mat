@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: destroyable_pillar_rock
-  m_Shader: {fileID: 2, guid: 0000000000000000e000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 80b109c5d15432f4b8c7fa863a5e9e35, type: 1}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -48,6 +48,10 @@ Material:
         first:
           name: _RimPower
         second: 2.5
+      data:
+        first:
+          name: _Outline
+        second: .00499999989
     m_Colors:
       data:
         first:
@@ -57,3 +61,7 @@ Material:
         first:
           name: _RimColor
         second: {r: .970000029, g: .879999995, b: 1, a: .75}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}
