@@ -10,3 +10,5 @@
 obj/
 Temp/
 Library/
+
+.DS_Store
