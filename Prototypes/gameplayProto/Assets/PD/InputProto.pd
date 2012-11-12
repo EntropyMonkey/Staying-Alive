@@ -134,7 +134,7 @@
 #X connect 11 2 8 0;
 #X restore 75 171 pd equalvoice;
 #X obj 159 98 - 100;
-#X msg 371 114 - 40;
+#X msg 371 114 -40;
 #X connect 0 0 5 0;
 #X connect 1 0 5 0;
 #X connect 1 1 5 1;
