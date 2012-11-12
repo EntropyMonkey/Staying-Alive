@@ -18,22 +18,11 @@ Material:
           m_Texture: {fileID: 2800000, guid: fd30841e6ffd69147a41256e92c591eb, type: 1}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _BumpMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Outline
-<<<<<<< HEAD
-        second: .00283582113
-=======
-        second: .0299999993
->>>>>>> f1fd94e3801d7d2283c438dde7a5e0c233e53957
+        second: .00249253726
     m_Colors:
       data:
         first:
