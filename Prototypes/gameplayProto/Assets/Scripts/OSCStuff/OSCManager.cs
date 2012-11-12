@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Net;
 using System.Collections.Generic;
+using System;
 
 public class OSCManager : MonoBehaviour
 {
@@ -31,14 +32,22 @@ public class OSCManager : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		OSCHandler.Instance.Init();
+        try
+        {
+            OSCHandler.Instance.Init();
 
-		// Receiver
-		OSCHandler.Instance.CreateReciever(GlobalNames.NAME.OSCReceiverName, 31000);
+            // Receive
+            OSCHandler.Instance.CreateReciever(GlobalNames.NAME.OSCReceiverName, 31000);
 
-		//Sender
-		OSCHandler.Instance.CreateSender(GlobalNames.NAME.OSCSenderName, 
-			IPAddress.Parse("127.0.0.1"), 30000); 
+            //Sender
+            OSCHandler.Instance.CreateSender(GlobalNames.NAME.OSCSenderName,
+                IPAddress.Parse("127.0.0.1"), 30000);
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning("Couldn't create server");
+        }
+        //DontDestroyOnLoad(gameObject);
 	}
 
 	// send one value to pd

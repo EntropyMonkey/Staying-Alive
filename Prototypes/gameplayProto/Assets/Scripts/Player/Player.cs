@@ -61,6 +61,9 @@ public class Player : MonoBehaviour
         get;
         set;
     }
+
+    public int currentLevel = 0;
+
 	#endregion
 
     //Changes size depening on how long the player has been whistling
@@ -215,7 +218,7 @@ public class Player : MonoBehaviour
         // Reset player and objects according to check point
         if (LastCheckpoint == null)
         {
-			Debug.Log ("Only happens once, at the beginning");
+			Debug.Log ("Only happens at the start of each level");
             // reset player position
             transform.position = startTransform.position;
         }
