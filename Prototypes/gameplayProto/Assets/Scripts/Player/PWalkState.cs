@@ -34,6 +34,8 @@ public class PWalkState : FSMState<Player>
 		// move r/l
 		if (Input.GetKey(player.settings.KeyLeft))
 		{
+			player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 1, 0));
+
 			player.rigidbody.AddForce(
 				Vector3.left * player.settings.MovementAcceleration * Time.deltaTime, 
 				ForceMode.Impulse);
@@ -47,6 +49,8 @@ public class PWalkState : FSMState<Player>
 		}
 		else if (Input.GetKey(player.settings.KeyRight))
 		{
+			player.transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 1, 0));
+
 			player.rigidbody.AddForce(
 				Vector3.right * player.settings.MovementAcceleration * Time.deltaTime,
 				ForceMode.Impulse);
