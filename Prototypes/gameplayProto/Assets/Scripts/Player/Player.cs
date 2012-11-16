@@ -335,11 +335,12 @@ public class Player : MonoBehaviour
 		if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
 		{
 			shoutTrigger.gameObject.active = true;
-			ShoutParticleSystem.Play();
+			ShoutParticleSystem.gameObject.active = true;
 		}
 		else
 		{
 			shoutTrigger.gameObject.active = false;
+			ShoutParticleSystem.gameObject.active = false;
 		}
 	}
 
