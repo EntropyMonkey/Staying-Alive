@@ -63,6 +63,8 @@ public class Player : MonoBehaviour
     }
 
     public int currentLevel = 0;
+	
+	public GameObject ShushSpawn;
 
 	#endregion
 
@@ -292,41 +294,58 @@ public class Player : MonoBehaviour
                 break;
         }
 	}
-
+	
+	bool justTriggeredShush = false;
+	GameObject lastSpawned;
 	void UpdateShushing()
 	{
 		shushTimer.Update(Time.deltaTime);
 
-		if ((oscManager.Shushing || Input.GetKey(settings.DEBUG_KeyShushing)))
+		if (Input.GetKey(settings.DEBUG_KeyShushing))
 		{
-			shushTrigger.active = true;
-			shushTimer.Start(DelayBetweenShushes);
+			if(!justTriggeredShush)	
+			{
+				justTriggeredShush = true;
+				shushTrigger.active = true;
+				shushTimer.Start(DelayBetweenShushes);
+				lastSpawned = Instantiate(ShushSpawn, transform.position + new Vector3(0,1,0), Quaternion.identity) as GameObject;
+				
+			}
 		}
 		else
+		{
+			justTriggeredShush = false;
 			shushTrigger.active = false;
+			if(lastSpawned != null)
+			{lastSpawned.BroadcastMessage("StopShush");}
+		}
 	}
 
 	void UpdateWhistling()
 	{
-		if (oscManager.Whistling)
-		{
-
-			whistlingTime += Time.deltaTime;
-		}
-		else
-		{
-			float timeRatio = settings.MaxExpandingTime / settings.DeflateTime;
-			whistlingTime -= timeRatio * Time.deltaTime;
-		}
-		whistlingTime = Mathf.Clamp(whistlingTime, 0, settings.MaxExpandingTime);
-
-		if (whistlingTime > 0.3f)
-		{
-			whistlingTrigger.active = true;
-		}
-		float scale = Mathf.Lerp(0, settings.MaxWhistlingScale, whistlingTime / settings.MaxExpandingTime);
-
-		whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(scale, scale, scale);
+		if(oscManager.Whistling)
+			whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(settings.MaxWhistlingScale, settings.MaxWhistlingScale, settings.MaxWhistlingScale);
+		else 
+			whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(0,0,0);
+//		if (oscManager.Whistling)
+//		{
+//
+//			whistlingTime += Time.deltaTime;
+//		}
+//		else
+//		{
+//			float timeRatio = settings.MaxExpandingTime / settings.DeflateTime;
+//			whistlingTime -= timeRatio * Time.deltaTime;
+//		}
+//		whistlingTime = Mathf.Clamp(whistlingTime, 0, settings.MaxExpandingTime);
+//
+//		if (whistlingTime > 0.3f)
+//		{
+//			whistlingTrigger.active = true;
+//		}
+//		float scale = Mathf.Lerp(0, settings.MaxWhistlingScale, whistlingTime / settings.MaxExpandingTime);
+//
+//		whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(scale, scale, scale);
 	}
 
 	void UpdateShouting()

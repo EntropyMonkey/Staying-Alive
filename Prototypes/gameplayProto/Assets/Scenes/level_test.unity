@@ -7574,6 +7574,10 @@ Prefab:
       propertyPath: EmissionModule.cnt0
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+      propertyPath: ShushSpawn
+      value: 
+      objectReference: {fileID: 100002, guid: b2d40e9740e09fb45825e8876ba08066, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
   m_RootGameObject: {fileID: 1667851219}
@@ -21296,6 +21300,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdecb7a0855b1e34f912ba35999d91f3, type: 1}
   m_Name: 
   points: 100
+--- !u!1 &802764093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 802764094}
+  - 108: {fileID: 802764095}
+  m_Layer: 0
+  m_Name: Spotlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &802764094
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 802764093}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 4.79879236, y: -15.7558746, z: 67.9626083}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!108 &802764095
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 802764093}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
 --- !u!1 &831761553
 GameObject:
   m_ObjectHideFlags: 0
@@ -26184,11 +26250,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 13241ac1a8e9f0a4eaa53d6efb1e2993, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.4028716e-09
+      value: -2.86031365
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 13241ac1a8e9f0a4eaa53d6efb1e2993, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.70413399
+      value: -2.27721786
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 13241ac1a8e9f0a4eaa53d6efb1e2993, type: 2}
       propertyPath: m_LocalPosition.z
@@ -29955,7 +30021,7 @@ Transform:
   m_PrefabInternal: {fileID: 1095481138}
   m_GameObject: {fileID: 1409619539}
   m_LocalRotation: {x: .707106829, y: -.707106829, z: -3.09086232e-08, w: 3.09086232e-08}
-  m_LocalPosition: {x: -1.4028716e-09, y: -1.70413399, z: -5.95716045e-08}
+  m_LocalPosition: {x: -2.86031365, y: -2.27721786, z: -5.95716045e-08}
   m_LocalScale: {x: .264142156, y: .264142156, z: .264142156}
   m_Children: []
   m_Father: {fileID: 0}
@@ -32762,6 +32828,7 @@ MonoBehaviour:
     KeyPlayer2Input: 303
     MaxHealthPoints: 1
   currentLevel: 0
+  ShushSpawn: {fileID: 100002, guid: b2d40e9740e09fb45825e8876ba08066, type: 2}
   JumpKeyReleased: 0
   DelayBetweenShushes: 1
   oscManager: {fileID: 0}
