@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 400000}
+  - 198: {fileID: 19800002}
+  - 199: {fileID: 19900002}
+  m_Layer: 0
+  m_Name: ShoutParticles
+  m_TagString: ShoutParticleSystem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,23 +127,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!1 &100014
-GameObject:
-  m_ObjectHideFlags: 0
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
-  m_Component:
-  - 4: {fileID: 400014}
-  - 198: {fileID: 19800002}
-  - 199: {fileID: 19900002}
-  m_Layer: 0
-  m_Name: ShoutParticles
-  m_TagString: ShoutParticleSystem
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
+  m_LocalPosition: {x: .777887464, y: .527300298, z: -9.27313977e-08}
+  m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_Children: []
+  m_Father: {fileID: 400002}
 --- !u!4 &400002
 Transform:
   m_ObjectHideFlags: 1
@@ -134,12 +146,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.92699289, y: -3.57538986, z: 0}
+  m_LocalPosition: {x: 103.448601, y: -1.64275432, z: 0}
   m_LocalScale: {x: .580059469, y: .580059469, z: .580059469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 400004}
-  - {fileID: 400014}
+  - {fileID: 400000}
   - {fileID: 400006}
   - {fileID: 400008}
   - {fileID: 400010}
@@ -203,18 +215,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 22, y: 22, z: 22}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 400002}
---- !u!4 &400014
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100014}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: .777887464, y: .527300298, z: -9.27313977e-08}
-  m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!23 &2300000
@@ -386,6 +386,7 @@ MonoBehaviour:
     KeyPlayer1Input: 304
     KeyPlayer2Input: 303
     MaxHealthPoints: 1
+  currentLevel: 0
   JumpKeyReleased: 0
   DelayBetweenShushes: 1
   oscManager: {fileID: 0}
@@ -1506,14 +1507,14 @@ ParticleSystem:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100014}
-  lengthInSec: .100000001
+  m_GameObject: {fileID: 100000}
+  lengthInSec: 1
   startDelay: 0
   speed: 1
   randomSeed: 0
-  looping: 0
+  looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   moveWithTransform: 0
   InitialModule:
     enabled: 1
@@ -1761,7 +1762,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 20
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1793,15 +1794,15 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    cnt0: 1
+    cnt0: 5
     cnt1: 1
     cnt2: 30
     cnt3: 30
-    time0: 0
+    time0: .100000001
     time1: .100000001
     time2: 0
     time3: 0
-    m_BurstCount: 2
+    m_BurstCount: 0
   SizeModule:
     enabled: 0
     curve:
@@ -2568,7 +2569,7 @@ ParticleSystemRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100014}
+  m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
