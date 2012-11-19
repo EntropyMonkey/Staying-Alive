@@ -26,8 +26,7 @@ public class ArrowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isSleeping)
-            physics.velocity = FlyDirection * Movespeed;
+		
     }
 
     void FixedUpdate()
@@ -37,12 +36,14 @@ public class ArrowScript : MonoBehaviour
     IEnumerator Rewake()
     {
         Debug.Log("Sleep");
+		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         if (!isSleeping)
-            velocity = physics.velocity;
+            velocity = rigidbody.velocity;
         yield return new WaitForSeconds(ShushDelay);
-        Debug.Log("Awake");
+        Debug.Log("Awake test");
         isSleeping = false;
-        physics.velocity = velocity;
+		rigidbody.constraints = RigidbodyConstraints.None;
+        rigidbody.velocity = velocity;
     }
 
     void OnCollisionEnter(Collision collision)
@@ -70,7 +71,6 @@ public class ArrowScript : MonoBehaviour
             Debug.Log("Freeze");
             StartCoroutine(Rewake());
             isSleeping = true;
-            gameObject.rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 }
