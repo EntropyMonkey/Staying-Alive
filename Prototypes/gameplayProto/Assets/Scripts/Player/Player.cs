@@ -119,12 +119,14 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
+		// find child triggers
         foreach (Transform childTransform in transform)
         {
             if (childTransform.gameObject.CompareTag(GlobalNames.TAG.ShoutingTrigger))
             {
                 shoutTrigger = childTransform.gameObject.GetComponent<BoxCollider>();
-            }else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
+            }
+			else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
             {
                 whistlingTrigger = childTransform.gameObject;
             }
@@ -133,6 +135,8 @@ public class Player : MonoBehaviour
                 shushTrigger = childTransform.gameObject;
             }
         }
+
+		// shout trigger
         if (shoutTrigger != null)
         {
             shoutTrigger.gameObject.active = false;
@@ -142,6 +146,7 @@ public class Player : MonoBehaviour
             Debug.Log("Shout trigger on player wasn't found");
         }
 
+		// whistling trigger
         if (whistlingTrigger != null)
         {
             whistlingTrigger.gameObject.active = true;
@@ -151,6 +156,7 @@ public class Player : MonoBehaviour
             Debug.Log("Whistling trigger on player wasn't found");
         }
 
+		// shush trigger
         if (shushTrigger != null)
         {
             shushTrigger.gameObject.active = false;
@@ -330,25 +336,6 @@ public class Player : MonoBehaviour
 			whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(settings.MaxWhistlingScale, settings.MaxWhistlingScale, settings.MaxWhistlingScale);
 		else 
 			whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(0,0,0);
-//		if (oscManager.Whistling)
-//		{
-//
-//			whistlingTime += Time.deltaTime;
-//		}
-//		else
-//		{
-//			float timeRatio = settings.MaxExpandingTime / settings.DeflateTime;
-//			whistlingTime -= timeRatio * Time.deltaTime;
-//		}
-//		whistlingTime = Mathf.Clamp(whistlingTime, 0, settings.MaxExpandingTime);
-//
-//		if (whistlingTime > 0.3f)
-//		{
-//			whistlingTrigger.active = true;
-//		}
-//		float scale = Mathf.Lerp(0, settings.MaxWhistlingScale, whistlingTime / settings.MaxExpandingTime);
-//
-//		whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(scale, scale, scale);
 	}
 
 	void UpdateShouting()
@@ -363,7 +350,6 @@ public class Player : MonoBehaviour
 		{
             ShoutParticleSystem.emissionRate = 0;
 			shoutTrigger.gameObject.active = false;
-			//ShoutParticleSystem.gameObject.active = false;
 		}
 	}
 
@@ -390,37 +376,38 @@ public class Player : MonoBehaviour
 	void OnCollisionStay(Collision collision)
 	{
 		// test all contacts for the right collision angle
-		bool foundAngle = false;
 		for (int i = 0; i < collision.contacts.Length; i++)
 		{
 			float angle = Vector3.Angle(collision.contacts[i].normal, Vector3.up);
 			
 			if (angle > -settings.MaxFloorAngle && angle < settings.MaxFloorAngle)
 			{
-				currentFloorColliders.Add(collision.contacts[i].otherCollider);
-				foundAngle = true;
+				Grounded = true;
 			}
-		}
-
-		if (foundAngle)
-		{
-			Grounded = true;
-		}
-		else
-		{
-			Grounded = false;
-			if (FSM.CurrentState == JumpState)
-				FSM.ChangeState(FallState);
 		}
 	}
 
 	void OnCollisionExit(Collision collision)
 	{
-		if (currentFloorColliders.Remove(collision.collider))
+		// if there's one or less angle according to the angle at which
+		// the player's grounded -> the player is not grounded anymore
+		int foundAngle = 0;
+		for (int i = 0; i < collision.contacts.Length; i++)
+		{
+			float angle = Vector3.Angle(collision.contacts[i].normal, Vector3.up);
+
+			if (angle > -settings.MaxFloorAngle && angle < settings.MaxFloorAngle)
+			{
+				foundAngle++;
+			}
+		}
+
+		if (foundAngle <= 1)
 		{
 			Grounded = false;
 		}
 
+		// unparent player when exiting collision with the moving platform
 		if (collision.collider.tag == GlobalNames.TAG.MovingPlatformTag)
 		{
 			transform.parent = null;
