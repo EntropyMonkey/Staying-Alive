@@ -17137,6 +17137,51 @@ Prefab:
   m_RootGameObject: {fileID: 150693249}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &266429544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+  m_PrefabInternal: {fileID: 426838846}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 266429545}
+  - 114: {fileID: 266429546}
+  m_Layer: 0
+  m_Name: WhistlingParticles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &266429545
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+  m_PrefabInternal: {fileID: 426838846}
+  m_GameObject: {fileID: 266429544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1667851220}
+--- !u!114 &266429546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: c348dcf977c439a43b60e9db461cef06,
+    type: 2}
+  m_PrefabInternal: {fileID: 426838846}
+  m_GameObject: {fileID: 266429544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30434c4d4b6c21a41a7fd9446045f9f8, type: 1}
+  m_Name: 
+  NoteMaterials:
+  - {fileID: 2100000, guid: b9e77653848995d42999256b6b923028, type: 2}
+  - {fileID: 2100000, guid: 94320916a6e1105449e00dd105c4edb5, type: 2}
+  - {fileID: 2100000, guid: 620ebd096cbba3d4da65bd4fe370b987, type: 2}
+  WhistlingParticleSystem: {fileID: 100000, guid: 7eccdafd99510e940a68a6252b30e052,
+    type: 2}
+  SpawnRate: .200000003
 --- !u!1001 &268541065
 Prefab:
   m_ObjectHideFlags: 0
@@ -30566,25 +30611,25 @@ Transform:
   m_LocalPosition: {x: 85.069046, y: -3.66040087, z: .995222509}
   m_LocalScale: {x: 1.20317507, y: 1.20317471, z: .762570381}
   m_Children:
-  - {fileID: 282683909}
-  - {fileID: 1068565626}
-  - {fileID: 953216131}
-  - {fileID: 2020842067}
-  - {fileID: 2076509717}
+  - {fileID: 2063833609}
   - {fileID: 1806387184}
-  - {fileID: 52422079}
   - {fileID: 1083065477}
+  - {fileID: 953216131}
+  - {fileID: 52422079}
+  - {fileID: 741325440}
+  - {fileID: 282683909}
+  - {fileID: 1411388694}
+  - {fileID: 1319962965}
+  - {fileID: 1768804897}
+  - {fileID: 76666131}
+  - {fileID: 1586717329}
+  - {fileID: 1230388877}
+  - {fileID: 2020842067}
+  - {fileID: 626965281}
   - {fileID: 967277687}
   - {fileID: 1821855806}
-  - {fileID: 1230388877}
-  - {fileID: 1319962965}
-  - {fileID: 1411388694}
-  - {fileID: 741325440}
-  - {fileID: 1768804897}
-  - {fileID: 626965281}
-  - {fileID: 1586717329}
-  - {fileID: 2063833609}
-  - {fileID: 76666131}
+  - {fileID: 1068565626}
+  - {fileID: 2076509717}
   m_Father: {fileID: 0}
 --- !u!198 &528527038
 ParticleSystem:
@@ -41915,8 +41960,8 @@ ParticleSystem:
   ShapeModule:
     enabled: 1
     type: 4
-    radius: 1
-    angle: 13.5
+    radius: .5
+    angle: 20
     boxX: 1
     boxY: 1
     boxZ: 1
@@ -41927,7 +41972,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -77588,8 +77633,8 @@ Transform:
   m_PrefabInternal: {fileID: 426838846}
   m_GameObject: {fileID: 1145127852}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: .777887464, y: .527300298, z: -9.27313977e-08}
-  m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
+  m_LocalPosition: {x: .556349397, y: 0, z: 0}
+  m_LocalScale: {x: 1.72396111, y: 1.44382465, z: 1.72396111}
   m_Children: []
   m_Father: {fileID: 1667851220}
 --- !u!1001 &1156525021
@@ -79937,20 +79982,20 @@ Transform:
   m_LocalPosition: {x: 55.8529778, y: -4.41188145, z: -1.01412761}
   m_LocalScale: {x: 1.20317495, y: 1.20317471, z: .762570381}
   m_Children:
-  - {fileID: 1236515024}
-  - {fileID: 244542840}
-  - {fileID: 1507534951}
-  - {fileID: 342696159}
   - {fileID: 736304020}
   - {fileID: 1548517311}
   - {fileID: 272226885}
-  - {fileID: 1937239936}
+  - {fileID: 929604743}
+  - {fileID: 244542840}
+  - {fileID: 1080041434}
   - {fileID: 779264611}
+  - {fileID: 1236515024}
+  - {fileID: 342696159}
+  - {fileID: 1507534951}
   - {fileID: 1689322791}
   - {fileID: 1855947101}
+  - {fileID: 1937239936}
   - {fileID: 37629503}
-  - {fileID: 1080041434}
-  - {fileID: 929604743}
   m_Father: {fileID: 0}
 --- !u!198 &1190974999
 ParticleSystem:
@@ -94629,25 +94674,25 @@ Transform:
   m_LocalPosition: {x: 79.9854584, y: -3.66562748, z: -.773879766}
   m_LocalScale: {x: 1.20317507, y: 1.20317471, z: .762570381}
   m_Children:
-  - {fileID: 1313285853}
-  - {fileID: 1001036316}
-  - {fileID: 1087915625}
-  - {fileID: 1672219382}
   - {fileID: 1087555317}
-  - {fileID: 365626326}
   - {fileID: 1187840029}
-  - {fileID: 1895138873}
-  - {fileID: 1794209458}
-  - {fileID: 213462746}
-  - {fileID: 197989932}
-  - {fileID: 859748657}
-  - {fileID: 1591978488}
-  - {fileID: 1331069609}
-  - {fileID: 631771266}
   - {fileID: 1038737110}
-  - {fileID: 1510947606}
-  - {fileID: 1296004653}
+  - {fileID: 1331069609}
   - {fileID: 972002475}
+  - {fileID: 1794209458}
+  - {fileID: 1313285853}
+  - {fileID: 631771266}
+  - {fileID: 1001036316}
+  - {fileID: 1591978488}
+  - {fileID: 1087915625}
+  - {fileID: 1895138873}
+  - {fileID: 213462746}
+  - {fileID: 365626326}
+  - {fileID: 1296004653}
+  - {fileID: 859748657}
+  - {fileID: 197989932}
+  - {fileID: 1510947606}
+  - {fileID: 1672219382}
   m_Father: {fileID: 0}
 --- !u!198 &1353306500
 ParticleSystem:
@@ -102521,25 +102566,25 @@ Transform:
   m_LocalPosition: {x: 82.5965195, y: -4.37656784, z: -.889526367}
   m_LocalScale: {x: 1.20317507, y: 1.20317471, z: .762570381}
   m_Children:
-  - {fileID: 1209025880}
-  - {fileID: 1666970823}
-  - {fileID: 1005061332}
-  - {fileID: 270138559}
-  - {fileID: 655762605}
-  - {fileID: 599803685}
-  - {fileID: 2105277580}
-  - {fileID: 849663379}
-  - {fileID: 1018022779}
-  - {fileID: 130197173}
-  - {fileID: 1628383209}
-  - {fileID: 1899890976}
-  - {fileID: 728035686}
   - {fileID: 1661872042}
-  - {fileID: 358869643}
-  - {fileID: 674337081}
+  - {fileID: 849663379}
   - {fileID: 1905841157}
+  - {fileID: 1209025880}
+  - {fileID: 2105277580}
+  - {fileID: 655762605}
+  - {fileID: 1666970823}
+  - {fileID: 1899890976}
+  - {fileID: 270138559}
+  - {fileID: 599803685}
+  - {fileID: 130197173}
+  - {fileID: 674337081}
+  - {fileID: 358869643}
+  - {fileID: 1018022779}
+  - {fileID: 1005061332}
   - {fileID: 1195836744}
+  - {fileID: 1628383209}
   - {fileID: 1965772517}
+  - {fileID: 728035686}
   m_Father: {fileID: 0}
 --- !u!198 &1545829737
 ParticleSystem:
@@ -112419,6 +112464,7 @@ Transform:
   - {fileID: 1632056925}
   - {fileID: 395651051}
   - {fileID: 1318811666}
+  - {fileID: 266429545}
   m_Father: {fileID: 0}
 --- !u!23 &1667851221
 Renderer:
@@ -112458,7 +112504,7 @@ Rigidbody:
   m_Mass: 1.01999998
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
@@ -112500,6 +112546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4da919eb4b4ab440951ca88ba5dd60d, type: 1}
   m_Name: 
   settings:
+    Gravity: 9.81000042
     JumpAcceleration: {x: 10, y: 5}
     MaxHorizontalJumpVelocity: 2.5
     MaxJumpTime: .400000006
