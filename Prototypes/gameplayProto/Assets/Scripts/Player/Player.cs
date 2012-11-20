@@ -98,8 +98,6 @@ public class Player : MonoBehaviour
         get;
         private set;
     }
-	
-	private List<Collider> currentFloorColliders;
 
     [HideInInspector]
     public OSCManager oscManager;
@@ -197,9 +195,6 @@ public class Player : MonoBehaviour
 		FSM = new FiniteStateMachine<Player>();
 		// configure it so that the player first falls and does not move r/l
 		FSM.Configure(this, FallState, null);
-		
-		// counts the current floor colliders, needed for double collisions
-		currentFloorColliders = new List<Collider>();
 		
 		GameObject temp = GameObject.FindGameObjectWithTag(GlobalNames.TAG.StartPoint);
 		if (temp != null)
