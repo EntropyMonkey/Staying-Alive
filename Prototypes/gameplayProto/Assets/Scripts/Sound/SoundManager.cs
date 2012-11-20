@@ -11,8 +11,8 @@ public class SoundManager : MonoBehaviour
 	{
 		public string name;
 		public AudioClip clip;
-		public float volume;
-		public float pitch;
+		public float volume = 1.0f;
+		public float pitch = 1.0f;
 		[HideInInspector]
 		public GameObject soundObject;
 	}
@@ -34,7 +34,7 @@ public class SoundManager : MonoBehaviour
 
 	}
 
-	void Play(string clipName, Transform location, float volume = 1.0f)
+	void Play(string clipName, Transform location, float volume = 1.0f, float pitch = 1.0f)
 	{
 		AudioData data = clips.Find(item => item.name == clipName);
 		if (data != null)
