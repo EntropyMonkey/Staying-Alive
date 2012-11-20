@@ -5,6 +5,8 @@ using System.Collections.Generic;
 [System.Serializable] // show the properties in the editor when used as variable in player
 public class PlayerSettings
 {
+	public float			Gravity = 9.81f;
+
 	// influences how the player can change his velocity in midair
 	public Vector2			JumpAcceleration = new Vector2(10, 5);
 	// the maximum horizontal speed a player can have while jumping 
@@ -22,7 +24,7 @@ public class PlayerSettings
     public float            RockAlphaMin = 0.3f;
 
 	//How long an object should be affected by the shush
-    public float            ShushPauseDuration; 
+    public float            ShushPauseDuration = 5f; 
 
 	// the player can influence the horizontal movement while falling down
 	public float			HorizontalFallAcceleration = 5;

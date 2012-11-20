@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
+// a moving platform class
 public class MovingPlatform : MonoBehaviour
 {
 	public float movementSpeed = 1;

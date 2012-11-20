@@ -134,8 +134,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: .777887464, y: .527300298, z: -9.27313977e-08}
-  m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
+  m_LocalPosition: {x: .556349397, y: 0, z: 0}
+  m_LocalScale: {x: 1.72396111, y: 1.44382465, z: 1.72396111}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -146,7 +146,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.448601, y: -1.64275432, z: 0}
+  m_LocalPosition: {x: -5.92699289, y: -3.57538986, z: 0}
   m_LocalScale: {x: .580059469, y: .580059469, z: .580059469}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -202,7 +202,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!4 &400012
@@ -302,7 +302,7 @@ Rigidbody:
   m_Mass: 1.01999998
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4da919eb4b4ab440951ca88ba5dd60d, type: 1}
   m_Name: 
   settings:
+    Gravity: 9.81000042
     JumpAcceleration: {x: 10, y: 5}
     MaxHorizontalJumpVelocity: 2.5
     MaxJumpTime: .400000006
@@ -387,6 +388,7 @@ MonoBehaviour:
     KeyPlayer2Input: 303
     MaxHealthPoints: 1
   currentLevel: 0
+  ShushSpawn: {fileID: 100002, guid: b2d40e9740e09fb45825e8876ba08066, type: 2}
   JumpKeyReleased: 0
   DelayBetweenShushes: 1
   oscManager: {fileID: 0}
@@ -1750,8 +1752,8 @@ ParticleSystem:
   ShapeModule:
     enabled: 1
     type: 4
-    radius: 1
-    angle: 13.5
+    radius: .5
+    angle: 20
     boxX: 1
     boxY: 1
     boxZ: 1
@@ -1762,7 +1764,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
