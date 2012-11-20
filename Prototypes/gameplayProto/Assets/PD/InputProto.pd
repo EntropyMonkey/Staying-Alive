@@ -567,7 +567,7 @@
 #X obj 669 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 675 85 r~ audioinput;
-#N canvas -3 413 450 300 LIMITTHINGS 0;
+#N canvas 0 413 450 300 LIMITTHINGS 0;
 #X obj 152 45 inlet~;
 #X obj 148 191 limiter~;
 #X obj 96 209 *~;
