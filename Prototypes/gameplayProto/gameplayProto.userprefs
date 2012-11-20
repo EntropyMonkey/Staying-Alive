@@ -1,9 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LevelStuff\PlatformScripts\MovingPlatform.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="326" Column="5" />
-      <File FileName="Assets\Scripts\Player\PFallState.cs" Line="27" Column="2" />
+      <File FileName="Assets\Scripts\LevelStuff\PlatformScripts\MovingPlatform.cs" Line="9" Column="34" />
+      <File FileName="Assets\Scripts\LevelStuff\ArrowSpawner.cs" Line="31" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\PFallState.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\LevelStuff\ArrowScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

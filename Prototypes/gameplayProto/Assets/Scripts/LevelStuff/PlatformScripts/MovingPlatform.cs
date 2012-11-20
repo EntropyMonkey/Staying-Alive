@@ -7,6 +7,7 @@ using System;
 public class MovingPlatform : MonoBehaviour
 {
 	public float movementSpeed = 1;
+	public float threshold = 0.1f;  
 
 	private Waypoint[] waypoints;
 	private int next; // next waypoint
@@ -36,7 +37,7 @@ public class MovingPlatform : MonoBehaviour
 		Vector3 position = transform.position + velocity;
 		transform.position = position;
 
-		if (Vector3.Distance(position, waypoints[next].position) < 0.1f)
+		if (Vector3.Distance(position, waypoints[next].position) < threshold)
 		{
 			last = next;
 			next++;
