@@ -84,6 +84,8 @@ public class Player : MonoBehaviour
         set;
     }
 
+
+    private float shoutEmissionRate; //Assigned on player start 
 	public ParticleSystem ShoutParticleSystem
 	{
 		get;
@@ -172,6 +174,7 @@ public class Player : MonoBehaviour
 			else if (current.gameObject.tag == GlobalNames.TAG.ShoutParticleSystem)
 			{
 				ShoutParticleSystem = current.gameObject.GetComponent<ParticleSystem>();
+                shoutEmissionRate = ShoutParticleSystem.emissionRate;
 				continue;
 			}
         }
@@ -261,7 +264,7 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKey(settings.KeyPlayer2Input))
             {
-                // both players are pressing, noone gets voice control
+                // both players are pressing, none gets voice control
                 activePlayerInput = 0;
             }
             else
@@ -354,12 +357,13 @@ public class Player : MonoBehaviour
 		if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
 		{
 			shoutTrigger.gameObject.active = true;
-			ShoutParticleSystem.gameObject.active = true;
+            ShoutParticleSystem.emissionRate = shoutEmissionRate;
 		}
 		else
 		{
+            ShoutParticleSystem.emissionRate = 0;
 			shoutTrigger.gameObject.active = false;
-			ShoutParticleSystem.gameObject.active = false;
+			//ShoutParticleSystem.gameObject.active = false;
 		}
 	}
 

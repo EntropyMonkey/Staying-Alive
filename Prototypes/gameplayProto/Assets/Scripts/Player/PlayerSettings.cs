@@ -22,7 +22,7 @@ public class PlayerSettings
     public float            RockAlphaMin = 0.3f;
 
 	//How long an object should be affected by the shush
-    public float            ShushPauseDuration; 
+    public float            ShushPauseDuration = 5f; 
 
 	// the player can influence the horizontal movement while falling down
 	public float			HorizontalFallAcceleration = 5;
