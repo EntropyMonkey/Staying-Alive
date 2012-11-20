@@ -218,7 +218,7 @@
 #X msg 118 397 1000;
 #X msg 86 396 0.1;
 #X obj 142 228 > 7;
-#X obj 195 260 s shouting;
+#X obj 195 347 s shouting;
 #X obj 214 173 loadbang;
 #X obj 213 232 outlet;
 #X obj 107 51 inlet;
@@ -231,6 +231,10 @@
 #X obj 271 79 hip~ 100;
 #X obj 271 101 hip~ 100;
 #X msg 214 195 -12.8;
+#X obj 196 286 del 750;
+#X obj 166 258 sel 1 0;
+#X msg 212 313 0;
+#X msg 175 313 1;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
@@ -248,7 +252,7 @@
 #X connect 12 0 7 1;
 #X connect 13 0 7 0;
 #X connect 14 0 6 0;
-#X connect 14 0 15 0;
+#X connect 14 0 29 0;
 #X connect 16 0 27 0;
 #X connect 18 0 14 1;
 #X connect 20 0 21 0;
@@ -261,6 +265,11 @@
 #X connect 27 0 14 1;
 #X connect 27 0 17 0;
 #X connect 27 0 19 0;
+#X connect 28 0 30 0;
+#X connect 29 0 31 0;
+#X connect 29 1 28 0;
+#X connect 30 0 15 0;
+#X connect 31 0 15 0;
 #X restore -25 194 pd shouting;
 #N canvas 550 87 495 440 indoorPDgraphic 0;
 #X obj -15 24 gemhead;
@@ -550,24 +559,20 @@
 #X floatatom 289 265 5 0 0 0 - - -;
 #X obj 462 271 dbtorms;
 #X floatatom 478 304 5 0 0 0 - - -;
-#X obj 277 67 *~;
+#X obj 295 76 *~;
 #X obj 371 48 hsl 150 20 0 100 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 149 1;
 #X floatatom 368 73 5 0 0 0 - - -;
-#X obj 403 144 gate;
-#X obj 402 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
 #X msg 368 23 1;
 #X text 441 438 V. 0.2.8;
 #X obj 346 292 expr 100/$f1;
-#X obj 435 91 max 0.01;
 #X obj 671 133 table MIC;
 #X obj 669 107 tabwrite~ MIC;
 #X obj 669 57 metro 100;
 #X obj 669 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 675 85 r~ audioinput;
-#N canvas -3 413 450 300 LIMITTHINGS 0;
+#N canvas 0 413 450 300 LIMITTHINGS 0;
 #X obj 152 45 inlet~;
 #X obj 148 191 limiter~;
 #X obj 96 209 *~;
@@ -595,7 +600,7 @@
 #X connect 9 1 7 0;
 #X connect 10 0 1 0;
 #X connect 11 0 1 0;
-#X restore 276 97 pd LIMITTHINGS;
+#X restore 177 104 pd LIMITTHINGS;
 #X floatatom 381 354 5 0 0 0 - - -;
 #X connect 5 0 4 0;
 #X connect 10 0 9 2;
@@ -605,12 +610,12 @@
 #X connect 15 0 16 0;
 #X connect 15 0 40 0;
 #X connect 15 0 41 0;
-#X connect 15 0 50 0;
+#X connect 15 0 48 0;
 #X connect 16 0 17 0;
-#X connect 16 0 58 0;
+#X connect 16 0 55 0;
 #X connect 18 0 9 1;
 #X connect 20 0 21 0;
-#X connect 20 0 48 0;
+#X connect 20 0 46 0;
 #X connect 23 0 24 0;
 #X connect 24 0 22 0;
 #X connect 24 0 3 0;
@@ -627,15 +632,10 @@
 #X connect 37 0 35 0;
 #X connect 39 0 15 0;
 #X connect 41 0 42 0;
-#X connect 43 0 57 0;
+#X connect 43 0 38 0;
 #X connect 44 0 43 1;
 #X connect 44 0 45 0;
-#X connect 46 0 51 0;
-#X connect 47 0 46 0;
-#X connect 48 0 44 0;
-#X connect 50 0 46 1;
-#X connect 51 0 44 0;
-#X connect 54 0 53 0;
-#X connect 55 0 54 0;
-#X connect 56 0 53 0;
-#X connect 57 0 38 0;
+#X connect 46 0 44 0;
+#X connect 51 0 50 0;
+#X connect 52 0 51 0;
+#X connect 53 0 50 0;
