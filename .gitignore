@@ -5,6 +5,11 @@
 *.suo
 *.pidb
 
+
+#### other files
+*.db
+*.db.meta
+
 #### directories
 
 obj/
