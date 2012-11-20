@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 94fc3739c9c13d949be9986f8de07a6d
+guid: 9744d47715e5b8e4697f36a61097276b
 ModelImporter:
   fileIDToRecycleName:
-    4300000: Box008
-    4300002: Torus002
+    4300000: Pyramid001
+    4300002: Pyramid002
+    4300004: Pyramid003
   serializedVersion: 10
   materials:
     importMaterials: 1
@@ -48,20 +49,27 @@ ModelImporter:
       data:
         first: 111
         second: 605fa900
-    Box008:
+    Object001:
       data:
         first: 1
-        second: a2860100
+        second: a6860100
       data:
         first: 4
-        second: 821a0600
+        second: 861a0600
+    Pyramid001:
+      data:
+        first: 1
+        second: a8860100
+      data:
+        first: 4
+        second: 881a0600
       data:
         first: 23
-        second: 60182300
+        second: 64182300
       data:
         first: 33
-        second: a05a3200
-    Torus002:
+        second: a45a3200
+    Pyramid002:
       data:
         first: 1
         second: a4860100
@@ -74,3 +82,16 @@ ModelImporter:
       data:
         first: 33
         second: a25a3200
+    Pyramid003:
+      data:
+        first: 1
+        second: a2860100
+      data:
+        first: 4
+        second: 821a0600
+      data:
+        first: 23
+        second: 60182300
+      data:
+        first: 33
+        second: a05a3200
