@@ -28,7 +28,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 185.907257, y: -4.98225212, z: 0}
   m_LocalScale: {x: 19.8537197, y: .717713475, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -43,10 +42,10 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: e9172b6cdea742849b23cd13e812590e, type: 2}
+  - {fileID: 2100000, guid: 3c8d5ed450951ab4e9b8282dfb072661, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
+  m_UseLightProbes: 1
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
 --- !u!33 &3300000

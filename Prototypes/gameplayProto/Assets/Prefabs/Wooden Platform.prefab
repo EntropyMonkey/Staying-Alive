@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
-  - 65: {fileID: 6500000}
   - 23: {fileID: 2300000}
   m_Layer: 0
   m_Name: Wooden Platform
@@ -316,7 +315,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a2789436ea472124abe2b6dc62925af1, type: 2}
+  - {fileID: 2100000, guid: 69b830904ba4db34c87f5ddfb4f7ecc7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -334,7 +333,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a2789436ea472124abe2b6dc62925af1, type: 2}
+  - {fileID: 2100000, guid: 69b830904ba4db34c87f5ddfb4f7ecc7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -352,7 +351,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a2789436ea472124abe2b6dc62925af1, type: 2}
+  - {fileID: 2100000, guid: 69b830904ba4db34c87f5ddfb4f7ecc7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -370,7 +369,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a2789436ea472124abe2b6dc62925af1, type: 2}
+  - {fileID: 2100000, guid: e9172b6cdea742849b23cd13e812590e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -388,7 +387,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a2789436ea472124abe2b6dc62925af1, type: 2}
+  - {fileID: 2100000, guid: e9172b6cdea742849b23cd13e812590e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -406,7 +405,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a2789436ea472124abe2b6dc62925af1, type: 2}
+  - {fileID: 2100000, guid: e9172b6cdea742849b23cd13e812590e, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -424,7 +423,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a2789436ea472124abe2b6dc62925af1, type: 2}
+  - {fileID: 2100000, guid: 69b830904ba4db34c87f5ddfb4f7ecc7, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -486,18 +485,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100018}
   m_Mesh: {fileID: 4300000, guid: af385b104bdcffa458ea8665ca97be08, type: 3}
---- !u!65 &6500000
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
