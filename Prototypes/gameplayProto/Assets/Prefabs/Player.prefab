@@ -134,9 +134,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: .777887464, y: .527300298, z: -9.27313977e-08}
-  m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalPosition: {x: .556349397, y: 0, z: 0}
+  m_LocalScale: {x: 1.72396111, y: 1.44382465, z: 1.72396111}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!4 &400002
@@ -146,9 +145,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.448601, y: -1.64275432, z: 0}
+  m_LocalPosition: {x: 97.7269287, y: .558467388, z: 0}
   m_LocalScale: {x: .580059469, y: .580059469, z: .580059469}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 400004}
   - {fileID: 400000}
@@ -166,7 +164,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29.9003181, y: -10.2237883, z: 20.5692635}
   m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!4 &400006
@@ -178,7 +175,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.6638751, y: .0628254861, z: 0}
   m_LocalScale: {x: 4.34751749, y: 2.74902272, z: 1.72396111}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!4 &400008
@@ -190,7 +186,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!4 &400010
@@ -202,7 +197,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.72396111, y: 1.72396111, z: 1.72396111}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!4 &400012
@@ -214,7 +208,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 22, y: 22, z: 22}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400002}
 --- !u!23 &2300000
@@ -387,6 +380,7 @@ MonoBehaviour:
     KeyPlayer2Input: 303
     MaxHealthPoints: 1
   currentLevel: 0
+  ShushSpawn: {fileID: 100002, guid: b2d40e9740e09fb45825e8876ba08066, type: 2}
   JumpKeyReleased: 0
   DelayBetweenShushes: 1
   oscManager: {fileID: 0}
@@ -1750,8 +1744,8 @@ ParticleSystem:
   ShapeModule:
     enabled: 1
     type: 4
-    radius: 1
-    angle: 13.5
+    radius: .5
+    angle: 20
     boxX: 1
     boxY: 1
     boxZ: 1
@@ -1762,7 +1756,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
