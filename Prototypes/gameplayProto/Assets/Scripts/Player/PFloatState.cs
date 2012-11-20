@@ -5,7 +5,6 @@ public class PFloatState : PWalkState
 {
 	public override void Enter(Player player)
 	{
-		player.rigidbody.useGravity = false;
 		Vector3 newVel = player.rigidbody.velocity;
 		newVel.y = 0;
 		player.rigidbody.velocity = newVel;
@@ -45,7 +44,6 @@ public class PFloatState : PWalkState
 
 	public override void Exit(Player player)
 	{
-		player.rigidbody.useGravity = true;
 		player.FloatParticleSystem.emissionRate = 0;
 	}
 }
