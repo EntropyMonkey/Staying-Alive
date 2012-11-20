@@ -5,6 +5,8 @@ using System.Collections.Generic;
 [System.Serializable] // show the properties in the editor when used as variable in player
 public class PlayerSettings
 {
+	public float			Gravity = 9.81f;
+
 	// influences how the player can change his velocity in midair
 	public Vector2			JumpAcceleration = new Vector2(10, 5);
 	// the maximum horizontal speed a player can have while jumping 

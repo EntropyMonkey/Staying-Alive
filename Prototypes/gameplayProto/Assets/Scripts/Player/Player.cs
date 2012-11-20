@@ -357,6 +357,8 @@ public class Player : MonoBehaviour
 	void FixedUpdate()
 	{
 		FSM.FixedUpdate();
+
+		rigidbody.AddForce(Vector3.down * settings.Gravity);
 	}
 
 	// do animation overriding here
