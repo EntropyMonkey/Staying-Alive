@@ -17137,6 +17137,51 @@ Prefab:
   m_RootGameObject: {fileID: 150693249}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &266429544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+  m_PrefabInternal: {fileID: 426838846}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 266429545}
+  - 114: {fileID: 266429546}
+  m_Layer: 0
+  m_Name: WhistlingParticles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &266429545
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: c348dcf977c439a43b60e9db461cef06, type: 2}
+  m_PrefabInternal: {fileID: 426838846}
+  m_GameObject: {fileID: 266429544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1667851220}
+--- !u!114 &266429546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400010, guid: c348dcf977c439a43b60e9db461cef06,
+    type: 2}
+  m_PrefabInternal: {fileID: 426838846}
+  m_GameObject: {fileID: 266429544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30434c4d4b6c21a41a7fd9446045f9f8, type: 1}
+  m_Name: 
+  NoteMaterials:
+  - {fileID: 2100000, guid: b9e77653848995d42999256b6b923028, type: 2}
+  - {fileID: 2100000, guid: 94320916a6e1105449e00dd105c4edb5, type: 2}
+  - {fileID: 2100000, guid: 620ebd096cbba3d4da65bd4fe370b987, type: 2}
+  WhistlingParticleSystem: {fileID: 100000, guid: 7eccdafd99510e940a68a6252b30e052,
+    type: 2}
+  SpawnRate: .200000003
 --- !u!1001 &268541065
 Prefab:
   m_ObjectHideFlags: 0
@@ -112419,6 +112464,7 @@ Transform:
   - {fileID: 1632056925}
   - {fileID: 395651051}
   - {fileID: 1318811666}
+  - {fileID: 266429545}
   m_Father: {fileID: 0}
 --- !u!23 &1667851221
 Renderer:

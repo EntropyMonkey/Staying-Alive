@@ -25,6 +25,12 @@ public class Timer {
         elapsedTime = 0;
     }
 
+    public void Stop()
+    {
+        IsActive = false;
+        IsTimeUp = false;
+    }
+
 	// Update is called once per frame
 	public void Update (float dtime) {
         if (IsActive)

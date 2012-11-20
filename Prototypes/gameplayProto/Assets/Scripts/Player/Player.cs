@@ -92,14 +92,14 @@ public class Player : MonoBehaviour
 		set;
 	}
 
+    private WhistlingSpawner whistlingSpawn;
+
 
     public int activePlayerInput
     {
         get;
         private set;
     }
-	
-	private List<Collider> currentFloorColliders;
 
     [HideInInspector]
     public OSCManager oscManager;
@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
             {
                 shoutTrigger = childTransform.gameObject.GetComponent<BoxCollider>();
             }
-			else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
+            else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
             {
                 whistlingTrigger = childTransform.gameObject;
             }
@@ -135,15 +135,14 @@ public class Player : MonoBehaviour
                 shushTrigger = childTransform.gameObject;
             }
         }
-
-		// shout trigger
+        
         if (shoutTrigger != null)
         {
             shoutTrigger.gameObject.active = false;
         }   
         else
         {
-            Debug.Log("Shout trigger on player wasn't found");
+            Debug.LogWarning("Shout trigger on player wasn't found");
         }
 
 		// whistling trigger
@@ -153,7 +152,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("Whistling trigger on player wasn't found");
+            Debug.LogWarning("Whistling trigger on player wasn't found");
         }
 
 		// shush trigger
@@ -163,8 +162,12 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("Shush trigger on player wasn't found");
+            Debug.LogWarning("Shush trigger on player wasn't found");
         }
+
+        whistlingSpawn = transform.GetComponentInChildren<WhistlingSpawner>();
+        if(whistlingSpawn == null)
+            Debug.LogWarning("Whistling spawn wasn't found");
 
         // float particle system
         Transform current;
@@ -197,9 +200,6 @@ public class Player : MonoBehaviour
 		FSM = new FiniteStateMachine<Player>();
 		// configure it so that the player first falls and does not move r/l
 		FSM.Configure(this, FallState, null);
-		
-		// counts the current floor colliders, needed for double collisions
-		currentFloorColliders = new List<Collider>();
 		
 		GameObject temp = GameObject.FindGameObjectWithTag(GlobalNames.TAG.StartPoint);
 		if (temp != null)
@@ -332,10 +332,16 @@ public class Player : MonoBehaviour
 
 	void UpdateWhistling()
 	{
-		if(oscManager.Whistling)
-			whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(settings.MaxWhistlingScale, settings.MaxWhistlingScale, settings.MaxWhistlingScale);
-		else 
-			whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(0,0,0);
+        if (oscManager.Whistling || Input.GetKey(settings.DEBUG_KeyWhistling))
+        {
+            whistlingSpawn.EnableSpawning();
+            whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(settings.MaxWhistlingScale, settings.MaxWhistlingScale, settings.MaxWhistlingScale);
+        }
+        else
+        {
+            whistlingSpawn.DisableSpawning();
+            whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(0, 0, 0);
+        }
 	}
 
 	void UpdateShouting()

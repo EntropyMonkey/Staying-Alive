@@ -10,7 +10,7 @@ PlayerSettings:
   targetPlatform: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: Razkolnikov
+  companyName: An
   productName: gameplayProto
   AndroidLicensePublicKey: 
   defaultScreenWidth: 1024
@@ -58,7 +58,6 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  debugUnloadMode: 0
   iPhoneBundleIdentifier: com.Company.ProductName
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
@@ -81,7 +80,6 @@ PlayerSettings:
   uIStatusBarStyle: 0
   iPhoneSplashScreen: {fileID: 0}
   iPhoneHighResSplashScreen: {fileID: 0}
-  iPhoneTallHighResSplashScreen: {fileID: 0}
   iPadPortraitSplashScreen: {fileID: 0}
   iPadHighResPortraitSplashScreen: {fileID: 0}
   iPadLandscapeSplashScreen: {fileID: 0}
@@ -123,11 +121,8 @@ PlayerSettings:
   ps3SoundPath: 
   ps3TrophyCommId: 
   ps3TrophyPackagePath: 
-  ps3ReservedMemorySizeMB: 16
-  ps3BootCheckMaxSaveGameSizeKB: 128
-  ps3TrophyCommSig: 
-  ps3SaveGameSlots: 1
-  ps3TrialMode: 0
+  ps3ReservedMemorySizeMB: 2
+  ps3ReservedHDDSizeMB: 128
   flashStrippingLevel: 2
   firstStreamedLevelWithResources: 0
   unityRebuildLibraryVersion: 9
