@@ -92,6 +92,8 @@ public class Player : MonoBehaviour
 		set;
 	}
 
+    private WhistlingSpawner whistlingSpawn;
+
 
     public int activePlayerInput
     {
@@ -124,7 +126,8 @@ public class Player : MonoBehaviour
             if (childTransform.gameObject.CompareTag(GlobalNames.TAG.ShoutingTrigger))
             {
                 shoutTrigger = childTransform.gameObject.GetComponent<BoxCollider>();
-            }else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
+            }
+            else if (childTransform.gameObject.CompareTag(GlobalNames.TAG.WhistlingTrigger))
             {
                 whistlingTrigger = childTransform.gameObject;
             }
@@ -133,13 +136,15 @@ public class Player : MonoBehaviour
                 shushTrigger = childTransform.gameObject;
             }
         }
+        
+
         if (shoutTrigger != null)
         {
             shoutTrigger.gameObject.active = false;
         }   
         else
         {
-            Debug.Log("Shout trigger on player wasn't found");
+            Debug.LogWarning("Shout trigger on player wasn't found");
         }
 
         if (whistlingTrigger != null)
@@ -148,7 +153,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("Whistling trigger on player wasn't found");
+            Debug.LogWarning("Whistling trigger on player wasn't found");
         }
 
         if (shushTrigger != null)
@@ -157,8 +162,12 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Debug.Log("Shush trigger on player wasn't found");
+            Debug.LogWarning("Shush trigger on player wasn't found");
         }
+
+        whistlingSpawn = transform.GetComponentInChildren<WhistlingSpawner>();
+        if(whistlingSpawn == null)
+            Debug.LogWarning("Whistling spawn wasn't found");
 
         // float particle system
         Transform current;
@@ -326,10 +335,17 @@ public class Player : MonoBehaviour
 
 	void UpdateWhistling()
 	{
-		if(oscManager.Whistling)
-			whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(settings.MaxWhistlingScale, settings.MaxWhistlingScale, settings.MaxWhistlingScale);
-		else 
-			whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(0,0,0);
+        if (oscManager.Whistling || Input.GetKey(settings.DEBUG_KeyWhistling))
+        {
+            whistlingSpawn.EnableSpawning();
+            whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(settings.MaxWhistlingScale, settings.MaxWhistlingScale, settings.MaxWhistlingScale);
+        }
+        else
+        {
+            whistlingSpawn.DisableSpawning();
+            whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(0, 0, 0);
+        }
+        
 //		if (oscManager.Whistling)
 //		{
 //
