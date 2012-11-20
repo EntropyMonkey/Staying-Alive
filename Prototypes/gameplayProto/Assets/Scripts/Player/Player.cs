@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
 
 	#endregion
 
-    //Changes size depening on how long the player has been whistling
+    //Changes size deepening on how long the player has been whistling
     private float whistlingTime = 0;
 	
 	// used to avoid bunnyhop
