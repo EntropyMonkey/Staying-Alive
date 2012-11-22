@@ -31,13 +31,21 @@ public class PWalkState : FSMState<Player>
 
 	public override void ExecuteFixed(Player player)
 	{
+		ExecuteMovement(player);
+
+		// add gravity (just in case of fast changes between falling/walking)
+		player.rigidbody.AddForce(Vector3.down * player.settings.Gravity);		
+	}
+
+	protected void ExecuteMovement(Player player)
+	{
 		// move r/l
 		if (Input.GetKey(player.settings.KeyLeft))
 		{
 			player.transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 1, 0));
 
 			player.rigidbody.AddForce(
-				Vector3.left * player.settings.MovementAcceleration * Time.deltaTime, 
+				Vector3.left * player.settings.MovementAcceleration * Time.deltaTime,
 				ForceMode.Impulse);
 
 			if (player.rigidbody.velocity.x < -player.settings.MaxMovementVelocity)

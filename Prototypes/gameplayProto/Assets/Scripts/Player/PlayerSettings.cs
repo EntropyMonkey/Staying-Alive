@@ -35,7 +35,7 @@ public class PlayerSettings
 	public float			MaxMovementVelocity = 3;
 
 	// the downward acceleration when floating
-	public float			VerticalFloatAcceleration = 1;
+	public float			FloatGravity = 1;
 	// the maximum velocity when floating down
 	public float			MaxVerticalFloatVelocity = 1;
 

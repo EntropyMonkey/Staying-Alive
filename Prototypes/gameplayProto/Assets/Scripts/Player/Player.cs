@@ -77,6 +77,8 @@ public class Player : MonoBehaviour
 
     private Timer shushTimer = new Timer(); //So the shush is an effect, not an expanding 
     public float DelayBetweenShushes = 1F;
+	bool justTriggeredShush = false;
+	GameObject lastSpawnedShushObject;
 
     public ParticleSystem FloatParticleSystem
     {
@@ -219,6 +221,9 @@ public class Player : MonoBehaviour
 	
 	public void Reset()
 	{
+		// start in fall state
+		FSM.ChangeState(FallState);
+
 		// used for bunnyhop avoidance
 		JumpKeyReleased = true;
 		
@@ -304,8 +309,6 @@ public class Player : MonoBehaviour
         }
 	}
 	
-	bool justTriggeredShush = false;
-	GameObject lastSpawned;
 	void UpdateShushing()
 	{
 		shushTimer.Update(Time.deltaTime);
@@ -317,7 +320,7 @@ public class Player : MonoBehaviour
 				justTriggeredShush = true;
 				shushTrigger.active = true;
 				shushTimer.Start(DelayBetweenShushes);
-				lastSpawned = Instantiate(ShushSpawn, transform.position + new Vector3(0,1,0), Quaternion.identity) as GameObject;
+				lastSpawnedShushObject = Instantiate(ShushSpawn, transform.position + new Vector3(0,1,0), Quaternion.identity) as GameObject;
 				
 			}
 		}
@@ -325,8 +328,8 @@ public class Player : MonoBehaviour
 		{
 			justTriggeredShush = false;
 			shushTrigger.active = false;
-			if(lastSpawned != null)
-			{lastSpawned.BroadcastMessage("StopShush");}
+			if(lastSpawnedShushObject != null)
+			{lastSpawnedShushObject.BroadcastMessage("StopShush");}
 		}
 	}
 
@@ -363,8 +366,6 @@ public class Player : MonoBehaviour
 	void FixedUpdate()
 	{
 		FSM.FixedUpdate();
-
-		rigidbody.AddForce(Vector3.down * settings.Gravity);
 	}
 
 	// do animation overriding here

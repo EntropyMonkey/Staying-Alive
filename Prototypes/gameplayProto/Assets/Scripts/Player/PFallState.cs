@@ -26,6 +26,10 @@ public class PFallState : FSMState<Player>
 
 	public override void ExecuteFixed(Player player)
 	{
+		// add gravity
+		player.rigidbody.AddForce(Vector3.down * player.settings.Gravity);
+
+		// left/rgith movement
 		if (Input.GetKey(player.settings.KeyRight))
 		{
 			player.rigidbody.AddForce(
@@ -39,6 +43,7 @@ public class PFallState : FSMState<Player>
 				ForceMode.Impulse);
 		}
 
+		// limit velocity
 		if (Mathf.Abs(player.rigidbody.velocity.x) > player.settings.MaxHorizontalJumpVelocity)
 		{
 			Vector3 vel = player.rigidbody.velocity;

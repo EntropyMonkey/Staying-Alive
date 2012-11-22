@@ -33,10 +33,10 @@ public class PJumpState : FSMState<Player>
 
 	public override void ExecuteFixed(Player player)
 	{
-		//player.rigidbody.AddForce(
-		//    Vector3.up * player.settings.jumpSpeed.y * Time.deltaTime,
-		//    ForceMode.Impulse);
+		// add gravity when jumping
+		player.rigidbody.AddForce(Vector3.down * player.settings.Gravity);
 
+		// left right movement
 		if (Input.GetKey(player.settings.KeyRight))
 		{
 			player.rigidbody.AddForce(
@@ -50,6 +50,7 @@ public class PJumpState : FSMState<Player>
 				ForceMode.Impulse);
 		}
 
+		// limit maximum velocity
 		if (Mathf.Abs(player.rigidbody.velocity.x) > player.settings.MaxHorizontalJumpVelocity)
 		{
 			Vector3 vel = player.rigidbody.velocity;
