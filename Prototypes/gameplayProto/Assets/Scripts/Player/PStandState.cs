@@ -26,6 +26,8 @@ public class PStandState : FSMState<Player>
 
 	public override void  ExecuteFixed(Player player)
 	{
+		// add gravity (in case of jittering when changing between standing/falling)
+		player.rigidbody.AddForce(Vector3.down * player.settings.Gravity);
 	}
 
 	public override void Exit(Player player)

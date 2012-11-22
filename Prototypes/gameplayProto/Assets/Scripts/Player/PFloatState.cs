@@ -34,10 +34,11 @@ public class PFloatState : PWalkState
 	public override void ExecuteFixed(Player player)
 	{
 		// sideways movement in PWalkState
-		base.ExecuteFixed(player); 
+		ExecuteMovement(player); 
 		
+		// add different gravity when floating
 		player.rigidbody.AddForce(
-			 Vector3.down * player.settings.VerticalFloatAcceleration * Time.deltaTime,
+			 Vector3.down * player.settings.FloatGravity * Time.deltaTime,
 			 ForceMode.Impulse);
 
 	}
