@@ -98828,15 +98828,15 @@ Transform:
   m_LocalPosition: {x: -2.09525442, y: -1.81644464, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 502057063}
-  - {fileID: 682769540}
-  - {fileID: 461612322}
-  - {fileID: 1755542831}
-  - {fileID: 150693250}
-  - {fileID: 1372326558}
-  - {fileID: 787580431}
-  - {fileID: 706238267}
   - {fileID: 2072144822}
+  - {fileID: 787580431}
+  - {fileID: 150693250}
+  - {fileID: 502057063}
+  - {fileID: 1755542831}
+  - {fileID: 461612322}
+  - {fileID: 706238267}
+  - {fileID: 682769540}
+  - {fileID: 1372326558}
   m_Father: {fileID: 0}
 --- !u!1 &1486547551
 GameObject:
@@ -112636,7 +112636,7 @@ MonoBehaviour:
     HorizontalFallAcceleration: 5
     MovementAcceleration: 15
     MaxMovementVelocity: 3
-    VerticalFloatAcceleration: 1
+    FloatGravity: 1
     MaxVerticalFloatVelocity: 1
     FloatParticleSpawnRate: 5
     MaxFloorAngle: 10
