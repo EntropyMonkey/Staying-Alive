@@ -14,7 +14,7 @@ public class PlayerSettings
 	public float			MaxHorizontalJumpVelocity = 2.5f;
 	// After this time, the jump is aborted, player cannot jump for as long
 	// as he wants to
-	public float			MaxJumpTime = 0.5f;
+	public float			MaxJumpTime = 0.4f;
 	public float			JumpTimeout = 0.2f;
 
     //Whistling information
@@ -24,7 +24,7 @@ public class PlayerSettings
     public float            RockAlphaMin = 0.3f;
 
 	//How long an object should be affected by the shush
-    public float            ShushPauseDuration = 5f; 
+    public float            ShushPauseDuration = 0; 
 
 	// the player can influence the horizontal movement while falling down
 	public float			HorizontalFallAcceleration = 5;
@@ -39,7 +39,7 @@ public class PlayerSettings
 	// the maximum velocity when floating down
 	public float			MaxVerticalFloatVelocity = 1;
 
-	public int				FloatParticleSpawnRate = 7;
+	public int				FloatParticleSpawnRate = 5;
 
 	// the maximum angle a floor can have for the player to not fall off
 	public float			MaxFloorAngle = 10;

@@ -256,6 +256,9 @@ public class Player : MonoBehaviour
 	// used for game logic stuff
 	void Update ()
 	{
+		// reset angular velocity
+		rigidbody.angularVelocity = Vector3.zero;
+		
 		FSM.Update();
 
 		if (Input.GetKeyUp(settings.KeyJump))
