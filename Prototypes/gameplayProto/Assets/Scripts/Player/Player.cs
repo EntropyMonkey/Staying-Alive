@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
 	bool justTriggeredShush = false;
 	GameObject lastSpawnedShushObject;
 
+	Renderer meshRenderer;
+
     public ParticleSystem FloatParticleSystem
     {
         get;
@@ -190,6 +192,9 @@ public class Player : MonoBehaviour
 			}
         }
 
+		// get renderer
+		meshRenderer = transform.GetComponentInChildren<MeshRenderer>();
+
 		// initialize states
 		StandState = ScriptableObject.CreateInstance<PStandState>();
 		WalkState = ScriptableObject.CreateInstance<PWalkState>();
@@ -286,28 +291,28 @@ public class Player : MonoBehaviour
                 activePlayerInput = 1;
             }
 
-			renderer.material.color = Color.red;
+			meshRenderer.material.color = Color.red;
         }
         else if (Input.GetKey(settings.KeyPlayer2Input))
         {
-			renderer.material.color = Color.blue;
+			meshRenderer.material.color = Color.blue;
             activePlayerInput = 2;
         }
         else
-        {
-			renderer.material.color = Color.white;
+		{
+			meshRenderer.material.color = Color.white;
             activePlayerInput = 0;
         }
         switch (activePlayerInput)
         {
             case 1:
-                this.renderer.material.color = Color.blue;
+                meshRenderer.material.color = Color.blue;
                 break;
             case 2:
-                this.renderer.material.color = Color.red;
+                meshRenderer.material.color = Color.red;
                 break;
             default:
-                this.renderer.material.color = Color.white;
+                meshRenderer.material.color = Color.white;
                 break;
         }
 	}

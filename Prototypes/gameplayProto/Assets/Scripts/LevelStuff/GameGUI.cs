@@ -8,6 +8,8 @@ public class GameGUI : MonoBehaviour
 	public Font standardFont;
 	public int fontSize = 50;
 
+	public GUIStyle playerActiveStyle;
+
 	private Player player;
 
 	void Start()
