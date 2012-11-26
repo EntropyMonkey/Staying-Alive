@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/level_test.unity
   - enabled: 1
     path: Assets/Scenes/level_test2.unity
+  - enabled: 1
+    path: Assets/Scenes/mainMenu.unity

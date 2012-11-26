@@ -1,20 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Always give positions in percent and sizes in pixel
+/// </summary>
+
 public class GameGUI : MonoBehaviour
 {
-	public Rect pointsPosition = new Rect(100, 100, 50, 50);
+	public Rect pointsPosition = new Rect(100, 100, 500, 500);
 
 	public Font standardFont;
 	public int fontSize = 50;
-
-	public GUIStyle playerActiveStyle;
 
 	private Player player;
 
 	void Start()
 	{
 		GameObject go = GameObject.FindGameObjectWithTag(GlobalNames.TAG.Player);
+		
 		if (go == null)
 		{
 			Debug.LogError("GUI.Start: Could not find a player in the scene.");
