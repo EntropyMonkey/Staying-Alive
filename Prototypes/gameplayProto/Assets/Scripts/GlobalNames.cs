@@ -30,4 +30,9 @@ public class GlobalNames
 		public const string JumpStart = "jumpStart";
 		public const string JumpExit = "jumpExit";
 	}
+
+	public class EVENT
+	{
+		public const string PlayerActive = "playerActive";
+	}
 }

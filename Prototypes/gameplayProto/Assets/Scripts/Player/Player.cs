@@ -98,8 +98,8 @@ public class Player : MonoBehaviour
 
     private WhistlingSpawner whistlingSpawn;
 
-
-    public int activePlayerInput
+	public enum PlayerActive { NONE, PLAYER_ONE, PLAYER_TWO, BOTH }
+    public PlayerActive activePlayerInput
     {
         get;
         private set;
@@ -284,11 +284,11 @@ public class Player : MonoBehaviour
             if (Input.GetKey(settings.KeyPlayer2Input))
             {
                 // both players are pressing, none gets voice control
-                activePlayerInput = 0;
+                activePlayerInput = PlayerActive.BOTH;
             }
             else
             {
-                activePlayerInput = 1;
+                activePlayerInput = PlayerActive.PLAYER_ONE;
             }
 
 			meshRenderer.material.color = Color.red;
@@ -296,7 +296,7 @@ public class Player : MonoBehaviour
         else if (Input.GetKey(settings.KeyPlayer2Input))
         {
 			meshRenderer.material.color = Color.blue;
-            activePlayerInput = 2;
+            activePlayerInput = PlayerActive.PLAYER_TWO;
         }
         else
 		{
@@ -305,10 +305,10 @@ public class Player : MonoBehaviour
         }
         switch (activePlayerInput)
         {
-            case 1:
+            case PlayerActive.PLAYER_ONE:
                 meshRenderer.material.color = Color.blue;
                 break;
-            case 2:
+            case PlayerActive.PLAYER_TWO:
                 meshRenderer.material.color = Color.red;
                 break;
             default:
@@ -358,7 +358,7 @@ public class Player : MonoBehaviour
 	void UpdateShouting()
 	{
 		// Player1 controls the shouting
-		if ((activePlayerInput == 1 && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
+		if ((activePlayerInput == PlayerActive.PLAYER_ONE && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
 		{
 			shoutTrigger.gameObject.active = true;
             ShoutParticleSystem.emissionRate = shoutEmissionRate;
