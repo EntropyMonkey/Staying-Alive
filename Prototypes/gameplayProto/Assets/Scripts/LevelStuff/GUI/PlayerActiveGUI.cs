@@ -25,20 +25,21 @@ public class PlayerActiveGUI : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		switch (player.activePlayerInput)
+		if (player.BothPlayersActive)
 		{
-			case Player.PlayerActive.BOTH:
-				renderer.material.mainTexture = BothPlayersActiveTexture;
-				break;
-			case Player.PlayerActive.PLAYER_ONE:
-				renderer.material.mainTexture = PlayerOneActiveTexture;
-				break;
-			case Player.PlayerActive.PLAYER_TWO:
-				renderer.material.mainTexture = PlayerTwoActiveTexture;
-				break;
-			default:
-				renderer.material.mainTexture = NoPlayerActiveTexture;
-				break;
+			renderer.material.mainTexture = BothPlayersActiveTexture;
+		}
+		else if (player.PlayerOneActive)
+		{
+			renderer.material.mainTexture = PlayerOneActiveTexture;
+		}
+		else if (player.PlayerTwoActive)
+		{
+			renderer.material.mainTexture = PlayerTwoActiveTexture;
+		}
+		else
+		{
+			renderer.material.mainTexture = NoPlayerActiveTexture;
 		}
 	}
 }

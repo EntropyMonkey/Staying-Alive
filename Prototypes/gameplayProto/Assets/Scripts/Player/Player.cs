@@ -98,12 +98,30 @@ public class Player : MonoBehaviour
 
     private WhistlingSpawner whistlingSpawn;
 
-	public enum PlayerActive { NONE, PLAYER_ONE, PLAYER_TWO, BOTH }
-    public PlayerActive activePlayerInput
-    {
-        get;
-        private set;
-    }
+	//public enum PlayerActive { NONE, PLAYER_ONE, PLAYER_TWO, BOTH }
+	//public PlayerActive activePlayerInput
+	//{
+	//    get;
+	//    private set;
+	//}
+
+	public bool PlayerOneActive
+	{
+		get;
+		private set;
+	}
+
+	public bool PlayerTwoActive
+	{
+		get;
+		private set;
+	}
+
+	public bool BothPlayersActive
+	{
+		get;
+		private set;
+	}
 
     [HideInInspector]
     public OSCManager oscManager;
@@ -279,41 +297,39 @@ public class Player : MonoBehaviour
 
         // Update control of voice input
         // Note that if both players are pressing, noone gets voice control!
-        if (Input.GetKey(settings.KeyPlayer1Input))
-        {
-            if (Input.GetKey(settings.KeyPlayer2Input))
-            {
-                // both players are pressing, none gets voice control
-                activePlayerInput = PlayerActive.BOTH;
-            }
-            else
-            {
-                activePlayerInput = PlayerActive.PLAYER_ONE;
-            }
-
-			meshRenderer.material.color = Color.red;
-        }
-        else if (Input.GetKey(settings.KeyPlayer2Input))
+		if (Input.GetKey(settings.KeyPlayer1Input) &&
+			Input.GetKey(settings.KeyPlayer2Input))
+		{
+			PlayerOneActive = PlayerTwoActive = false;
+			BothPlayersActive = true;
+		}
+		else if (Input.GetKey(settings.KeyPlayer1Input))
+		{
+			PlayerOneActive = true;
+			BothPlayersActive = false;
+		}
+		else if (Input.GetKey(settings.KeyPlayer2Input))
+		{
+			PlayerTwoActive = true;
+			BothPlayersActive = false;
+		}
+		else
+		{
+			PlayerOneActive = PlayerTwoActive = false;
+			BothPlayersActive = false;
+		}
+		
+		if (PlayerOneActive)
         {
 			meshRenderer.material.color = Color.blue;
-            activePlayerInput = PlayerActive.PLAYER_TWO;
+        }
+        else if (PlayerTwoActive)
+        {
+			meshRenderer.material.color = Color.red;
         }
         else
 		{
 			meshRenderer.material.color = Color.white;
-            activePlayerInput = 0;
-        }
-        switch (activePlayerInput)
-        {
-            case PlayerActive.PLAYER_ONE:
-                meshRenderer.material.color = Color.blue;
-                break;
-            case PlayerActive.PLAYER_TWO:
-                meshRenderer.material.color = Color.red;
-                break;
-            default:
-                meshRenderer.material.color = Color.white;
-                break;
         }
 	}
 	
@@ -358,7 +374,7 @@ public class Player : MonoBehaviour
 	void UpdateShouting()
 	{
 		// Player1 controls the shouting
-		if ((activePlayerInput == PlayerActive.PLAYER_ONE && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
+		if ((PlayerOneActive && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
 		{
 			shoutTrigger.gameObject.active = true;
             ShoutParticleSystem.emissionRate = shoutEmissionRate;

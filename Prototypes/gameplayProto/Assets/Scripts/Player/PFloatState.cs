@@ -24,7 +24,7 @@ public class PFloatState : PWalkState
 			player.rigidbody.velocity = vel;
 		}
 
-        if (!(player.activePlayerInput == Player.PlayerActive.PLAYER_TWO && 
+        if (!(player.PlayerTwoActive && 
 			player.oscManager.Singing) && 
             !Input.GetKey(player.settings.DEBUG_KeySinging) || player.Grounded)
 		{

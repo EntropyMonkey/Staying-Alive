@@ -18,7 +18,7 @@ public class PFallState : FSMState<Player>
 			player.FSM.ChangeState(player.StandState);
 		}
             // Player 2 controls singing
-		else if ((player.activePlayerInput == Player.PlayerActive.PLAYER_TWO && 
+		else if ((player.PlayerTwoActive && 
 			player.oscManager.Singing) || Input.GetKey(player.settings.DEBUG_KeySinging))
 		{
 			player.FSM.ChangeState(player.FloatState);
