@@ -21,7 +21,7 @@
 using System;
 using System.Net;
 using System.Collections.Generic;
-
+using System.Threading;
 using UnityEngine;
 using UnityOSC;
 
@@ -72,6 +72,7 @@ public class OSCHandler : MonoBehaviour
     public void Start()
     {
         OSCHandler.Instance.Init();
+        OSCHandler.Instance.InternalThreads = new List<Thread>();
     }
 	
 	public static OSCHandler Instance 
@@ -131,21 +132,30 @@ public class OSCHandler : MonoBehaviour
 	}
 	#endregion
 	
+	private List<Thread> InternalThreads = new List<Thread>();
+	
 	#region Methods
 	
 	/// <summary>
 	/// Ensure that the instance is destroyed when the game is stopped in the Unity editor
 	/// Close all the OSC clients and servers
 	/// </summary>
-	void OnApplicationQuit() 
+	void OnDisable () 
 	{
+        foreach (Thread t in InternalThreads)
+        {
+            t.Abort();
+        }
+       
 		foreach(KeyValuePair<string,SenderLog> pair in _senders)
 		{
+			Debug.Log ("sender close");
 			pair.Value.sender.Close();
 		}
 		
 		foreach(KeyValuePair<string,ReceiverLog> pair in _receivers)
 		{
+			Debug.Log ("receiver close");
 			pair.Value.receiver.Close();
 		}
 			
@@ -166,23 +176,26 @@ public class OSCHandler : MonoBehaviour
 	/// </param>
 	public void CreateSender(string clientId, IPAddress destination, int port)
 	{
-		SenderLog clientitem = new SenderLog();
-		clientitem.sender = new OSCSender(destination, port);
-		clientitem.log = new List<LogInfo>();
-		clientitem.messages = new List<OSCMessage>();
-		
-		_senders.Add(clientId, clientitem);
-		
-		// Send test message
-		string testaddress = "/test/alive/";
-		OSCMessage message = new OSCMessage(testaddress, destination.ToString());
-		message.Append(port); message.Append("OK");
-
-        _senders[clientId].log.Add(new LogInfo { Timestamp = DateTime.UtcNow, Log = DataToString(message.Data) });
-		
-		_senders[clientId].messages.Add(message);
-		
-		_senders[clientId].sender.Send(message);
+		if(!_senders.ContainsKey(clientId))
+		{
+			SenderLog clientitem = new SenderLog();
+			clientitem.sender = new OSCSender(destination, port);
+			clientitem.log = new List<LogInfo>();
+			clientitem.messages = new List<OSCMessage>();
+			
+			_senders.Add(clientId, clientitem);
+			
+			// Send test message
+			string testaddress = "/test/alive/";
+			OSCMessage message = new OSCMessage(testaddress, destination.ToString());
+			message.Append(port); message.Append("OK");
+	
+	        _senders[clientId].log.Add(new LogInfo { Timestamp = DateTime.UtcNow, Log = DataToString(message.Data) });
+			
+			_senders[clientId].messages.Add(message);
+			
+			_senders[clientId].sender.Send(message);
+		}		
 	}
 	
 	/// <summary>
@@ -196,12 +209,22 @@ public class OSCHandler : MonoBehaviour
 	/// </param>
 	public void CreateReciever(string serverId, int port)
 	{
-		ReceiverLog serveritem = new ReceiverLog();
-		serveritem.receiver = new OSCReciever(port);
-		serveritem.log = new List<LogInfo>();
-		serveritem.packets = new List<OSCPacket>();
-		
-		_receivers.Add(serverId, serveritem);
+		if(!_receivers.ContainsKey(serverId))
+		{
+			ReceiverLog serveritem = new ReceiverLog();
+			serveritem.receiver = new OSCReciever(port);
+			serveritem.log = new List<LogInfo>();
+			serveritem.packets = new List<OSCPacket>();
+			
+			_receivers.Add(serverId, serveritem);
+
+            InternalThreads.Clear();
+            foreach(KeyValuePair<string,ReceiverLog> pair in _receivers)
+            {
+                InternalThreads.Add(pair.Value.receiver.InternalThread);
+            }
+            
+		}
 	}
 	
 	/// <summary>

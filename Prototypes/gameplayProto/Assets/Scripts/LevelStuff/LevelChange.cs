@@ -7,12 +7,9 @@ public class LevelChange : MonoBehaviour {
     {
         if (other.gameObject.tag == GlobalNames.TAG.Player)
         {
-            gameObject.active = false;
-            GameObject temp = GameObject.FindGameObjectWithTag(GlobalNames.TAG.Player);
-            Player p = temp.GetComponent<Player>();
+            Player p = other.gameObject.GetComponent<Player>();
             p.LastCheckpoint = null;
             Application.LoadLevel(++p.currentLevel); // load next level
-            //p.Reset();
         }
     }
 }
