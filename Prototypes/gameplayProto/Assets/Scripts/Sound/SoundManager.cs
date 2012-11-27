@@ -57,8 +57,11 @@ public class SoundManager : MonoBehaviour
 		if (startWalking)
 		{
 			PlayingSound ps = Play(GlobalNames.SOUND.Player_Walk, player);
-			
+
+			ps.soundSource.audio.loop = true;
+			// use this for moving sounds
 			StartCoroutine(UpdatePosition(ps));
+			// fade from 0 to 1 in 1 second
 			StartCoroutine(Fade(ps, 0.0f, 1.0f, 1.0f));
 		}
 			// if the walking sound is still playing but the player stopped
