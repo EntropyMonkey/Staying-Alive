@@ -34,10 +34,10 @@ public class OSCManager : MonoBehaviour
 	{
         try
         {
-            OSCHandler.Instance.Init();
+            //OSCHandler.Instance.Init();
 
             // Receive
-            OSCHandler.Instance.CreateReciever(GlobalNames.NAME.OSCReceiverName, 31000);
+            OSCHandler.Instance.CreateReciever(GlobalNames.NAME.OSCReceiverName, 31000); //THIS LINE
 
             //Sender
             OSCHandler.Instance.CreateSender(GlobalNames.NAME.OSCSenderName,
@@ -48,6 +48,11 @@ public class OSCManager : MonoBehaviour
             Debug.LogWarning("Couldn't create server");
         }
         //DontDestroyOnLoad(gameObject);
+	}
+	
+	public void OnApplicationQuit()
+	{
+		//OSCHandler.Instantiate.
 	}
 
 	// send one value to pd

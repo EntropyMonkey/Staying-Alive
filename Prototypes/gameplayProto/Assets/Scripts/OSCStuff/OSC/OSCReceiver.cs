@@ -24,6 +24,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace UnityOSC
 {
@@ -48,6 +49,9 @@ namespace UnityOSC
 		#endregion
 		
 		#region Properties
+        public Thread InternalThread
+        { get { return _receiverThread; } }
+
 		public UdpClient UDPClient
 		{
 			get
@@ -93,7 +97,7 @@ namespace UnityOSC
 			try
 			{
 				_udpClient = new UdpClient(_localPort);
-				_receiverThread = new Thread(new ThreadStart(this.ReceivePool));
+				_receiverThread = new Thread(new ThreadStart(this.ReceivePool));	
 				_receiverThread.Start();
 			}
 			catch
@@ -107,7 +111,8 @@ namespace UnityOSC
 		/// </summary>
 		public void Close()
 		{
-			if(_receiverThread !=null) _receiverThread.Abort();
+			if(_receiverThread !=null) 
+				_receiverThread.Abort();
 			_receiverThread = null;
 			_udpClient.Close();
 			_udpClient = null;
@@ -145,7 +150,7 @@ namespace UnityOSC
 		/// </summary>
 		private void ReceivePool()
 		{
-			while(true)
+			while(true	)				
 			{
 				_lastReceivedPacket = Receive();
 				_lastReceivedPacket.TimeStamp = long.Parse(String.Concat(DateTime.Now.Ticks));
