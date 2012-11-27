@@ -5,6 +5,8 @@ public class PWalkState : FSMState<Player>
 {
 	public override void Enter(Player player)
 	{
+		Messenger<GameObject, bool>.Invoke(
+			GlobalNames.EVENT.Player_Walking, player.gameObject, true);
 	}
 
 	public override void Execute(Player player)
@@ -74,5 +76,7 @@ public class PWalkState : FSMState<Player>
 
 	public override void Exit(Player player)
 	{
+		Messenger<GameObject, bool>.Invoke(
+			GlobalNames.EVENT.Player_Walking, player.gameObject, false);
 	}
 }

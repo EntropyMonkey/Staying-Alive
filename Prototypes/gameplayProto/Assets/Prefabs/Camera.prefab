@@ -13,6 +13,7 @@ GameObject:
   - 124: {fileID: 12400000}
   - 81: {fileID: 8100000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -205,6 +206,17 @@ MonoBehaviour:
     type: 1}
   BothPlayersActiveTexture: {fileID: 2800000, guid: 1af9a4a4cf85f4a489b1beb9aa7e9464,
     type: 1}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d617052a770dbc42a80e822935a6466, type: 1}
+  m_Name: 
+  clips: []
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

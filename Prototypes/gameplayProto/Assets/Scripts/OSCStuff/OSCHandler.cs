@@ -149,13 +149,11 @@ public class OSCHandler : MonoBehaviour
        
 		foreach(KeyValuePair<string,SenderLog> pair in _senders)
 		{
-			Debug.Log ("sender close");
 			pair.Value.sender.Close();
 		}
 		
 		foreach(KeyValuePair<string,ReceiverLog> pair in _receivers)
 		{
-			Debug.Log ("receiver close");
 			pair.Value.receiver.Close();
 		}
 			

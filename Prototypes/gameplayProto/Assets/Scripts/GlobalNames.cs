@@ -25,14 +25,16 @@ public class GlobalNames
 		public const string OSCReceiverName = "Willibald";
 	}
 
+	// the names for the sounds
 	public class SOUND
 	{
 		public const string JumpStart = "jumpStart";
 		public const string JumpExit = "jumpExit";
+		public const string Player_Walk = "Player_Walk";
 	}
 
 	public class EVENT
 	{
-		public const string PlayerActive = "playerActive";
+		public const string Player_Walking = "player is walking";
 	}
 }
