@@ -1,11 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sound\SoundManager.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Sound\SoundManager.cs" Line="173" Column="11" />
+      <File FileName="Assets\Scripts\GlobalNames.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\OSCStuff\OSCHandler.cs" Line="218" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="C:\Users\Peter\Documents\GitHub\Staying-Alive\Prototypes\gameplayProto\Assets\Scripts\OSCStuff\OSCHandler.cs" line="146" />
       <Breakpoint file="C:\Users\Peter\Documents\GitHub\Staying-Alive\Prototypes\gameplayProto\Assets\Scripts\OSCStuff\OSCHandler.cs" line="225" />
       <Breakpoint file="C:\Users\Peter\Documents\GitHub\Staying-Alive\Prototypes\gameplayProto\Assets\Scripts\OSCStuff\OSCHandler.cs" line="215" />
+      <Breakpoint file="Q:\Dokumente\FH Kopenhagen\Faecher\Semester 1\Game Design\Staying-Alive\Prototypes\gameplayProto\Assets\Scripts\Sound\SoundManager.cs" line="91" />
+      <Breakpoint file="C:\Users\Peter\Documents\GitHub\Staying-Alive\Prototypes\gameplayProto\Assets\Scripts\OSCStuff\OSCHandler.cs" line="146" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

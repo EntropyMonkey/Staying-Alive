@@ -14,6 +14,8 @@ public class PJumpState : FSMState<Player>
 		player.rigidbody.velocity = vel;
 
 		player.JumpKeyReleased = false;
+
+		Messenger<GameObject>.Invoke(GlobalNames.EVENT.Player_JumpStart, player.gameObject);
 	}
 
 	public override void Execute(Player player)

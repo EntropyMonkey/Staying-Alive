@@ -32,6 +32,8 @@ public class DestructableObject : MonoBehaviour
 			{
 				transform.GetChild(i).gameObject.active = false;		
 			}
+
+			Messenger<GameObject>.Invoke(GlobalNames.EVENT.Pillar_Destroyed, gameObject);
 		}
 	}
 }

@@ -55,5 +55,6 @@ public class PFallState : FSMState<Player>
 
 	public override void Exit(Player player)
 	{
+		Messenger<GameObject>.Invoke(GlobalNames.EVENT.Player_JumpEnd, player.gameObject);
 	}
 }

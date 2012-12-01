@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
 		public float pitch = 1.0f;
 	}
 
+	[System.Serializable]
 	public class PlayingSound
 	{
 		public string name; // same name as in clip list
@@ -23,33 +24,67 @@ public class SoundManager : MonoBehaviour
 	}
 
 	public List<AudioData> clips; // the list containing the clips which can be played
-	private Dictionary<string, PlayingSound> playingSounds; // all the sounds which are currently playing
-	private Dictionary<string, PlayingSound> inactiveSounds; // all the sounds which have been used are pushed here and reused
+	
+	public Dictionary<string, PlayingSound> playingSounds; // all the sounds which are currently playing
 
 	void Start()
 	{
 		playingSounds = new Dictionary<string, PlayingSound>();
-		inactiveSounds = new Dictionary<string, PlayingSound>();
 
 		// register for sound events
 		Messenger<GameObject, bool>.AddListener(GlobalNames.EVENT.Player_Walking, PlayerWalking);
+		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Player_JumpStart, PlayerJumpStart);
+		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Player_JumpEnd, PlayerJumpEnd);
+		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Pillar_Destroyed, PillarDestroyed);
+		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Cookie_Collected, CookieCollected);
 	}
 
 	// onenabled is not called at the start of the game
 	void OnEnabled()
 	{
 		Messenger<GameObject, bool>.AddListener(GlobalNames.EVENT.Player_Walking, PlayerWalking);
+		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Player_JumpStart, PlayerJumpStart);
 	}
 
 	void OnDisabled()
 	{
 		// only receive events when the object is active
 		Messenger<GameObject, bool>.RemoveListener(GlobalNames.EVENT.Player_Walking, PlayerWalking);
+		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Player_JumpStart, PlayerJumpStart);
+		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Player_JumpEnd, PlayerJumpEnd);
+		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Pillar_Destroyed, PillarDestroyed);
+		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Cookie_Collected, CookieCollected);
 	}
 
 	void Update()
 	{
+	}
 
+	void PlayerJumpStart(GameObject player)
+	{
+		PlayingSound ps = Play(GlobalNames.SOUND.Player_Jump, player);
+		
+		StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
+	}
+
+	void PlayerJumpEnd(GameObject player)
+	{
+		PlayingSound ps = Play(GlobalNames.SOUND.Player_Land, player);
+		StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
+	}
+
+	void PillarDestroyed(GameObject pillar)
+	{
+		PlayingSound ps = Play(GlobalNames.SOUND.Pillar_Destroyed, pillar);
+		StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
+	}
+
+	void CookieCollected(GameObject cookie)
+	{
+		PlayingSound ps = 
+			Play(GlobalNames.SOUND.Cookie_Collected + Random.Range(1, 4), 
+			cookie);
+		StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
 	}
 
 	void PlayerWalking(GameObject player, bool startWalking)
@@ -68,59 +103,44 @@ public class SoundManager : MonoBehaviour
 			// walking
 		else if (playingSounds.ContainsKey(GlobalNames.SOUND.Player_Walk))
 		{
-			StartCoroutine(Fade(
-				playingSounds[GlobalNames.SOUND.Player_Walk],
-				1.0f, 0.0f,
-				1.0f));
-
 			StartCoroutine(
-				Stop(playingSounds[GlobalNames.SOUND.Player_Walk], 1.0f));
+				Stop(playingSounds[GlobalNames.SOUND.Player_Walk]));
 		}
 	}
 
 	PlayingSound Play(string name, GameObject soundObject, float volume = -1.0f, float pitch = -1.0f)
 	{
 		PlayingSound ps;
-
 		if (!playingSounds.ContainsKey(name))
 		{
-			if (inactiveSounds.ContainsKey(name))
+			GameObject newSoundSource =
+					new GameObject("Audio: " + name);
+			newSoundSource.AddComponent<AudioSource>();
+
+			ps = new PlayingSound
 			{
-				ps = inactiveSounds[name];
-				inactiveSounds.Remove(name);
-			}
-			else
-			{
-				GameObject newSoundSource =
-						new GameObject("Audio: " + name);
-				newSoundSource.AddComponent<AudioSource>();
-				ps = new PlayingSound
-				{
-					name = GlobalNames.SOUND.Player_Walk,
-					soundSource = newSoundSource,
-					soundObject = soundObject
-				};
-			}
+				name = name,
+				soundSource = newSoundSource,
+				soundObject = soundObject
+			};
 
 			playingSounds.Add(ps.name, ps);
 
 			ps.soundSource.active = true;
+
+			AudioData data = clips.Find(item => item.name == name);
+			ps.soundSource.audio.clip = data.clip;
+			ps.soundSource.audio.volume = volume < 0 ? data.volume : volume;
+			ps.soundSource.audio.pitch = pitch < 0 ? data.pitch : pitch;
+
+			ps.soundSource.transform.position = ps.soundObject.transform.position;
+
+			ps.soundSource.audio.Play();
 		}
 		else
 		{
 			ps = playingSounds[name];
 		}
-
-		AudioData data = clips.Find(item => item.name == name);
-		ps.soundSource.audio.clip = data.clip;
-		ps.soundSource.audio.volume = volume < 0 ? data.volume : volume;
-		ps.soundSource.audio.pitch = pitch < 0 ? data.pitch : pitch;
-
-		ps.soundObject = soundObject;
-		
-		ps.soundSource.transform.position = ps.soundObject.transform.position;
-
-		ps.soundSource.audio.Play();
 
 		return ps;
 	}
@@ -133,23 +153,23 @@ public class SoundManager : MonoBehaviour
 			yield return new WaitForEndOfFrame();
 		}
 
-		if (sound.soundSource.active)
+		if (sound.soundSource)
 		{
 			sound.soundSource.audio.Stop();
 			sound.soundSource.active = false;
+			Destroy(sound.soundSource);
 			playingSounds.Remove(sound.name);
-			inactiveSounds.Add(sound.name, sound);
 		}
 	}
 
 	IEnumerator UpdatePosition(PlayingSound sound)
 	{
-		yield return new WaitForSeconds(Time.deltaTime);
+		yield return new WaitForEndOfFrame();
 		// if the sound is set inactive it does not follow the object anymore
-		if (sound.soundSource.active)
+		if (sound.soundSource != null)
 		{
 			sound.soundSource.transform.position = sound.soundObject.transform.position;
-			UpdatePosition(sound);
+			StartCoroutine(UpdatePosition(sound));
 		}
 	}
 
@@ -163,7 +183,7 @@ public class SoundManager : MonoBehaviour
 			while (i <= 1.0f)
 			{
 				// stop fading if sound source has been deactivated
-				if (!sound.soundSource.active)
+				if (sound.soundSource == null || !sound.soundSource.active)
 					break;
 
 				i += step * Time.deltaTime;

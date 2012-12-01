@@ -31,10 +31,18 @@ public class GlobalNames
 		public const string JumpStart = "jumpStart";
 		public const string JumpExit = "jumpExit";
 		public const string Player_Walk = "Player_Walk";
+		public const string Player_Jump = "Player_Jump";
+		public const string Player_Land = "Player_Land";
+		public const string Pillar_Destroyed = "Pillar_Destroyed";
+		public const string Cookie_Collected = "Cookie_Collected";
 	}
 
 	public class EVENT
 	{
 		public const string Player_Walking = "player is walking";
+		public const string Player_JumpStart = "player starts jumping";
+		public const string Player_JumpEnd = "player lands";
+		public const string Pillar_Destroyed = "pillar destroyed";
+		public const string Cookie_Collected = "cookie collected";
 	}
 }
