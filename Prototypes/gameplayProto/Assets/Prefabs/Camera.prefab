@@ -314,6 +314,26 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
     volume: .0500000007
     pitch: 1
+  - name: Player_Whistling
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Player_Shushing
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Player_Shouting
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Player_Singing
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Cookie_Collected4
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

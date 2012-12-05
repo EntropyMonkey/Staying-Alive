@@ -1,3 +1,6 @@
+
+//#define DEBUG_SOUNDS
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -37,6 +40,7 @@ public class SoundManager : MonoBehaviour
 		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Player_JumpEnd, PlayerJumpEnd);
 		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Pillar_Destroyed, PillarDestroyed);
 		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Cookie_Collected, CookieCollected);
+		Messenger<GameObject, string, bool>.AddListener(GlobalNames.EVENT.Player_Noise, PlayerMakingNoise);
 	}
 
 	void OnDisabled()
@@ -47,6 +51,7 @@ public class SoundManager : MonoBehaviour
 		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Player_JumpEnd, PlayerJumpEnd);
 		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Pillar_Destroyed, PillarDestroyed);
 		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Cookie_Collected, CookieCollected);
+		Messenger<GameObject, string, bool>.RemoveListener(GlobalNames.EVENT.Player_Noise, PlayerMakingNoise);
 	}
 
 	void Update()
@@ -68,17 +73,37 @@ public class SoundManager : MonoBehaviour
 			StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
 	}
 
+	void PlayerMakingNoise(GameObject player, string sound, bool stop)
+	{
+		if (!stop)
+		{
+			PlayingSound ps = Play(sound, player);
+			ps.soundSource.audio.loop = true;
+			StartCoroutine(UpdatePosition(ps));
+		}
+		else if (playingSounds.ContainsKey(sound))
+		{
+			PlayingSound ps = playingSounds[sound];
+			StartCoroutine(Fade(
+				ps, 
+				clips.Find(item =>item.name == sound).volume, 0,
+				ps.soundSource.audio.clip.length));
+			StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
+		}
+	}
+
 	void PillarDestroyed(GameObject pillar)
 	{
 		PlayingSound ps = Play(GlobalNames.SOUND.Pillar_Destroyed, pillar);
 		StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
 	}
 
-	void CookieCollected(GameObject cookie)
+	void CookieCollected(GameObject player)
 	{
 		PlayingSound ps = 
-			Play(GlobalNames.SOUND.Cookie_Collected + Random.Range(1, 4), 
-			cookie);
+			Play(GlobalNames.SOUND.Cookie_Collected + Random.Range(1, 5),
+			player);
+		StartCoroutine(UpdatePosition(ps));
 		StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
 	}
 
@@ -105,6 +130,9 @@ public class SoundManager : MonoBehaviour
 
 	PlayingSound Play(string name, GameObject soundObject, float volume = -1.0f, float pitch = -1.0f)
 	{
+#if DEBUG_SOUNDS
+		Debug.Log("play sound: " + name);
+#endif
 		PlayingSound ps;
 		if (!playingSounds.ContainsKey(name))
 		{
@@ -154,16 +182,19 @@ public class SoundManager : MonoBehaviour
 			sound.soundSource.active = false;
 			Destroy(sound.soundSource);
 			playingSounds.Remove(sound.name);
+#if DEBUG_SOUNDS
+			Debug.Log("stop sound: " + sound.name);
+#endif
 		}
 	}
 
 	IEnumerator UpdatePosition(PlayingSound sound)
 	{
-		yield return new WaitForEndOfFrame();
 		// if the sound is set inactive it does not follow the object anymore
 		if (sound.soundSource != null)
 		{
 			sound.soundSource.transform.position = sound.soundObject.transform.position;
+			yield return new WaitForEndOfFrame();
 			StartCoroutine(UpdatePosition(sound));
 		}
 	}
@@ -183,6 +214,10 @@ public class SoundManager : MonoBehaviour
 
 				i += step * Time.deltaTime;
 				sound.soundSource.audio.volume = Mathf.Lerp(from, to, i);
+
+#if DEBUG_SOUNDS
+				Debug.Log("fade sound: " + sound.name + " volume at " + sound.soundSource.audio.volume);
+#endif
 
 				yield return new WaitForSeconds(step * Time.deltaTime);				
 			}
