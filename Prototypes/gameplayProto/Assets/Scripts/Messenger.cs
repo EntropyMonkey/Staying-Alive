@@ -13,13 +13,27 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+static public class MessengerEvents
+{
+	public const string ClearQueuedEvents = "clear events";
+}
+
 /**
   * A messenger for events that have no parameters.
   */
-
 static public class Messenger
 {
 	private static Dictionary<string, Delegate> eventTable = new Dictionary<string, Delegate>();
+
+	static Messenger()
+	{
+		AddListener(MessengerEvents.ClearQueuedEvents, ClearEvents);
+	}
+
+	static public void ClearEvents()
+	{
+		eventTable.Clear();
+	}
 
 	static public void AddListener( string eventType, Callback handler )
 	{
@@ -86,6 +100,16 @@ static public class Messenger<T>
 {
 	private static Dictionary<string, Delegate> eventTable = new Dictionary<string, Delegate>();
 
+	static Messenger()
+	{
+		Messenger.AddListener(MessengerEvents.ClearQueuedEvents, ClearEvents);
+	}
+
+	static public void ClearEvents()
+	{
+		eventTable.Clear();
+	}
+
 	static public void AddListener( string eventType, Callback<T> handler )
 	{
 		// Obtain a lock on the event table to keep this thread-safe.
@@ -150,6 +174,16 @@ static public class Messenger<T>
 static public class Messenger<T, U>
 {
 	private static Dictionary<string, Delegate> eventTable = new Dictionary<string, Delegate>();
+
+	static Messenger()
+	{
+		Messenger.AddListener(MessengerEvents.ClearQueuedEvents, ClearEvents);
+	}
+
+	static public void ClearEvents()
+	{
+		eventTable.Clear();
+	}
 
 	static public void AddListener( string eventType, Callback<T, U> handler )
 	{
@@ -216,6 +250,16 @@ static public class Messenger<T, U>
 static public class Messenger<T, U, V>
 {
 	private static Dictionary<string, Delegate> eventTable = new Dictionary<string, Delegate>();
+
+	static Messenger()
+	{
+		Messenger.AddListener(MessengerEvents.ClearQueuedEvents, ClearEvents);
+	}
+
+	static public void ClearEvents()
+	{
+		eventTable.Clear();
+	}
 
 	static public void AddListener( string eventType, Callback<T, U, V> handler )
 	{

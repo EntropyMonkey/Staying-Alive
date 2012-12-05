@@ -4,7 +4,7 @@
  * PLAYER - only player
  * GIRL - only girl (mood and movement)
  */
-#define DEBUG_STATES_ALL
+//#define DEBUG_STATES_ALL
 
 public class FiniteStateMachine<T>
 {

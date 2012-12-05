@@ -10,6 +10,10 @@ public class PFloatState : PWalkState
 		player.rigidbody.velocity = newVel;
 
 		player.FloatParticleSystem.emissionRate = player.settings.FloatParticleSpawnRate;
+
+		Messenger<GameObject, string, bool>.Invoke(
+			GlobalNames.EVENT.Player_Noise, player.gameObject,
+			GlobalNames.SOUND.Player_Singing, false);
 	}
 
 	public override void Execute(Player player)
@@ -47,5 +51,8 @@ public class PFloatState : PWalkState
 	public override void Exit(Player player)
 	{
 		player.FloatParticleSystem.emissionRate = 0;
+		Messenger<GameObject, string, bool>.Invoke(
+			GlobalNames.EVENT.Player_Noise, player.gameObject,
+			GlobalNames.SOUND.Player_Singing, true);
 	}
 }

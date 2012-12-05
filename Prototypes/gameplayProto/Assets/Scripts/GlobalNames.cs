@@ -35,6 +35,10 @@ public class GlobalNames
 		public const string Player_Land = "Player_Land";
 		public const string Pillar_Destroyed = "Pillar_Destroyed";
 		public const string Cookie_Collected = "Cookie_Collected";
+		public const string Player_Whistling = "Player_Whistling";
+		public const string Player_Shushing = "Player_Shushing";
+		public const string Player_Shouting = "Player_Shouting";
+		public const string Player_Singing = "Player_Singing";
 	}
 
 	public class EVENT
@@ -44,5 +48,6 @@ public class GlobalNames
 		public const string Player_JumpEnd = "player lands";
 		public const string Pillar_Destroyed = "pillar destroyed";
 		public const string Cookie_Collected = "cookie collected";
+		public const string Player_Noise = "player is making noise";
 	}
 }
