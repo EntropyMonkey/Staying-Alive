@@ -1,10 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sound\SoundManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Sound/SoundManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Sound\SoundManager.cs" Line="173" Column="11" />
-      <File FileName="Assets\Scripts\GlobalNames.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\OSCStuff\OSCHandler.cs" Line="218" Column="4" />
+      <File FileName="Assets/Scripts/Sound/SoundManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
