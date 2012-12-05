@@ -87,6 +87,8 @@ public class Player : MonoBehaviour
     }
 
 
+    private ConfusingSpawner ConfusingSpawn;
+
     private float shoutEmissionRate; //Assigned on player start 
 	public ParticleSystem ShoutParticleSystem
 	{
@@ -188,6 +190,10 @@ public class Player : MonoBehaviour
         whistlingSpawn = transform.GetComponentInChildren<WhistlingSpawner>();
         if(whistlingSpawn == null)
             Debug.LogWarning("Whistling spawn wasn't found");
+
+        ConfusingSpawn = transform.GetComponentInChildren<ConfusingSpawner>();
+        if (ConfusingSpawn == null)
+            Debug.LogWarning("Confusing spawn wasn't found");
 
         // float particle system
         Transform current;
@@ -294,27 +300,31 @@ public class Player : MonoBehaviour
 		UpdateShushing();
 
         // Update control of voice input
-        // Note that if both players are pressing, noone gets voice control!
+        // Note that if both players are pressing, none gets voice control!
 		if (Input.GetKey(settings.KeyPlayer1Input) &&
 			Input.GetKey(settings.KeyPlayer2Input))
 		{
 			PlayerOneActive = PlayerTwoActive = false;
 			BothPlayersActive = true;
+            ConfusingSpawn.EnableSpawning();
 		}
 		else if (Input.GetKey(settings.KeyPlayer1Input))
 		{
-			PlayerOneActive = true;
+			PlayerOneActive = true; 
 			BothPlayersActive = false;
+            ConfusingSpawn.DisableSpawning();
 		}
 		else if (Input.GetKey(settings.KeyPlayer2Input))
 		{
 			PlayerTwoActive = true;
 			BothPlayersActive = false;
+            ConfusingSpawn.DisableSpawning();
 		}
 		else
 		{
 			PlayerOneActive = PlayerTwoActive = false;
 			BothPlayersActive = false;
+            ConfusingSpawn.DisableSpawning();
 		}
 		
 		if (PlayerOneActive)

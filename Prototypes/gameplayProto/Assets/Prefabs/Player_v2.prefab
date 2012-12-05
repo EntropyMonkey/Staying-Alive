@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Player_v2
   m_TagString: Player
@@ -150,9 +151,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.66561222, y: -3.54582357, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 400008}
   - {fileID: 400016}
@@ -171,7 +171,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0163879395, y: .174407959, z: -.00493220985}
   m_LocalScale: {x: 0, y: 0, z: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!4 &400004
@@ -183,7 +182,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0163879395, y: .174407959, z: -.00493220985}
   m_LocalScale: {x: 12.7613087, y: 12.7613087, z: 12.7613096}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!4 &400006
@@ -195,7 +193,6 @@ Transform:
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: .257271767, y: .174407959, z: -.00493224245}
   m_LocalScale: {x: 1, y: .837504029, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!4 &400008
@@ -207,7 +204,6 @@ Transform:
   m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: -.0163879395, y: .174407959, z: -.00493220985}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!4 &400010
@@ -219,7 +215,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0163879395, y: .174407959, z: -.00493220985}
   m_LocalScale: {x: .580058992, y: .580058992, z: .580059052}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!4 &400012
@@ -231,7 +226,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.0163879395, y: .174407959, z: -.00493220985}
   m_LocalScale: {x: 2.52181911, y: 1.59459686, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!4 &400016
@@ -243,7 +237,6 @@ Transform:
   m_LocalRotation: {x: -.5, y: .5, z: .5, w: .5}
   m_LocalPosition: {x: -.00757265091, y: -.573034763, z: -.00493220985}
   m_LocalScale: {x: .176948786, y: .168353602, z: .188331053}
-  m_LocalEulerAnglesHint: {x: 270, y: 90, z: 0}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!23 &2300000
@@ -294,7 +287,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2e4b50f45980348468e61286d430686b, type: 2}
+  - {fileID: 2100000, guid: cc8007603dbe0b74eabe3fd2a138ad0d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -464,7 +457,6 @@ MonoBehaviour:
     KeyPlayer1Input: 304
     KeyPlayer2Input: 303
     MaxHealthPoints: 1
-  currentLevel: 0
   ShushSpawn: {fileID: 100002, guid: b2d40e9740e09fb45825e8876ba08066, type: 2}
   JumpKeyReleased: 0
   DelayBetweenShushes: 1
@@ -486,6 +478,19 @@ MonoBehaviour:
   WhistlingParticleSystem: {fileID: 100000, guid: 7eccdafd99510e940a68a6252b30e052,
     type: 2}
   SpawnRate: .200000003
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2ac1d9666b9f743985fe0e988c3275, type: 1}
+  m_Name: 
+  BlueConfusing: {fileID: 100000, guid: df18cdb1aee0b3141bb84616ff0cf5ce, type: 2}
+  RedConfusing: {fileID: 100000, guid: 1bc8917dce3453442a0b11f84175f961, type: 2}
+  SpawnRate: .5
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
