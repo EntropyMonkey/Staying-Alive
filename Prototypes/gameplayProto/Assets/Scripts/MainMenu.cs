@@ -42,25 +42,25 @@ public class MainMenu : MonoBehaviour {
                 // new game: change camera to show The Escape or The Troll Cave
                 Vector3 v = new Vector3();
                 v.x = 0.2f;
-                v.y = 8;
+                v.y = 11;
                 camera.transform.Translate(v);
                 break;
             case 2:
                 // the escape : start playing the first level
                 Debug.Log("Loading first level!");
-                Application.LoadLevel(0);
+                Application.LoadLevel(1);
                 break;
             case 3:
                 // the troll cave : start playing the second level
                 Debug.Log("Loading second level!");
-                Application.LoadLevel(1); // WARNING: This may not set the currentLevel variable in the Player correctly!
+                Application.LoadLevel(2); // WARNING: This may not set the currentLevel variable in the Player correctly!
                 break;
             case 4:
                 // go back to main menu
                 Debug.Log("Going back to main menu");
                 Vector3 v2 = new Vector3();
                 v2.x = -0.2f;
-                v2.y = -8;
+                v2.y = -11;
                 camera.transform.Translate(v2);
                 break;
             case 5:
