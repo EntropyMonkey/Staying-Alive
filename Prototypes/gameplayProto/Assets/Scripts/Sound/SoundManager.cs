@@ -39,13 +39,6 @@ public class SoundManager : MonoBehaviour
 		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Cookie_Collected, CookieCollected);
 	}
 
-	// onenabled is not called at the start of the game
-	void OnEnabled()
-	{
-		Messenger<GameObject, bool>.AddListener(GlobalNames.EVENT.Player_Walking, PlayerWalking);
-		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Player_JumpStart, PlayerJumpStart);
-	}
-
 	void OnDisabled()
 	{
 		// only receive events when the object is active
@@ -70,7 +63,9 @@ public class SoundManager : MonoBehaviour
 	void PlayerJumpEnd(GameObject player)
 	{
 		PlayingSound ps = Play(GlobalNames.SOUND.Player_Land, player);
-		StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
+		// HACK this event is called even after the component has been destroyed
+		if (this != null)
+			StartCoroutine(Stop(ps, ps.soundSource.audio.clip.length));
 	}
 
 	void PillarDestroyed(GameObject pillar)
