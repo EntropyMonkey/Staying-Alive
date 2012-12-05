@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LevelChange : MonoBehaviour {
 
-	public int nextLevel = -1;
+    public int NextLevelID = -1;
 
     void OnTriggerEnter(Collider other)
     {
@@ -14,8 +14,8 @@ public class LevelChange : MonoBehaviour {
 			
 			Messenger.Invoke(MessengerEvents.ClearQueuedEvents);
 
-			if (nextLevel >= 0)
-				Application.LoadLevel(nextLevel); // load next level
+			if (NextLevelID >= 0)
+				Application.LoadLevel(NextLevelID); // load next level
 			else
 	            Application.LoadLevel(Application.loadedLevel + 1); // load next level
         }
