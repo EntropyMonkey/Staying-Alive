@@ -61,8 +61,6 @@ public class Player : MonoBehaviour
         get;
         set;
     }
-
-    public int currentLevel = 0;
 	
 	public GameObject ShushSpawn;
 
