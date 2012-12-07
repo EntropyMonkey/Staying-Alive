@@ -5,8 +5,6 @@
  * GIRL - only girl (mood and movement)
  */
 //#define DEBUG_STATES_ALL
-//#define DEBUG_STATES_PLAYER
-//#define DEBUG_STATES_GIRL
 
 public class FiniteStateMachine<T>
 {
@@ -89,19 +87,7 @@ public class FiniteStateMachine<T>
 			return false;
 
 #if DEBUG_STATES_ALL
-        Debug.Log("FSM(" + typeof(T) + "):Change State " + CurrentState + " to " + NewState);
-#endif
-#if DEBUG_STATES_PLAYER
-        if (typeof(T) == typeof(PlayerController))
-        {
-            Debug.Log("FSM(PlayerController): Change State " + CurrentState + " to " + NewState + "\n" + Environment.StackTrace);
-        }
-#endif
-#if DEBUG_STATES_GIRL
-        if (typeof(T) == typeof(BalloonController))
-        {
-            Debug.Log("FSM(PlayerController): Change State " + CurrentState + " to " + NewState + "\n" + Environment.StackTrace);
-        }
+        MessengerDebug.print("FSM(" + typeof(T) + "):Change State " + CurrentState + " to " + NewState);
 #endif
 
 		PreviousState = CurrentState;

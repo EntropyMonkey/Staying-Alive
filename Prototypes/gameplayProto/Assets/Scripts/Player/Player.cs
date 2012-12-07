@@ -61,8 +61,6 @@ public class Player : MonoBehaviour
         get;
         set;
     }
-
-    public int currentLevel = 0;
 	
 	public GameObject ShushSpawn;
 
@@ -88,6 +86,8 @@ public class Player : MonoBehaviour
         set;
     }
 
+
+    private ConfusingSpawner ConfusingSpawn;
 
     private float shoutEmissionRate; //Assigned on player start 
 	public ParticleSystem ShoutParticleSystem
@@ -190,6 +190,10 @@ public class Player : MonoBehaviour
         whistlingSpawn = transform.GetComponentInChildren<WhistlingSpawner>();
         if(whistlingSpawn == null)
             Debug.LogWarning("Whistling spawn wasn't found");
+
+        ConfusingSpawn = transform.GetComponentInChildren<ConfusingSpawner>();
+        if (ConfusingSpawn == null)
+            Debug.LogWarning("Confusing spawn wasn't found");
 
         // float particle system
         Transform current;
@@ -296,27 +300,31 @@ public class Player : MonoBehaviour
 		UpdateShushing();
 
         // Update control of voice input
-        // Note that if both players are pressing, noone gets voice control!
+        // Note that if both players are pressing, none gets voice control!
 		if (Input.GetKey(settings.KeyPlayer1Input) &&
 			Input.GetKey(settings.KeyPlayer2Input))
 		{
 			PlayerOneActive = PlayerTwoActive = false;
 			BothPlayersActive = true;
+            ConfusingSpawn.EnableSpawning();
 		}
 		else if (Input.GetKey(settings.KeyPlayer1Input))
 		{
-			PlayerOneActive = true;
+			PlayerOneActive = true; 
 			BothPlayersActive = false;
+            ConfusingSpawn.DisableSpawning();
 		}
 		else if (Input.GetKey(settings.KeyPlayer2Input))
 		{
 			PlayerTwoActive = true;
 			BothPlayersActive = false;
+            ConfusingSpawn.DisableSpawning();
 		}
 		else
 		{
 			PlayerOneActive = PlayerTwoActive = false;
 			BothPlayersActive = false;
+            ConfusingSpawn.DisableSpawning();
 		}
 		
 		if (PlayerOneActive)
@@ -341,15 +349,20 @@ public class Player : MonoBehaviour
 		{
 			if(!justTriggeredShush)	
 			{
+				Messenger<GameObject, string, bool>.Invoke(
+					GlobalNames.EVENT.Player_Noise, gameObject, 
+					GlobalNames.SOUND.Player_Shushing, false);
 				justTriggeredShush = true;
 				shushTrigger.active = true;
 				shushTimer.Start(DelayBetweenShushes);
 				lastSpawnedShushObject = Instantiate(ShushSpawn, transform.position + new Vector3(0,1,0), Quaternion.identity) as GameObject;
-				
 			}
 		}
 		else
 		{
+			Messenger<GameObject, string, bool>.Invoke(
+					GlobalNames.EVENT.Player_Noise, gameObject,
+					GlobalNames.SOUND.Player_Shushing, true);
 			justTriggeredShush = false;
 			shushTrigger.active = false;
 			if(lastSpawnedShushObject != null)
@@ -361,12 +374,23 @@ public class Player : MonoBehaviour
 	{
         if (oscManager.Whistling || Input.GetKey(settings.DEBUG_KeyWhistling))
         {
+			if (!whistlingSpawn.Enabled)
+			{
+				Messenger<GameObject, string, bool>.Invoke(
+					GlobalNames.EVENT.Player_Noise, gameObject,
+					GlobalNames.SOUND.Player_Whistling, false);
+			}
             whistlingSpawn.EnableSpawning();
             whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(settings.MaxWhistlingScale, settings.MaxWhistlingScale, settings.MaxWhistlingScale);
         }
         else
         {
-            whistlingSpawn.DisableSpawning();
+			if (whistlingSpawn.Enabled)
+				Messenger<GameObject, string, bool>.Invoke(
+					GlobalNames.EVENT.Player_Noise, gameObject,
+					GlobalNames.SOUND.Player_Whistling, true);
+
+			whistlingSpawn.DisableSpawning();
             whistlingTrigger.gameObject.transform.localScale = new UnityEngine.Vector3(0, 0, 0);
         }
 	}
@@ -376,11 +400,23 @@ public class Player : MonoBehaviour
 		// Player1 controls the shouting
 		if ((PlayerOneActive && oscManager.Shouting) || Input.GetKey(settings.DEBUG_KeyShout))
 		{
+			if (shoutTrigger.gameObject.active == false)
+			{
+				Messenger<GameObject, string, bool>.Invoke(
+					GlobalNames.EVENT.Player_Noise, gameObject,
+					GlobalNames.SOUND.Player_Shouting, false);
+			}
 			shoutTrigger.gameObject.active = true;
             ShoutParticleSystem.emissionRate = shoutEmissionRate;
 		}
 		else
 		{
+			if (shoutTrigger.gameObject.active == true)
+			{
+				Messenger<GameObject, string, bool>.Invoke(
+					GlobalNames.EVENT.Player_Noise, gameObject,
+					GlobalNames.SOUND.Player_Shouting, true);
+			}
             ShoutParticleSystem.emissionRate = 0;
 			shoutTrigger.gameObject.active = false;
 		}

@@ -279,16 +279,16 @@ MonoBehaviour:
     volume: 1
     pitch: 1
   - name: Player_Jump1
-    clip: {fileID: 8300000, guid: aa5404cf433296b4bb2e018a0c900308, type: 1}
-    volume: 1
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .5
     pitch: 1
   - name: Player_Jump2
-    clip: {fileID: 8300000, guid: 317ca8a5ed7eecb4fb7ad63ddd254033, type: 1}
-    volume: 1
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .330000013
     pitch: 1
   - name: Player_Jump3
-    clip: {fileID: 8300000, guid: e2943de5e52cb11438045709c7af7c11, type: 1}
-    volume: 1
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .150000006
     pitch: 1
   - name: Player_Land
     clip: {fileID: 8300000, guid: a1e81b149512ea847a445dc97eeb1bc9, type: 1}
@@ -299,18 +299,38 @@ MonoBehaviour:
     volume: 1
     pitch: 1
   - name: Cookie_Collected1
-    clip: {fileID: 8300000, guid: 0e8b8661a42b5184684eb9ef544b5ab8, type: 1}
+    clip: {fileID: 8300000, guid: b87a15a2fe74f4190988a92372ae8da2, type: 1}
     volume: 1
     pitch: 1
   - name: Cookie_Collected2
-    clip: {fileID: 8300000, guid: ff0e571cd3d86904ebd8c4291c29ee6c, type: 1}
+    clip: {fileID: 8300000, guid: 4a0d443ccc19c4dd98903271abd2cf8a, type: 1}
     volume: 1
     pitch: 1
   - name: Cookie_Collected3
-    clip: {fileID: 8300000, guid: 76776140d1e748047a436c02ef752fdc, type: 1}
+    clip: {fileID: 8300000, guid: 9a7d0a033791a498389595030c5d407e, type: 1}
     volume: 1
     pitch: 1
   - name: Player_Jump
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Player_Whistling
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Player_Shushing
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Player_Shouting
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Player_Singing
+    clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
+    volume: .0500000007
+    pitch: 1
+  - name: Cookie_Collected4
     clip: {fileID: 8300000, guid: 33a934967ac679446bfc69e009bb7c83, type: 1}
     volume: .0500000007
     pitch: 1

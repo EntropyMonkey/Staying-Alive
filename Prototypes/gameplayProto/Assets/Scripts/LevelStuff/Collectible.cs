@@ -11,7 +11,7 @@ public class Collectible : MonoBehaviour
 		{
 			Player p = other.gameObject.GetComponent<Player>();
 			p.Points += points;
-			Messenger<GameObject>.Invoke(GlobalNames.EVENT.Cookie_Collected, gameObject);
+			Messenger<GameObject>.Invoke(GlobalNames.EVENT.Cookie_Collected, other.gameObject);
 			Destroy(gameObject);
 		}
 	}

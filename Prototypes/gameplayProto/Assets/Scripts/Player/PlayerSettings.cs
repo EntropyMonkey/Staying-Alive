@@ -5,6 +5,8 @@ using System.Collections.Generic;
 [System.Serializable] // show the properties in the editor when used as variable in player
 public class PlayerSettings
 {
+    public static int      CurrentLevel = 0;
+
 	public float			Gravity = 9.81f;
 
 	// influences how the player can change his velocity in midair

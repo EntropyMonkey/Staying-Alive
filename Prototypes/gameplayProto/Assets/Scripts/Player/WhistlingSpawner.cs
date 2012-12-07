@@ -12,6 +12,14 @@ public class WhistlingSpawner : MonoBehaviour {
 
     Timer timer = new Timer();
 
+	public bool Enabled
+	{
+		get
+		{
+			return isEnabled;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
         if (WhistlingParticleSystem == null)
