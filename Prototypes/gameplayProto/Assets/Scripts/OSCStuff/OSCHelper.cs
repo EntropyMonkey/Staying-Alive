@@ -17,8 +17,10 @@
 //    License along with this library; if not, see <http://www.gnu.org/licenses/>.
 //
 
-using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+using UnityEngine;
 using UnityOSC;
 
 using System;
@@ -30,7 +32,10 @@ using System.Text;
 /// You should have this script placed at the /Editor folder.
 /// Show the panel helper by selecting "Window->OSC Helper" from the Unity menu.
 /// </summary>
-public class OSCHelper : EditorWindow
+public class OSCHelper 
+	#if UNITY_EDITOR
+	: EditorWindow
+#endif
 {
 	#region Member variables
 	private string _status = "";
@@ -42,6 +47,7 @@ public class OSCHelper : EditorWindow
 	private Dictionary<string, ReceiverLog> _receivers = new Dictionary<string, ReceiverLog>();
 	#endregion
 	
+	#if UNITY_EDITOR
 	/// <summary>
 	/// Initializes the OSC Helper and creates an entry in the Unity menu.
 	/// </summary>
@@ -51,12 +57,14 @@ public class OSCHelper : EditorWindow
 		OSCHelper window = (OSCHelper)EditorWindow.GetWindow (typeof(OSCHelper));
 		window.Show();
 	}
+	#endif
 	
 	/// <summary>
 	/// Executes OnGUI in the panel within the Unity Editor
 	/// </summary>
 	void OnGUI ()
 	{	
+		#if UNITY_EDITOR
 		if(EditorApplication.isPlaying)
 		{
 			_status = "";
@@ -91,6 +99,7 @@ public class OSCHelper : EditorWindow
 			_status = "\n Enter the play mode in the Editor to see \n running senders and receivers";
 			GUILayout.Label(_status, EditorStyles.boldLabel);
 		}
+#endif
 	}
 	
 	/// <summary>
@@ -98,6 +107,7 @@ public class OSCHelper : EditorWindow
 	/// </summary>
 	void Update()
 	{
+		#if UNITY_EDITOR
 		if(EditorApplication.isPlaying)
 		{
 			OSCHandler.Instance.UpdateLogs();
@@ -113,6 +123,7 @@ public class OSCHelper : EditorWindow
 			
 			Repaint();
 		}
+#endif
 	}
 	
 	/// <summary>
