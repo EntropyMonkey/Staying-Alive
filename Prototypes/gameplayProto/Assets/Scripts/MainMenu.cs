@@ -11,27 +11,20 @@ public class MainMenu : MonoBehaviour {
 
     void OnMouseEnter()
     {
+        /* OLD
         renderer.material.color = Color.green; // color chosen box's text white
-        /*
-        GUITexture[] texture = gameObject.GetComponentsInChildren<GUITexture>();
-        GUITexture texture1 = texture[0];
-        GUITexture texture2 = texture[1];
-        if (texture1.enabled)
-        {
-            texture1.enabled = false;
-            texture2.enabled = true;
-        }
-        else
-        {
-            texture2.enabled = false;
-            texture1.enabled = true;
-        }
-         */
+         * */
+        GUITexture texture = gameObject.GetComponentInChildren<GUITexture>();
+        texture.enabled = true;
     }
 
     void OnMouseExit()
     {
+        /* OLD
         renderer.material.color = Color.white; // color chosen box's text white
+         */
+        GUITexture texture = gameObject.GetComponentInChildren<GUITexture>();
+        texture.enabled = false;
     }
 
     void OnMouseDown()
