@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -.61759907, y: .0567094535, z: -.0502486713, w: .782835007}
-  m_LocalPosition: {x: -4.70309496, y: -3.34442329, z: .690981984}
+  m_LocalPosition: {x: .276878893, y: -2.95902348, z: .566622913}
   m_LocalScale: {x: .537337065, y: .537337124, z: .537337065}
   m_Children:
   - {fileID: 400006}
@@ -169,7 +169,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: .61759907, y: -.0567094535, z: .0502486713, w: .782835007}
-  m_LocalPosition: {x: -3.97546721, y: 1.2432059, z: 4.78079796}
+  m_LocalPosition: {x: -5.7042141, y: .639193058, z: 2.03411269}
   m_LocalScale: {x: .193089113, y: .193089113, z: .193089113}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -257,7 +257,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9138ddd17be436840b184dbd61f65da4, type: 1}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -298,7 +298,8 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_Text: "Welcome player!\r\nWe hope you will\r\nenjoy our game!"
+  m_Text: "Welcome to Stupid Lemmings\nPlayer one Press A and D to move\r\nPlayer
+    two  Press L to jump \r\n"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -307,7 +308,7 @@ TextMesh:
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 0
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 9138ddd17be436840b184dbd61f65da4, type: 1}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,7 +329,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
