@@ -37,7 +37,7 @@ public class SoundManager : MonoBehaviour
 		// register for sound events
 		Messenger<GameObject, bool>.AddListener(GlobalNames.EVENT.Player_Walking, PlayerWalking);
 		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Player_JumpStart, PlayerJumpStart);
-		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Player_JumpEnd, PlayerJumpEnd);
+		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Player_EnterStand, PlayerJumpEnd);
 		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Pillar_Destroyed, PillarDestroyed);
 		Messenger<GameObject>.AddListener(GlobalNames.EVENT.Cookie_Collected, CookieCollected);
 		Messenger<GameObject, string, bool>.AddListener(GlobalNames.EVENT.Player_Noise, PlayerMakingNoise);
@@ -48,7 +48,7 @@ public class SoundManager : MonoBehaviour
 		// only receive events when the object is active
 		Messenger<GameObject, bool>.RemoveListener(GlobalNames.EVENT.Player_Walking, PlayerWalking);
 		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Player_JumpStart, PlayerJumpStart);
-		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Player_JumpEnd, PlayerJumpEnd);
+		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Player_EnterStand, PlayerJumpEnd);
 		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Pillar_Destroyed, PillarDestroyed);
 		Messenger<GameObject>.RemoveListener(GlobalNames.EVENT.Cookie_Collected, CookieCollected);
 		Messenger<GameObject, string, bool>.RemoveListener(GlobalNames.EVENT.Player_Noise, PlayerMakingNoise);

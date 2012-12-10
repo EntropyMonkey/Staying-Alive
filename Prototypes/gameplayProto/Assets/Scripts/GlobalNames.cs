@@ -41,11 +41,17 @@ public class GlobalNames
 		public const string Player_Singing = "Player_Singing";
 	}
 
+	public class ANIM
+	{
+		public const string Player_Walk = "walk";
+		public const string Player_Idle = "idle";
+	}
+
 	public class EVENT
 	{
 		public const string Player_Walking = "player is walking";
 		public const string Player_JumpStart = "player starts jumping";
-		public const string Player_JumpEnd = "player lands";
+		public const string Player_EnterStand = "player enters stand state";
 		public const string Pillar_Destroyed = "pillar destroyed";
 		public const string Cookie_Collected = "cookie collected";
 		public const string Player_Noise = "player is making noise";

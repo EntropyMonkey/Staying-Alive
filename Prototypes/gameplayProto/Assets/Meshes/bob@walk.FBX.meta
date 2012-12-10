@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 3833bd1b20e91744aba4397fb1e6208c
+guid: 0dd42c7036bfa084ba22b15511de0de5
 ModelImporter:
   fileIDToRecycleName:
     4300000: Bob
-    7400000: Take 001 //// bob
+    7400000: Take 001 //// bob@walk
   serializedVersion: 10
   materials:
     importMaterials: 1
@@ -17,7 +17,7 @@ ModelImporter:
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
-    animationWrapMode: 0
+    animationWrapMode: 2
     clipAnimations: []
   meshes:
     lODScreenPercentages: []
@@ -86,10 +86,10 @@ ModelImporter:
     Bip001 L Clavicle:
       data:
         first: 1
-        second: cc860100
+        second: c6860100
       data:
         first: 4
-        second: ac1a0600
+        second: a61a0600
     Bip001 L Foot:
       data:
         first: 1
@@ -100,10 +100,10 @@ ModelImporter:
     Bip001 L Forearm:
       data:
         first: 1
-        second: c8860100
+        second: d2860100
       data:
         first: 4
-        second: a81a0600
+        second: b21a0600
     Bip001 L Hand:
       data:
         first: 1
@@ -128,17 +128,17 @@ ModelImporter:
     Bip001 L Toe0Nub:
       data:
         first: 1
-        second: d0860100
-      data:
-        first: 4
-        second: b01a0600
-    Bip001 L UpperArm:
-      data:
-        first: 1
         second: ca860100
       data:
         first: 4
         second: aa1a0600
+    Bip001 L UpperArm:
+      data:
+        first: 1
+        second: c4860100
+      data:
+        first: 4
+        second: a41a0600
     Bip001 Neck:
       data:
         first: 1
@@ -163,10 +163,10 @@ ModelImporter:
     Bip001 R Clavicle:
       data:
         first: 1
-        second: c6860100
+        second: d0860100
       data:
         first: 4
-        second: a61a0600
+        second: b01a0600
     Bip001 R Foot:
       data:
         first: 1
@@ -177,10 +177,10 @@ ModelImporter:
     Bip001 R Forearm:
       data:
         first: 1
-        second: d2860100
+        second: cc860100
       data:
         first: 4
-        second: b21a0600
+        second: ac1a0600
     Bip001 R Hand:
       data:
         first: 1
@@ -205,17 +205,17 @@ ModelImporter:
     Bip001 R Toe0Nub:
       data:
         first: 1
+        second: c8860100
+      data:
+        first: 4
+        second: a81a0600
+    Bip001 R UpperArm:
+      data:
+        first: 1
         second: ce860100
       data:
         first: 4
         second: ae1a0600
-    Bip001 R UpperArm:
-      data:
-        first: 1
-        second: c4860100
-      data:
-        first: 4
-        second: a41a0600
     Bip001 Spine:
       data:
         first: 1
