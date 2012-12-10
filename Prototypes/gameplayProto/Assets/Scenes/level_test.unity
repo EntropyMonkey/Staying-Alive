@@ -55558,6 +55558,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 71ebd50835f73614db5c13cf3f83ae1b, type: 2}
+    - target: {fileID: 100012, guid: 1b0fd70a830dac74ab084e151a082bd6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b0fd70a830dac74ab084e151a082bd6, type: 3}
   m_RootGameObject: {fileID: 1721090903}
@@ -74579,7 +74583,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1437767673
 Transform:

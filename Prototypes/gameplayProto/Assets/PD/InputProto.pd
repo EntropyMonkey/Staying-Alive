@@ -1,7 +1,7 @@
-#N canvas 526 112 717 610 10;
+#N canvas 416 12 717 610 10;
 #X declare -lib mrpeach;
 #X obj 85 43 output~;
-#N canvas 86 409 670 391 whistling 0;
+#N canvas 131 349 670 391 whistling 0;
 #X obj 78 99 mtof;
 #X obj 230 110 t b f;
 #X obj 78 75 fiddle~ 2048 1;
@@ -134,7 +134,7 @@
 #X connect 11 2 8 0;
 #X restore 75 171 pd equalvoice;
 #X obj 159 98 - 100;
-#X msg 371 114 -30.5;
+#X msg 371 114 -45;
 #X connect 0 0 5 0;
 #X connect 1 0 5 0;
 #X connect 1 1 5 1;
@@ -150,7 +150,7 @@
 #X connect 12 0 5 2;
 #X connect 12 0 8 0;
 #X restore -27 261 pd whistling;
-#N canvas 91 199 817 501 shushing 0;
+#N canvas 329 267 817 501 shushing 0;
 #X obj 14 164 gemhead;
 #X obj 14 248 translateXYZ -2 -1 0;
 #X obj 14 215 color 0 1 0;
@@ -176,7 +176,7 @@
 #X obj 97 57 r~ audioinput;
 #X obj 291 191 - 100;
 #X obj 291 215 > -30;
-#X msg 369 169 -30;
+#X msg 369 169 -50;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
@@ -202,7 +202,7 @@
 #X connect 24 0 19 0;
 #X connect 24 0 23 1;
 #X restore 124 258 pd shushing;
-#N canvas 579 204 613 483 shouting 1;
+#N canvas 284 177 613 483 shouting 0;
 #X obj -15 24 gemhead;
 #X obj -14 154 translateXYZ;
 #X obj -15 56 color 1 0 0;
@@ -230,12 +230,12 @@
 #X obj 271 57 hip~ 100;
 #X obj 271 79 hip~ 100;
 #X obj 271 101 hip~ 100;
-#X msg 214 195 -12.8;
 #X msg 201 328 0;
 #X msg 166 329 1;
 #X obj 166 258 sel 1;
 #X obj 167 279 t b b;
 #X obj 201 304 del 200;
+#X msg 214 195 -42.5;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
@@ -253,8 +253,8 @@
 #X connect 12 0 7 1;
 #X connect 13 0 7 0;
 #X connect 14 0 6 0;
-#X connect 14 0 30 0;
-#X connect 16 0 27 0;
+#X connect 14 0 29 0;
+#X connect 16 0 32 0;
 #X connect 18 0 14 1;
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
@@ -263,15 +263,15 @@
 #X connect 24 0 25 0;
 #X connect 25 0 26 0;
 #X connect 26 0 10 0;
-#X connect 27 0 14 1;
-#X connect 27 0 17 0;
-#X connect 27 0 19 0;
+#X connect 27 0 15 0;
 #X connect 28 0 15 0;
-#X connect 29 0 15 0;
+#X connect 29 0 30 0;
 #X connect 30 0 31 0;
-#X connect 31 0 32 0;
-#X connect 31 1 29 0;
-#X connect 32 0 28 0;
+#X connect 30 1 28 0;
+#X connect 31 0 27 0;
+#X connect 32 0 14 1;
+#X connect 32 0 17 0;
+#X connect 32 0 19 0;
 #X restore -25 194 pd shouting;
 #N canvas 550 87 495 440 indoorPDgraphic 0;
 #X obj -15 24 gemhead;
@@ -422,7 +422,7 @@
 #X restore -49 55 pd indoorPDgraphic;
 #X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#N canvas 15 370 559 382 holdingtone 0;
+#N canvas 51 318 559 382 holdingtone 0;
 #X obj 106 169 mtof;
 #X obj 106 135 fiddle 2048 1;
 #X obj 180 182 t b f;
@@ -465,7 +465,7 @@
 #X restore 100 242 pd equalvoice;
 #X obj 117 25 r~ audioinput;
 #X obj 180 159 - 100;
-#X msg 375 180 -21;
+#X msg 375 180 -56;
 #X connect 0 0 14 0;
 #X connect 1 0 0 0;
 #X connect 1 3 17 0;
@@ -489,9 +489,9 @@
 #X restore 122 194 pd holdingtone;
 #X text -21 147 player 1;
 #X text 119 145 player 2;
-#N canvas 601 368 450 300 PureUnity 0;
+#N canvas 847 342 450 300 PureUnity 0;
 #X obj 330 40 import mrpeach;
-#X obj 136 109 pack f f f f;
+#X obj 158 127 pack f f f f;
 #X obj 188 197 packOSC;
 #X msg 177 156 send /test \$1#\$2#\$3#\$4;
 #X obj 186 264 udpsend;
@@ -507,6 +507,9 @@
 #X obj 173 24 inlet;
 #X obj 449 21 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X obj 136 98 t b f;
+#X obj 177 101 t b f;
+#X obj 219 98 t b f;
 #X connect 1 0 3 0;
 #X connect 2 0 13 1;
 #X connect 3 0 2 0;
@@ -515,11 +518,17 @@
 #X connect 7 0 6 0;
 #X connect 8 0 5 0;
 #X connect 9 0 1 0;
-#X connect 10 0 1 1;
-#X connect 11 0 1 2;
-#X connect 12 0 1 3;
+#X connect 10 0 16 0;
+#X connect 11 0 17 0;
+#X connect 12 0 18 0;
 #X connect 13 0 4 0;
 #X connect 14 0 13 0;
+#X connect 16 0 1 0;
+#X connect 16 1 1 1;
+#X connect 17 0 1 0;
+#X connect 17 1 1 2;
+#X connect 18 0 1 0;
+#X connect 18 1 1 3;
 #X restore 97 490 pd PureUnity;
 #X obj 170 466 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -538,24 +547,24 @@
 #X msg 153 45 \; pd dsp 1;
 #X floatatom 47 194 5 0 0 0 - - -;
 #X obj -18 173 r anfang;
-#X obj -22 172 hsl 65 20 -30 10 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2752 1;
+#X obj -22 172 hsl 65 20 -70 10 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2200 1;
 #X obj 142 387 loadbang;
 #X obj 124 174 r anfangslautstärke;
 #X floatatom 213 193 5 0 0 0 - - -;
 #X obj 126 174 s lautstärke;
-#X obj 126 173 hsl 120 20 -80 0 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8776 1;
+#X obj 126 172 hsl 120 20 -80 0 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3476 1;
 #X floatatom 53 262 5 0 0 0 - - -;
 #X obj -24 236 s lautstärkew;
 #X obj -25 236 r alautstärkew;
 #X obj -24 233 hsl 120 20 -80 0 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7363 1;
+-1 -1 5263 1;
 #X obj 129 236 s lautstärkeS;
 #X floatatom 200 259 5 0 0 0 - - -;
 #X obj 128 236 r AlautstärkeS;
 #X obj 128 235 hsl 120 20 -70 0 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6800 1;
+-1 -1 3500 1;
 #X obj 278 123 s~ audioinput;
 #X obj 337 229 r~ audioinput;
 #X floatatom 289 265 5 0 0 0 - - -;
@@ -567,41 +576,6 @@
 #X floatatom 368 73 5 0 0 0 - - -;
 #X msg 368 23 1;
 #X obj 346 292 expr 100/$f1;
-#X obj 671 133 table MIC;
-#X obj 669 107 tabwrite~ MIC;
-#X obj 669 57 metro 100;
-#X obj 669 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 675 85 r~ audioinput;
-#N canvas 0 413 450 300 LIMITTHINGS 0;
-#X obj 152 45 inlet~;
-#X obj 148 191 limiter~;
-#X obj 96 209 *~;
-#X obj 115 80 z~ 64;
-#X obj 94 266 outlet~;
-#X obj 205 8 loadbang;
-#X msg 226 171 set 100 10 20;
-#X msg 204 53 COMPRESS;
-#X msg 229 142 ratio 0.5;
-#X obj 210 28 t b b;
-#X msg 226 80 limit 110;
-#X msg 226 102 treshold 100;
-#X connect 0 0 3 0;
-#X connect 0 0 1 0;
-#X connect 1 0 2 1;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 5 0 9 0;
-#X connect 6 0 1 0;
-#X connect 7 0 1 0;
-#X connect 8 0 1 0;
-#X connect 9 0 10 0;
-#X connect 9 0 11 0;
-#X connect 9 0 8 0;
-#X connect 9 1 7 0;
-#X connect 10 0 1 0;
-#X connect 11 0 1 0;
-#X restore 177 104 pd LIMITTHINGS;
 #X floatatom 381 354 5 0 0 0 - - -;
 #X text 441 438 V. 0.2.9;
 #X connect 5 0 4 0;
@@ -614,7 +588,7 @@
 #X connect 15 0 41 0;
 #X connect 15 0 47 0;
 #X connect 16 0 17 0;
-#X connect 16 0 54 0;
+#X connect 16 0 48 0;
 #X connect 18 0 9 1;
 #X connect 20 0 21 0;
 #X connect 20 0 46 0;
@@ -638,6 +612,3 @@
 #X connect 44 0 43 1;
 #X connect 44 0 45 0;
 #X connect 46 0 44 0;
-#X connect 50 0 49 0;
-#X connect 51 0 50 0;
-#X connect 52 0 49 0;
