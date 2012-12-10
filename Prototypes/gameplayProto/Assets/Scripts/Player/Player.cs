@@ -345,7 +345,7 @@ public class Player : MonoBehaviour
 	{
 		shushTimer.Update(Time.deltaTime);
 
-		if (Input.GetKey(settings.DEBUG_KeyShushing))
+		if ((PlayerOneActive && oscManager.Shushing) || Input.GetKey(settings.DEBUG_KeyShushing))
 		{
 			if(!justTriggeredShush)	
 			{
@@ -372,7 +372,7 @@ public class Player : MonoBehaviour
 
 	void UpdateWhistling()
 	{
-        if (oscManager.Whistling || Input.GetKey(settings.DEBUG_KeyWhistling))
+        if ((PlayerTwoActive && oscManager.Whistling) || Input.GetKey(settings.DEBUG_KeyWhistling))
         {
 			if (!whistlingSpawn.Enabled)
 			{
