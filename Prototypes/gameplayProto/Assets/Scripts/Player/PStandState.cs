@@ -5,8 +5,7 @@ public class PStandState : FSMState<Player>
 {
 	public override void Enter(Player player)
 	{
-		if (player.FSM.PreviousState == player.FallState)
-			Messenger<GameObject>.Invoke(GlobalNames.EVENT.Player_JumpEnd, player.gameObject);
+		Messenger<GameObject>.Invoke(GlobalNames.EVENT.Player_EnterStand, player.gameObject);
 	}
 
 	public override void Execute(Player player)
