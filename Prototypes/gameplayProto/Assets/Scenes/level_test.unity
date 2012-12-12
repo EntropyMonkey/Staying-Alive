@@ -83938,6 +83938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 279a4c0b5f65aa947ad500c5d91c8fab, type: 1}
   m_Name: 
   clips:
+  - {fileID: 7400000, guid: 2096229f8b00b244092ebb35bc2af766, type: 3}
   - {fileID: 7400000, guid: 0dd42c7036bfa084ba22b15511de0de5, type: 3}
 --- !u!1 &1622152107
 GameObject:
