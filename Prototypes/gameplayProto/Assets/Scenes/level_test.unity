@@ -2329,6 +2329,46 @@ Prefab:
       propertyPath: m_Name
       value: Signpost 3
       objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Text
+      value: "Make some NOICE\r\nPlayer one Hold down Left Shift\r\nAnd SHOUT\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -9.99308586
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .944975793
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.8265183
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .620187938
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.00337976939
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0172689725
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .784255862
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
   m_RootGameObject: {fileID: 1057207670}
@@ -8479,13 +8519,12 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 1760156006}
   m_GameObject: {fileID: 155783844}
-  m_Text: "Welcome to Stupid Lemmings\nPlayer one Press A and D to move\r\nPlayer
-    two  Press L to jump \r\n"
+  m_Text: "Dont worry player Two\r\nYou are next\r\n"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 0
@@ -13659,7 +13698,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6500004, guid: 579eccfb0b588a14d8e5fd76fa9c9b49, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6500004, guid: 579eccfb0b588a14d8e5fd76fa9c9b49, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 579eccfb0b588a14d8e5fd76fa9c9b49, type: 2}
   m_RootGameObject: {fileID: 1205984032}
   m_IsPrefabParent: 0
@@ -15527,7 +15571,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 275827553}
   - 33: {fileID: 275827554}
-  - 65: {fileID: 275827555}
   m_Layer: 0
   m_Name: Spikes Cluster Medium
   m_TagString: Untagged
@@ -15561,19 +15604,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 801083425}
   m_GameObject: {fileID: 275827552}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &275827555
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6500004, guid: 579eccfb0b588a14d8e5fd76fa9c9b49,
-    type: 2}
-  m_PrefabInternal: {fileID: 801083425}
-  m_GameObject: {fileID: 275827552}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &284118379
 GameObject:
   m_ObjectHideFlags: 0
@@ -15702,8 +15732,8 @@ MonoBehaviour:
   m_Name: 
   pointsPosition:
     serializedVersion: 2
-    x: 100
-    y: 100
+    x: 645
+    y: 70
     width: 200
     height: 100
   standardFont: {fileID: 12800000, guid: 1c313f8d2b22a7242bea9c0879807de4, type: 1}
@@ -27009,7 +27039,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 487308259}
   m_LocalRotation: {x: .0722980872, y: -.997383118, z: 2.17985008e-08, w: 1.58012725e-09}
-  m_LocalPosition: {x: -63.3177185, y: -6.95485449, z: 1.98472345}
+  m_LocalPosition: {x: -63.3080292, y: -7.0215764, z: 1.98472404}
   m_LocalScale: {x: 4.81990671, y: 10.1471443, z: 1.78385878}
   m_Children: []
   m_Father: {fileID: 1026617607}
@@ -28307,7 +28337,7 @@ Transform:
   m_PrefabInternal: {fileID: 694164340}
   m_GameObject: {fileID: 522756839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.92699289, y: -3.57538986, z: -7.69154406}
+  m_LocalPosition: {x: -5.92699289, y: -1.42895317, z: -7.69154406}
   m_LocalScale: {x: .580059469, y: .580059469, z: .580059469}
   m_Children:
   - {fileID: 1344604424}
@@ -32727,7 +32757,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 568378055}
   m_LocalRotation: {x: -.5, y: -.5, z: -.5, w: .5}
-  m_LocalPosition: {x: .296860516, y: -3.89019442, z: .375402957}
+  m_LocalPosition: {x: .296860516, y: -5.78744936, z: .375403017}
   m_LocalScale: {x: .729664207, y: .510526597, z: 3.6626327}
   m_Children: []
   m_Father: {fileID: 1357146051}
@@ -34786,8 +34816,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
   m_PrefabInternal: {fileID: 701948177}
   m_GameObject: {fileID: 596825830}
-  m_LocalRotation: {x: .61759907, y: -.0567094535, z: .0502486713, w: .782835007}
-  m_LocalPosition: {x: -5.7042141, y: .639193058, z: 2.03411269}
+  m_LocalRotation: {x: .620082319, y: -.0119373491, z: -.00644547585, w: .784419537}
+  m_LocalPosition: {x: -5.48705626, y: 1.3074702, z: 4.87665939}
   m_LocalScale: {x: .193089113, y: .193089113, z: .193089113}
   m_Children: []
   m_Father: {fileID: 1074260174}
@@ -34818,13 +34848,13 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 701948177}
   m_GameObject: {fileID: 596825830}
-  m_Text: "Welcome to Stupid Lemmings\nPlayer one Press A and D to move\r\nPlayer
-    two  Press L to jump \r\n"
+  m_Text: "You need to float to cross this one\r\nPlayer Two Hold down Right Shift\r\nJump
+    and Hold a tone like this:\r\nAaaaaaaaaaaaaaaaaaaaa....\r\n"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 0
@@ -35660,13 +35690,12 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 2066547594}
   m_GameObject: {fileID: 630074122}
-  m_Text: "Welcome to Stupid Lemmings\nPlayer one Press A and D to move\r\nPlayer
-    two  Press L to jump \r\n"
+  m_Text: "Master working together \r\nTo cross these next\r\nFew gaps"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 0
@@ -35878,12 +35907,12 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 1686555459}
   m_GameObject: {fileID: 637358164}
-  m_Text: Try not to fall
+  m_Text: "Try not to fall\r\nand avoid the rocks\n"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 0
@@ -41526,7 +41555,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 51860863677357e419d72c5393e8d5bf, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.57538986
+      value: -1.42895317
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 51860863677357e419d72c5393e8d5bf, type: 2}
       propertyPath: m_LocalPosition.z
@@ -41547,6 +41576,14 @@ Prefab:
     - target: {fileID: 400000, guid: 51860863677357e419d72c5393e8d5bf, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 51860863677357e419d72c5393e8d5bf, type: 2}
+      propertyPath: pointsPosition.x
+      value: 645
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 51860863677357e419d72c5393e8d5bf, type: 2}
+      propertyPath: pointsPosition.y
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51860863677357e419d72c5393e8d5bf, type: 2}
@@ -41759,6 +41796,43 @@ Prefab:
     - target: {fileID: 100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
       propertyPath: m_Name
       value: Signpost 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Text
+      value: "You need to float to cross this one\r\nPlayer Two Hold down Right Shift\r\nJump
+        and Hold a tone like this:\r\nAaaaaaaaaaaaaaaaaaaaa....\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .620082319
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.0119373491
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.00644547585
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .784419537
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.48705626
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.3074702
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4.87665939
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
@@ -42153,6 +42227,46 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .0197763443, y: .16424191, z: 1}
   m_Center: {x: -.545760155, y: .168685347, z: 0}
+--- !u!1001 &721092514
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 67.084671
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.735771656
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+  m_RootGameObject: {fileID: 2118320939}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &723071363
 GameObject:
   m_ObjectHideFlags: 0
@@ -46140,7 +46254,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6500004, guid: 579eccfb0b588a14d8e5fd76fa9c9b49, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 579eccfb0b588a14d8e5fd76fa9c9b49, type: 2}
   m_RootGameObject: {fileID: 275827552}
   m_IsPrefabParent: 0
@@ -48978,6 +49093,43 @@ Prefab:
       propertyPath: m_Name
       value: Signpost 6
       objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Text
+      value: "Nice \u2013 remember that\r\nThe longer you hold tone\r\nThe longer
+        you will float\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .608959317
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.151302561
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0939220116
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .772951961
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -6.33960009
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 3.58691478
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.00546455
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
   m_RootGameObject: {fileID: 736274076}
@@ -50358,8 +50510,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
   m_PrefabInternal: {fileID: 1305122324}
   m_GameObject: {fileID: 906862481}
-  m_LocalRotation: {x: .61759907, y: -.0567094535, z: .0502486713, w: .782835007}
-  m_LocalPosition: {x: -5.7042141, y: .639193058, z: 2.03411269}
+  m_LocalRotation: {x: .602674723, y: .0185242258, z: .174582973, w: .778434932}
+  m_LocalPosition: {x: -5.41988897, y: -1.99058437, z: 1.7264365}
   m_LocalScale: {x: .193089113, y: .193089113, z: .193089113}
   m_Children: []
   m_Father: {fileID: 1421633015}
@@ -50390,13 +50542,13 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 1305122324}
   m_GameObject: {fileID: 906862481}
-  m_Text: "Welcome to Stupid Lemmings\nPlayer one Press A and D to move\r\nPlayer
-    two  Press L to jump \r\n"
+  m_Text: "One last thing\r\nNever hold down BOTH Shifts\r\nLemmings are not that
+    smart \r\n"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 0
@@ -52624,8 +52776,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 941501010}
-  m_LocalRotation: {x: .716479301, y: -.697389245, z: .0107460292, w: .0137920231}
-  m_LocalPosition: {x: -57.1521683, y: -2.85686731, z: 1.97014368}
+  m_LocalRotation: {x: .688518107, y: -.725008428, z: .0112797525, w: .0133590698}
+  m_LocalPosition: {x: -57.3713608, y: -3.3619113, z: 1.98855126}
   m_LocalScale: {x: 4.81991148, y: 10.1471548, z: 1.78385651}
   m_Children: []
   m_Father: {fileID: 1026617607}
@@ -56921,11 +57073,11 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 41a1d0ce1015cd143a02fa796cfa4506, type: 2}
   m_PrefabInternal: {fileID: 1601317224}
   m_GameObject: {fileID: 1022400365}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
-  m_LocalPosition: {x: 12.0257492, y: -.090480864, z: 0}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 2.83097839, y: -.090480864, z: 0}
   m_LocalScale: {x: 4.10567474, y: 4.10567474, z: .205283746}
   m_Children: []
-  m_Father: {fileID: 1291640586}
+  m_Father: {fileID: 2118320940}
 --- !u!23 &1022400367
 Renderer:
   m_ObjectHideFlags: 0
@@ -63843,7 +63995,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1205984033}
   - 33: {fileID: 1205984034}
-  - 65: {fileID: 1205984035}
   m_Layer: 0
   m_Name: Spikes Cluster Medium
   m_TagString: Untagged
@@ -63877,19 +64028,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 203386187}
   m_GameObject: {fileID: 1205984032}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &1205984035
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6500004, guid: 579eccfb0b588a14d8e5fd76fa9c9b49,
-    type: 2}
-  m_PrefabInternal: {fileID: 203386187}
-  m_GameObject: {fileID: 1205984032}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1206975696
 GameObject:
   m_ObjectHideFlags: 0
@@ -64285,7 +64423,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1221546117}
   m_LocalRotation: {x: -.495643437, y: -.504319012, z: -.495643675, w: .504318774}
-  m_LocalPosition: {x: .406656057, y: -3.73924541, z: -.64722234}
+  m_LocalPosition: {x: .406415641, y: -3.55971622, z: -.64722234}
   m_LocalScale: {x: .729664207, y: .496166855, z: 3.32497668}
   m_Children: []
   m_Father: {fileID: 908496627}
@@ -68968,8 +69106,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 57.8899002, y: -.735771656, z: 0}
   m_LocalScale: {x: 1, y: 20, z: 1}
-  m_Children:
-  - {fileID: 1022400366}
+  m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &1291640587
 Renderer:
@@ -69384,6 +69521,43 @@ Prefab:
     - target: {fileID: 100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
       propertyPath: m_Name
       value: Signpost 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .602674723
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .0185242258
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .174582973
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .778434932
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -5.41988897
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.99058437
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.7264365
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Text
+      value: "One last thing\r\nNever hold down BOTH Shifts\r\nLemmings are not that
+        smart \r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
@@ -72655,7 +72829,7 @@ Transform:
   m_PrefabInternal: {fileID: 2107266963}
   m_GameObject: {fileID: 1372326557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67.6490936, y: -1.85706091, z: 0}
+  m_LocalPosition: {x: 67.6490936, y: -1.21458769, z: 0}
   m_LocalScale: {x: 1.41197813, y: 1.11245501, z: 1.73496401}
   m_Children: []
   m_Father: {fileID: 1478591506}
@@ -82189,11 +82363,11 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1291640586}
+    m_TransformParent: {fileID: 2118320940}
     m_Modifications:
     - target: {fileID: 400000, guid: 41a1d0ce1015cd143a02fa796cfa4506, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.0257492
+      value: 2.83097839
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41a1d0ce1015cd143a02fa796cfa4506, type: 2}
       propertyPath: m_LocalPosition.y
@@ -82213,7 +82387,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41a1d0ce1015cd143a02fa796cfa4506, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 41a1d0ce1015cd143a02fa796cfa4506, type: 2}
       propertyPath: m_LocalRotation.w
@@ -84721,8 +84895,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
   m_PrefabInternal: {fileID: 53238891}
   m_GameObject: {fileID: 1653552161}
-  m_LocalRotation: {x: .61759907, y: -.0567094535, z: .0502486713, w: .782835007}
-  m_LocalPosition: {x: -5.7042141, y: .639193058, z: 2.03411269}
+  m_LocalRotation: {x: .620187938, y: -.00337976939, z: -.0172689725, w: .784255862}
+  m_LocalPosition: {x: -9.99308586, y: .944975793, z: 2.8265183}
   m_LocalScale: {x: .193089113, y: .193089113, z: .193089113}
   m_Children: []
   m_Father: {fileID: 1057207671}
@@ -84753,15 +84927,14 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 53238891}
   m_GameObject: {fileID: 1653552161}
-  m_Text: "Welcome to Stupid Lemmings\nPlayer one Press A and D to move\r\nPlayer
-    two  Press L to jump \r\n"
+  m_Text: "Make some NOICE\r\nPlayer one Hold down Left Shift\r\nAnd SHOUT\r\n"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 50
+  m_FontSize: 40
   m_FontStyle: 0
   m_Font: {fileID: 12800000, guid: 9138ddd17be436840b184dbd61f65da4, type: 1}
 --- !u!1 &1654393993
@@ -87108,7 +87281,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
       propertyPath: m_Text
-      value: Try not to fall
+      value: "Try not to fall\r\nand avoid the rocks\n"
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
       propertyPath: m_LocalRotation.x
@@ -87137,6 +87310,10 @@ Prefab:
     - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
       propertyPath: m_LocalPosition.z
       value: 6.19256544
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
@@ -91988,6 +92165,14 @@ Prefab:
     - target: {fileID: 100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
       propertyPath: m_Name
       value: Signpost 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Text
+      value: "Dont worry player Two\r\nYou are next\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
@@ -97587,8 +97772,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
   m_PrefabInternal: {fileID: 865801910}
   m_GameObject: {fileID: 1822575920}
-  m_LocalRotation: {x: .61759907, y: -.0567094535, z: .0502486713, w: .782835007}
-  m_LocalPosition: {x: -5.7042141, y: .639193058, z: 2.03411269}
+  m_LocalRotation: {x: .608959317, y: -.151302561, z: -.0939220116, w: .772951961}
+  m_LocalPosition: {x: -6.33960009, y: 3.58691478, z: 3.00546455}
   m_LocalScale: {x: .193089113, y: .193089113, z: .193089113}
   m_Children: []
   m_Father: {fileID: 736274077}
@@ -97619,13 +97804,13 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 865801910}
   m_GameObject: {fileID: 1822575920}
-  m_Text: "Welcome to Stupid Lemmings\nPlayer one Press A and D to move\r\nPlayer
-    two  Press L to jump \r\n"
+  m_Text: "Nice \u2013 remember that\r\nThe longer you hold tone\r\nThe longer you
+    will float\r\n"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
   m_Anchor: 0
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 50
   m_FontStyle: 0
@@ -109034,6 +109219,14 @@ Prefab:
       propertyPath: m_Name
       value: Signpost 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Text
+      value: "Master working together \r\nTo cross these next\r\nFew gaps"
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
   m_RootGameObject: {fileID: 1607703985}
@@ -113476,7 +113669,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b7da942a933994e801d1a6d7345574, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.85706091
+      value: -1.21458769
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b7da942a933994e801d1a6d7345574, type: 2}
       propertyPath: m_LocalPosition.z
@@ -113904,6 +114097,88 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2118320939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+  m_PrefabInternal: {fileID: 721092514}
+  serializedVersion: 3
+  m_Component:
+  - 4: {fileID: 2118320940}
+  - 33: {fileID: 2118320942}
+  - 65: {fileID: 2118320943}
+  - 23: {fileID: 2118320941}
+  - 114: {fileID: 2118320944}
+  m_Layer: 0
+  m_Name: Checkpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2118320940
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 3f53962d86bfd9846a4d393753770837, type: 2}
+  m_PrefabInternal: {fileID: 721092514}
+  m_GameObject: {fileID: 2118320939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 67.084671, y: -.735771656, z: 0}
+  m_LocalScale: {x: 1, y: 20, z: 1}
+  m_Children:
+  - {fileID: 1022400366}
+  m_Father: {fileID: 0}
+--- !u!23 &2118320941
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 3f53962d86bfd9846a4d393753770837,
+    type: 2}
+  m_PrefabInternal: {fileID: 721092514}
+  m_GameObject: {fileID: 2118320939}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+--- !u!33 &2118320942
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 3f53962d86bfd9846a4d393753770837,
+    type: 2}
+  m_PrefabInternal: {fileID: 721092514}
+  m_GameObject: {fileID: 2118320939}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &2118320943
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 3f53962d86bfd9846a4d393753770837,
+    type: 2}
+  m_PrefabInternal: {fileID: 721092514}
+  m_GameObject: {fileID: 2118320939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2118320944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 3f53962d86bfd9846a4d393753770837,
+    type: 2}
+  m_PrefabInternal: {fileID: 721092514}
+  m_GameObject: {fileID: 2118320939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 100e9927a50f19c42af511f1be6c4b28, type: 1}
+  m_Name: 
 --- !u!1 &2119828247
 GameObject:
   m_ObjectHideFlags: 0
