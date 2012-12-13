@@ -156,16 +156,16 @@
 #X text 99 467 disconnect;
 #X text 232 463 connect;
 #X obj 150 166 vu 15 120 amp empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 162 426 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 162 426 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 182 425 udpsend on/off;
 #X floatatom 64 211 5 0 0 0 - shout -;
 #X obj -25 168 hsl 120 40 -80 10 0 0 shout r_shout SHOUTING -2 -8 0
-10 -258113 -1 -1 10753 1;
+10 -258113 -1 -1 4853 1;
 #X obj 162 399 loadbang;
 #X floatatom 332 214 5 0 0 0 - longtone -;
 #X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
-0 10 -258113 -1 -1 4480 1;
+0 10 -258113 -1 -1 0 1;
 #X floatatom 65 293 5 0 0 0 - whistle -;
 #X obj -24 251 hsl 120 40 -80 0 0 0 whistle r_whistle WHISTLE -2 -8
 0 10 -258113 -1 -1 5206 1;
