@@ -1,4 +1,4 @@
-#N canvas 262 118 469 516 10;
+#N canvas 583 206 469 516 10;
 #X declare -lib mrpeach;
 #N canvas 742 201 495 440 indoorPDgraphic 0;
 #X obj -15 24 gemhead;
@@ -149,39 +149,38 @@
 #X restore -49 55 pd indoorPDgraphic;
 #X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 214 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 84 470 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 46 388 bng 30 250 50 0 con loadme2 empty 17 7 0 10 -4034 -1
 -1;
-#X text 99 467 disconnect;
-#X text 232 463 connect;
+#X obj 46 423 bng 30 250 50 0 dis_c empty empty 17 7 0 10 -258113 -1
+-1;
+#X text 82 429 disconnect;
+#X text 84 395 connect;
 #X obj 150 166 vu 15 120 amp empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 162 426 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X text 182 425 udpsend on/off;
+#X text 83 464 udpsend on/off;
 #X floatatom 64 211 5 0 0 0 - shout -;
 #X obj -25 168 hsl 120 40 -80 10 0 0 shout r_shout SHOUTING -2 -8 0
-10 -258113 -1 -1 4853 1;
-#X obj 162 399 loadbang;
+10 -258113 -1 -1 9300 1;
 #X floatatom 332 214 5 0 0 0 - longtone -;
 #X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
-0 10 -258113 -1 -1 0 1;
-#X floatatom 65 293 5 0 0 0 - whistle -;
-#X obj -24 251 hsl 120 40 -80 0 0 0 whistle r_whistle WHISTLE -2 -8
-0 10 -258113 -1 -1 5206 1;
+0 10 -258113 -1 -1 5580 1;
+#X floatatom 332 214 5 0 0 0 - longtone -;
+#X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
+0 10 -258113 -1 -1 5580 1;
+#X obj -27 248 hsl 120 40 -80 0 0 0 whistle r_whistle WHISTLE -2 -8
+0 10 -258113 -1 -1 5306 1;
 #X floatatom 335 294 5 0 0 0 - shush -;
 #X obj 244 252 hsl 120 40 -70 0 0 0 shush r_shush SHUSH -2 -8 0 10
 -258113 -1 -1 3400 1;
 #X floatatom 150 293 5 0 0 0 - amp -;
 #X text -3 124 PLAYER 1;
 #X text 272 123 PLAYER 2;
-#N canvas 388 273 589 356 sound 0;
+#N canvas 551 384 589 356 sound 0;
 #X obj 274 152 env~;
 #X obj 274 180 - 100;
 #X obj 275 207 s amp;
 #X obj 301 48 adc~;
 #X obj 189 18 loadbang;
-#X msg 189 40 \; pd dsp 1;
+#X msg 189 56 \; pd dsp 1;
 #X obj 306 129 s~ audioinput;
 #X obj 305 86 *~;
 #X obj 341 63 hsl 150 20 0 100 0 0 empty empty empty -2 -8 0 10 -262144
@@ -190,7 +189,7 @@
 #X msg 338 38 1;
 #X text 374 43 boost the mic \, if you must;
 #X obj 95 53 output~;
-#N canvas 225 285 613 483 shouting 0;
+#N canvas 652 279 613 483 shouting 0;
 #X obj -15 24 gemhead;
 #X obj -14 154 translateXYZ;
 #X obj -15 56 color 1 0 0;
@@ -207,7 +206,7 @@
 #X msg 86 396 0.1;
 #X obj 142 228 > 7;
 #X obj 201 385 s shouting;
-#X obj 214 173 loadbang;
+#X obj 211 131 loadbang;
 #X obj 213 232 outlet;
 #X obj 169 27 r~ audioinput;
 #X obj 182 57 lop~ 700;
@@ -223,7 +222,8 @@
 #X obj 201 304 del 200;
 #X obj 274 226 s r_shout;
 #X obj 99 184 r shout;
-#X msg 214 195 -43.3;
+#X msg 214 195 -9.66387;
+#X obj 225 172 prepend set;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
@@ -257,11 +257,13 @@
 #X connect 28 1 26 0;
 #X connect 29 0 25 0;
 #X connect 31 0 14 1;
+#X connect 31 0 33 0;
 #X connect 32 0 14 1;
 #X connect 32 0 17 0;
 #X connect 32 0 30 0;
+#X connect 33 0 32 0;
 #X restore 1 239 pd shouting;
-#N canvas 238 286 770 444 holdingtone 0;
+#N canvas 401 346 770 444 holdingtone 0;
 #X obj 339 368 s tone;
 #X obj 382 370 s singing;
 #N canvas 645 218 635 454 equalvoice 0;
@@ -311,7 +313,8 @@
 #X obj 395 190 r longtone;
 #X obj 225 24 fiddle~ 2048 1 10 10;
 #X obj 155 279 s r_tone;
-#X msg 155 250 -64;
+#X msg 155 250 -42.4874;
+#X obj 227 208 prepend set;
 #X connect 2 0 1 0;
 #X connect 2 0 0 0;
 #X connect 3 0 21 0;
@@ -337,11 +340,12 @@
 #X connect 18 0 17 1;
 #X connect 19 0 23 0;
 #X connect 20 0 18 0;
+#X connect 20 0 24 0;
 #X connect 21 4 16 0;
-#X connect 23 0 18 0;
 #X connect 23 0 22 0;
+#X connect 24 0 23 0;
 #X restore 132 240 pd holdingtone;
-#N canvas 131 349 670 391 whistling 0;
+#N canvas 348 398 670 391 whistling 0;
 #X obj 78 99 mtof;
 #X obj 230 110 t b f;
 #X obj 78 75 fiddle~ 2048 1;
@@ -472,9 +476,10 @@
 #X connect 11 2 8 0;
 #X restore 75 171 pd equalvoice;
 #X obj 159 98 - 100;
-#X msg 371 114 -45;
+#X msg 371 114 -44.3294;
 #X obj 387 148 s r_whistle;
-#X obj 320 84 r whistle;
+#X obj 304 63 r whistle;
+#X obj 446 94 prepend set;
 #X connect 0 0 5 0;
 #X connect 1 0 5 0;
 #X connect 1 1 5 1;
@@ -489,6 +494,8 @@
 #X connect 10 0 5 2;
 #X connect 10 0 11 0;
 #X connect 12 0 5 2;
+#X connect 12 0 13 0;
+#X connect 13 0 10 0;
 #X restore -22 299 pd whistling;
 #N canvas 266 206 817 501 shushing 0;
 #X obj 14 164 gemhead;
@@ -541,6 +548,7 @@
 #X connect 10 2 8 0;
 #X restore 252 275 pd equalvoice;
 #X obj 255 315 sel 0 1;
+#X obj 452 148 prepend set;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
@@ -558,24 +566,33 @@
 #X connect 18 0 20 0;
 #X connect 19 0 22 0;
 #X connect 21 0 19 1;
+#X connect 21 0 24 0;
 #X connect 22 0 23 0;
 #X connect 22 0 14 0;
 #X connect 23 0 6 0;
 #X connect 23 1 3 0;
+#X connect 24 0 18 0;
 #X restore 108 297 pd shushing;
+#X obj 174 101 t b b;
+#X obj 140 136 s loadme;
+#X obj 200 134 s loadme2;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 3 0 7 0;
 #X connect 3 1 7 0;
 #X connect 4 0 5 0;
 #X connect 4 0 10 0;
+#X connect 4 0 17 0;
 #X connect 7 0 6 0;
 #X connect 7 0 0 0;
 #X connect 8 0 7 1;
 #X connect 8 0 9 0;
 #X connect 10 0 8 0;
+#X connect 17 0 19 0;
+#X connect 17 1 18 0;
 #X restore 74 55 pd sound;
-#N canvas 847 342 450 300 PureVersusUnity 0;
+#X text 95 344 V. 0.3.1 (c) Lemming Enterprises;
+#N canvas 830 342 450 300 PuredataVersusUnity 0;
 #X obj 330 40 import mrpeach;
 #X obj 158 127 pack f f f f;
 #X obj 188 197 packOSC;
@@ -583,43 +600,40 @@
 #X obj 186 264 udpsend;
 #X msg 265 201 connect localhost 31000;
 #X msg 90 194 disconnect;
-#X obj 85 142 inlet;
-#X obj 268 110 inlet;
 #X obj 27 68 r shouting;
 #X obj 112 66 r shushing;
 #X obj 187 64 r singing;
 #X obj 260 64 r whistling;
 #X obj 188 236 gate;
-#X obj 173 24 inlet;
 #X obj 449 21 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 136 98 t b f;
 #X obj 177 101 t b f;
 #X obj 219 98 t b f;
+#X obj 50 172 r dis_c;
+#X obj 332 170 r con;
+#X obj 123 237 r trig;
 #X connect 1 0 3 0;
-#X connect 2 0 13 1;
+#X connect 2 0 11 1;
 #X connect 3 0 2 0;
-#X connect 5 0 13 1;
-#X connect 6 0 13 1;
-#X connect 7 0 6 0;
-#X connect 8 0 5 0;
-#X connect 9 0 1 0;
-#X connect 10 0 16 0;
-#X connect 11 0 17 0;
-#X connect 12 0 18 0;
-#X connect 13 0 4 0;
-#X connect 14 0 13 0;
-#X connect 16 0 1 0;
-#X connect 16 1 1 1;
-#X connect 17 0 1 0;
-#X connect 17 1 1 2;
-#X connect 18 0 1 0;
-#X connect 18 1 1 3;
-#X restore 111 484 pd PureVersusUnity;
-#X text 95 344 V. 0.3.0 (c) Lemming Enterprises;
+#X connect 5 0 11 1;
+#X connect 6 0 11 1;
+#X connect 7 0 1 0;
+#X connect 8 0 13 0;
+#X connect 9 0 14 0;
+#X connect 10 0 15 0;
+#X connect 11 0 4 0;
+#X connect 13 0 1 0;
+#X connect 13 1 1 1;
+#X connect 14 0 1 0;
+#X connect 14 1 1 2;
+#X connect 15 0 1 0;
+#X connect 15 1 1 3;
+#X connect 16 0 6 0;
+#X connect 17 0 5 0;
+#X connect 18 0 11 0;
+#X restore 45 490 pd PuredataVersusUnity;
+#X floatatom 63 293 5 0 0 0 - whistle -;
+#X obj 46 457 tgl 30 0 trig loadme empty 17 7 0 10 -262144 -1 -1 1
+1;
 #X connect 1 0 0 0;
-#X connect 2 0 22 2;
-#X connect 3 0 22 0;
-#X connect 7 0 22 1;
-#X connect 11 0 7 0;
-#X connect 11 0 2 0;
