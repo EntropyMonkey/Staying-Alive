@@ -1,6 +1,6 @@
-#N canvas 539 22 469 516 10;
+#N canvas 851 101 469 516 10;
 #X declare -lib mrpeach;
-#N canvas 738 314 495 440 indoorPDgraphic 0;
+#N canvas 742 201 495 440 indoorPDgraphic 0;
 #X obj -15 24 gemhead;
 #X obj -4 212 translateXYZ;
 #X obj -15 56 color 1 0 0;
@@ -94,7 +94,7 @@
 #X obj 163 259 gemwin;
 #X msg 94 107 create;
 #X msg 178 105 destroy;
-#X obj 199 134 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 199 134 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 159 8 inlet;
 #X obj 162 33 sel 0 1;
@@ -147,7 +147,7 @@
 #X connect 13 0 12 0;
 #X connect 14 0 12 0;
 #X restore -49 55 pd indoorPDgraphic;
-#X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 214 467 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -156,16 +156,16 @@
 #X text 99 467 disconnect;
 #X text 232 463 connect;
 #X obj 150 166 vu 15 120 amp empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 162 426 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 162 426 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 182 425 udpsend on/off;
 #X floatatom 64 211 5 0 0 0 - shout -;
 #X obj -25 168 hsl 120 40 -80 10 0 0 shout r_shout SHOUTING -2 -8 0
-10 -258113 -1 -1 10958 1;
+10 -258113 -1 -1 4853 1;
 #X obj 162 399 loadbang;
 #X floatatom 332 214 5 0 0 0 - longtone -;
 #X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
-0 10 -258113 -1 -1 5770 1;
+0 10 -258113 -1 -1 2370 1;
 #X floatatom 65 293 5 0 0 0 - whistle -;
 #X obj -24 251 hsl 120 40 -80 0 0 0 whistle r_whistle WHISTLE -2 -8
 0 10 -258113 -1 -1 5206 1;
@@ -175,7 +175,7 @@
 #X floatatom 150 293 5 0 0 0 - amp -;
 #X text -3 124 PLAYER 1;
 #X text 272 123 PLAYER 2;
-#N canvas 0 22 589 356 sound 0;
+#N canvas 388 273 589 356 sound 0;
 #X obj 274 152 env~;
 #X obj 274 180 - 100;
 #X obj 275 207 s amp;
@@ -190,7 +190,7 @@
 #X msg 338 38 1;
 #X text 374 43 boost the mic \, if you must;
 #X obj 95 53 output~;
-#N canvas 225 295 613 483 shouting 0;
+#N canvas 225 285 613 483 shouting 0;
 #X obj -15 24 gemhead;
 #X obj -14 154 translateXYZ;
 #X obj -15 56 color 1 0 0;
@@ -221,9 +221,9 @@
 #X obj 166 258 sel 1;
 #X obj 167 279 t b b;
 #X obj 201 304 del 200;
-#X msg 214 195 -42.5;
 #X obj 274 226 s r_shout;
 #X obj 99 184 r shout;
+#X msg 214 195 -43.3;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
@@ -242,7 +242,7 @@
 #X connect 13 0 7 0;
 #X connect 14 0 6 0;
 #X connect 14 0 27 0;
-#X connect 16 0 30 0;
+#X connect 16 0 32 0;
 #X connect 18 0 19 0;
 #X connect 19 0 20 0;
 #X connect 20 0 21 0;
@@ -256,12 +256,12 @@
 #X connect 28 0 29 0;
 #X connect 28 1 26 0;
 #X connect 29 0 25 0;
-#X connect 30 0 14 1;
-#X connect 30 0 17 0;
-#X connect 30 0 31 0;
+#X connect 31 0 14 1;
 #X connect 32 0 14 1;
+#X connect 32 0 17 0;
+#X connect 32 0 30 0;
 #X restore 1 239 pd shouting;
-#N canvas 24 165 770 444 holdingtone 0;
+#N canvas 238 286 770 444 holdingtone 0;
 #X obj 339 368 s tone;
 #X obj 382 370 s singing;
 #N canvas 645 218 635 454 equalvoice 0;
@@ -303,43 +303,43 @@
 #X obj 305 157 rmstodb;
 #X obj 357 130 unpack;
 #X obj 400 155 rmstodb;
-#X obj 225 24 fiddle 2048 1 10 10;
 #X obj 487 71 route 1 2 3 4 5 6;
 #X obj 338 234 expr if($f1>$f2&&$f3>$f2&&$f4>$f2&&$f5>$f2&&$f6>$f2&&$f7>$f2
 \, 1 \, 0);
 #X obj 396 213 + 100;
 #X obj 155 228 loadbang;
-#X msg 155 250 -56;
-#X obj 155 279 s s_tone;
 #X obj 395 190 r longtone;
+#X obj 225 24 fiddle~ 2048 1 10 10;
+#X obj 155 279 s r_tone;
+#X msg 155 250 -64;
 #X connect 2 0 1 0;
 #X connect 2 0 0 0;
-#X connect 3 0 16 0;
+#X connect 3 0 21 0;
 #X connect 4 1 5 0;
-#X connect 5 0 18 0;
+#X connect 5 0 17 0;
 #X connect 6 1 7 0;
-#X connect 7 0 18 4;
+#X connect 7 0 17 4;
 #X connect 8 1 9 0;
-#X connect 9 0 18 5;
+#X connect 9 0 17 5;
 #X connect 10 1 11 0;
-#X connect 11 0 18 6;
+#X connect 11 0 17 6;
 #X connect 12 1 13 0;
-#X connect 13 0 18 2;
+#X connect 13 0 17 2;
 #X connect 14 1 15 0;
-#X connect 15 0 18 3;
-#X connect 16 4 17 0;
-#X connect 17 0 4 0;
-#X connect 17 1 12 0;
-#X connect 17 2 14 0;
-#X connect 17 3 6 0;
-#X connect 17 4 8 0;
-#X connect 17 5 10 0;
-#X connect 18 0 2 0;
-#X connect 19 0 18 1;
-#X connect 20 0 21 0;
-#X connect 21 0 19 0;
-#X connect 21 0 22 0;
-#X connect 23 0 19 0;
+#X connect 15 0 17 3;
+#X connect 16 0 4 0;
+#X connect 16 1 12 0;
+#X connect 16 2 14 0;
+#X connect 16 3 6 0;
+#X connect 16 4 8 0;
+#X connect 16 5 10 0;
+#X connect 17 0 2 0;
+#X connect 18 0 17 1;
+#X connect 19 0 23 0;
+#X connect 20 0 18 0;
+#X connect 21 4 16 0;
+#X connect 23 0 18 0;
+#X connect 23 0 22 0;
 #X restore 132 240 pd holdingtone;
 #N canvas 131 349 670 391 whistling 0;
 #X obj 78 99 mtof;
@@ -490,7 +490,7 @@
 #X connect 10 0 11 0;
 #X connect 12 0 5 2;
 #X restore -22 299 pd whistling;
-#N canvas 90 405 817 501 shushing 0;
+#N canvas 90 267 817 501 shushing 0;
 #X obj 14 164 gemhead;
 #X obj 14 248 translateXYZ -2 -1 0;
 #X obj 14 215 color 0 1 0;
