@@ -1,4 +1,4 @@
-#N canvas 583 206 469 516 10;
+#N canvas 599 187 469 516 10;
 #X declare -lib mrpeach;
 #N canvas 742 201 495 440 indoorPDgraphic 0;
 #X obj -15 24 gemhead;
@@ -157,8 +157,8 @@
 #X text 84 395 connect;
 #X obj 150 166 vu 15 120 amp empty -1 -8 0 10 -66577 -1 1 0;
 #X text 83 464 udpsend on/off;
-#X floatatom 64 211 5 0 0 0 - shout -;
-#X obj -25 168 hsl 120 40 -80 10 0 0 shout r_shout SHOUTING -2 -8 0
+#X floatatom 65 211 5 0 0 0 - shout -;
+#X obj -24 168 hsl 120 40 -80 10 0 0 shout r_shout SHOUTING -2 -8 0
 10 -258113 -1 -1 9300 1;
 #X floatatom 332 214 5 0 0 0 - longtone -;
 #X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
@@ -166,7 +166,7 @@
 #X floatatom 332 214 5 0 0 0 - longtone -;
 #X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
 0 10 -258113 -1 -1 5580 1;
-#X obj -27 248 hsl 120 40 -80 0 0 0 whistle r_whistle WHISTLE -2 -8
+#X obj -26 248 hsl 120 40 -80 0 0 0 whistle r_whistle WHISTLE -2 -8
 0 10 -258113 -1 -1 5306 1;
 #X floatatom 335 294 5 0 0 0 - shush -;
 #X obj 244 252 hsl 120 40 -70 0 0 0 shush r_shush SHUSH -2 -8 0 10
@@ -633,7 +633,7 @@
 #X connect 17 0 5 0;
 #X connect 18 0 11 0;
 #X restore 45 490 pd PuredataVersusUnity;
-#X floatatom 63 293 5 0 0 0 - whistle -;
+#X floatatom 64 293 5 0 0 0 - whistle -;
 #X obj 46 457 tgl 30 0 trig loadme empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X connect 1 0 0 0;
