@@ -1,4 +1,4 @@
-#N canvas 599 187 469 516 10;
+#N canvas 577 146 469 516 10;
 #X declare -lib mrpeach;
 #N canvas 742 201 495 440 indoorPDgraphic 0;
 #X obj -15 24 gemhead;
@@ -161,16 +161,14 @@
 #X obj -24 168 hsl 120 40 -80 10 0 0 shout r_shout SHOUTING -2 -8 0
 10 -258113 -1 -1 9300 1;
 #X floatatom 332 214 5 0 0 0 - longtone -;
-#X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
-0 10 -258113 -1 -1 5580 1;
 #X floatatom 332 214 5 0 0 0 - longtone -;
 #X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
-0 10 -258113 -1 -1 5580 1;
+0 10 -258113 -1 -1 5100 1;
 #X obj -26 248 hsl 120 40 -80 0 0 0 whistle r_whistle WHISTLE -2 -8
-0 10 -258113 -1 -1 5306 1;
+0 10 -258113 -1 -1 6706 1;
 #X floatatom 335 294 5 0 0 0 - shush -;
 #X obj 244 252 hsl 120 40 -70 0 0 0 shush r_shush SHUSH -2 -8 0 10
--258113 -1 -1 3400 1;
+-258113 -1 -1 3600 1;
 #X floatatom 150 293 5 0 0 0 - amp -;
 #X text -3 124 PLAYER 1;
 #X text 272 123 PLAYER 2;
@@ -313,7 +311,7 @@
 #X obj 395 190 r longtone;
 #X obj 225 24 fiddle~ 2048 1 10 10;
 #X obj 155 279 s r_tone;
-#X msg 155 250 -42.4874;
+#X msg 155 250 -45.7143;
 #X obj 227 208 prepend set;
 #X connect 2 0 1 0;
 #X connect 2 0 0 0;
@@ -476,7 +474,7 @@
 #X connect 11 2 8 0;
 #X restore 75 171 pd equalvoice;
 #X obj 159 98 - 100;
-#X msg 371 114 -44.3294;
+#X msg 371 114 -34.9176;
 #X obj 387 148 s r_whistle;
 #X obj 304 63 r whistle;
 #X obj 446 94 prepend set;
@@ -517,7 +515,7 @@
 #X obj 371 146 loadbang;
 #X obj 97 57 r~ audioinput;
 #X obj 291 191 - 100;
-#X msg 369 169 -50;
+#X msg 369 169 -48.8235;
 #X obj 252 240 expr if($f1>3500&&$f1<5400&& $f2<$f3 \, 1 \, 0);
 #X obj 384 208 s r_shush;
 #X obj 342 110 r shush;
