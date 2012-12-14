@@ -94,7 +94,7 @@
 #X obj 163 259 gemwin;
 #X msg 94 107 create;
 #X msg 178 105 destroy;
-#X obj 199 134 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 199 134 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 159 8 inlet;
 #X obj 162 33 sel 0 1;
@@ -147,7 +147,7 @@
 #X connect 13 0 12 0;
 #X connect 14 0 12 0;
 #X restore -49 55 pd indoorPDgraphic;
-#X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj -49 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 46 388 bng 30 250 50 0 con loadme2 empty 17 7 0 10 -4034 -1
 -1;
@@ -159,15 +159,13 @@
 #X text 83 464 udpsend on/off;
 #X floatatom 65 211 5 0 0 0 - shout -;
 #X obj -24 168 hsl 120 40 -80 10 0 0 shout r_shout SHOUTING -2 -8 0
-10 -258113 -1 -1 9300 1;
+10 -258113 -1 -1 5200 1;
 #X floatatom 332 214 5 0 0 0 - longtone -;
-#X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
-0 10 -258113 -1 -1 5580 1;
 #X floatatom 332 214 5 0 0 0 - longtone -;
-#X obj 243 172 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
-0 10 -258113 -1 -1 5580 1;
+#X obj 243 170 hsl 120 40 -80 0 0 1 longtone r_tone HOLD_TONE -2 -8
+0 10 -258113 -1 -1 0 1;
 #X obj -26 248 hsl 120 40 -80 0 0 0 whistle r_whistle WHISTLE -2 -8
-0 10 -258113 -1 -1 5306 1;
+0 10 -258113 -1 -1 4906 1;
 #X floatatom 335 294 5 0 0 0 - shush -;
 #X obj 244 252 hsl 120 40 -70 0 0 0 shush r_shush SHUSH -2 -8 0 10
 -258113 -1 -1 3400 1;
@@ -222,7 +220,7 @@
 #X obj 201 304 del 200;
 #X obj 274 226 s r_shout;
 #X obj 99 184 r shout;
-#X msg 214 195 -9.66387;
+#X msg 214 195 -40.6723;
 #X obj 225 172 prepend set;
 #X connect 0 0 2 0;
 #X connect 1 0 5 0;
@@ -313,7 +311,7 @@
 #X obj 395 190 r longtone;
 #X obj 225 24 fiddle~ 2048 1 10 10;
 #X obj 155 279 s r_tone;
-#X msg 155 250 -42.4874;
+#X msg 155 250 -80;
 #X obj 227 208 prepend set;
 #X connect 2 0 1 0;
 #X connect 2 0 0 0;
@@ -476,7 +474,7 @@
 #X connect 11 2 8 0;
 #X restore 75 171 pd equalvoice;
 #X obj 159 98 - 100;
-#X msg 371 114 -44.3294;
+#X msg 371 114 -47.0185;
 #X obj 387 148 s r_whistle;
 #X obj 304 63 r whistle;
 #X obj 446 94 prepend set;
