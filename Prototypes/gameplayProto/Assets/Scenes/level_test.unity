@@ -15737,7 +15737,7 @@ MonoBehaviour:
     width: 200
     height: 100
   standardFont: {fileID: 12800000, guid: 1c313f8d2b22a7242bea9c0879807de4, type: 1}
-  fontSize: 50
+  fontSize: 40
 --- !u!1 &285384245
 GameObject:
   m_ObjectHideFlags: 0
@@ -34856,7 +34856,7 @@ TextMesh:
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 50
+  m_FontSize: 40
   m_FontStyle: 0
   m_Font: {fileID: 12800000, guid: 9138ddd17be436840b184dbd61f65da4, type: 1}
 --- !u!1 &599171957
@@ -41785,6 +41785,10 @@ Prefab:
     - target: {fileID: 400010, guid: 1a5928f612773b948801667bf439b983, type: 2}
       propertyPath: m_LocalPosition.z
       value: 4.87665939
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200000, guid: 1a5928f612773b948801667bf439b983, type: 2}
+      propertyPath: m_FontSize
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a5928f612773b948801667bf439b983, type: 2}
@@ -72081,7 +72085,7 @@ Transform:
   m_GameObject: {fileID: 1344604423}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: -.0282505266, y: 5.37320805, z: 13.2514181}
-  m_LocalScale: {x: .624988317, y: 1.72396123, z: .340058833}
+  m_LocalScale: {x: .424992085, y: 1.17229366, z: .231240034}
   m_Children: []
   m_Father: {fileID: 522756840}
 --- !u!23 &1344604425

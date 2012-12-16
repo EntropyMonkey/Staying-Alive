@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40d9fec899ea391478aae895ad813f99, type: 1}
   m_Name: 
-  ShushDelay: 1
+  ShushDelay: 3
   spawnParent: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
