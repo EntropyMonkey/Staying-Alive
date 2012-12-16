@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: plattform_rock
-  m_Shader: {fileID: 4800000, guid: 80b109c5d15432f4b8c7fa863a5e9e35, type: 1}
+  m_Shader: {fileID: 30, guid: 0000000000000000e000000000000000, type: 0}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -15,7 +15,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 999883dbd6ae5b34d889a0172076e1b4, type: 1}
+          m_Texture: {fileID: 10300, guid: 0000000000000000e000000000000000, type: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -107,7 +107,7 @@ Material:
       data:
         first:
           name: _OutlineColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: .701492548, g: .701492548, b: .701492548, a: 1}
       data:
         first:
           name: _RimColor

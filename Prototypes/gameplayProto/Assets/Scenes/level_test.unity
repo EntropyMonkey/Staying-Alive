@@ -2784,7 +2784,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3069,7 +3069,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -3081,9 +3081,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -3799,7 +3799,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -7486,7 +7486,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7771,7 +7771,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -7783,9 +7783,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -8501,7 +8501,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -9392,7 +9392,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -9677,7 +9677,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -9689,9 +9689,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -10407,7 +10407,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -11372,7 +11372,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -11657,7 +11657,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -11669,9 +11669,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -12387,7 +12387,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -12499,7 +12499,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 1582223288}
   m_GameObject: {fileID: 199706238}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -12510,7 +12510,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -12543,7 +12543,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -12667,7 +12667,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -12740,8 +12740,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -12753,17 +12753,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -12784,8 +12794,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -12793,7 +12803,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -13536,7 +13546,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1582223288}
   m_GameObject: {fileID: 199706238}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -18102,7 +18112,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -18387,7 +18397,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -18399,9 +18409,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -19117,7 +19127,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -19467,7 +19477,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 449773612}
   m_GameObject: {fileID: 349064286}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -19478,7 +19488,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -19511,7 +19521,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -19635,7 +19645,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -19708,8 +19718,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -19721,17 +19731,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -19752,8 +19772,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -19761,7 +19781,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -20504,7 +20524,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 449773612}
   m_GameObject: {fileID: 349064286}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -22695,7 +22715,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -22980,7 +23000,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -22992,9 +23012,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -23710,7 +23730,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -25704,7 +25724,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -25989,7 +26009,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -26001,9 +26021,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -26719,7 +26739,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -29618,7 +29638,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 217877462}
   m_GameObject: {fileID: 544717718}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -29629,7 +29649,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29662,7 +29682,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -29786,7 +29806,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -29859,8 +29879,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -29872,17 +29892,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -29903,8 +29933,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -29912,7 +29942,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -30655,7 +30685,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 217877462}
   m_GameObject: {fileID: 544717718}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -31041,7 +31071,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 1896296271}
   m_GameObject: {fileID: 549670794}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -31052,7 +31082,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31085,7 +31115,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31209,7 +31239,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -31282,8 +31312,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -31295,17 +31325,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -31326,8 +31366,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -31335,7 +31375,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -32078,7 +32118,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1896296271}
   m_GameObject: {fileID: 549670794}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -33516,7 +33556,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 1017223878}
   m_GameObject: {fileID: 584421744}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -33527,7 +33567,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33560,7 +33600,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -33684,7 +33724,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -33757,8 +33797,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -33770,17 +33810,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -33801,8 +33851,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -33810,7 +33860,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -34553,7 +34603,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1017223878}
   m_GameObject: {fileID: 584421744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -36655,7 +36705,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 1306264913}
   m_GameObject: {fileID: 649823921}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -36666,7 +36716,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -36699,7 +36749,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -36823,7 +36873,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -36896,8 +36946,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -36909,17 +36959,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -36940,8 +37000,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -36949,7 +37009,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -37692,7 +37752,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1306264913}
   m_GameObject: {fileID: 649823921}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -39586,7 +39646,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -39871,7 +39931,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -39883,9 +39943,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -40601,7 +40661,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -45166,7 +45226,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 619160573}
   m_GameObject: {fileID: 800093229}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -45177,7 +45237,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -45210,7 +45270,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -45334,7 +45394,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -45407,8 +45467,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -45420,17 +45480,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -45451,8 +45521,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -45460,7 +45530,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -46203,7 +46273,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 619160573}
   m_GameObject: {fileID: 800093229}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -50869,7 +50939,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -51154,7 +51224,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -51166,9 +51236,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -51884,7 +51954,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -54300,7 +54370,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -54585,7 +54655,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -54597,9 +54667,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -55315,7 +55385,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -55482,7 +55552,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 11277880}
   m_GameObject: {fileID: 990716667}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -55493,7 +55563,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -55526,7 +55596,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -55650,7 +55720,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -55723,8 +55793,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -55736,17 +55806,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -55767,8 +55847,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -55776,7 +55856,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -56519,7 +56599,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 11277880}
   m_GameObject: {fileID: 990716667}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -62675,7 +62755,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -62960,7 +63040,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -62972,9 +63052,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -63690,7 +63770,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -70238,7 +70318,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -70523,7 +70603,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -70535,9 +70615,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -71253,7 +71333,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -73603,7 +73683,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 1219760564}
   m_GameObject: {fileID: 1388842960}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -73614,7 +73694,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -73647,7 +73727,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -73771,7 +73851,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -73844,8 +73924,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -73857,17 +73937,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -73888,8 +73978,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -73897,7 +73987,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -74640,7 +74730,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1219760564}
   m_GameObject: {fileID: 1388842960}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -77949,7 +78039,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 2034671461}
   m_GameObject: {fileID: 1486547551}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -77960,7 +78050,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -77993,7 +78083,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -78117,7 +78207,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -78190,8 +78280,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -78203,17 +78293,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -78234,8 +78334,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -78243,7 +78343,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -78986,7 +79086,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 2034671461}
   m_GameObject: {fileID: 1486547551}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -90719,7 +90819,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 1557940915}
   m_GameObject: {fileID: 1753565879}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -90730,7 +90830,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -90763,7 +90863,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -90887,7 +90987,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -90960,8 +91060,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -90973,17 +91073,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -91004,8 +91114,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -91013,7 +91123,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -91756,7 +91866,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1557940915}
   m_GameObject: {fileID: 1753565879}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -92990,7 +93100,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 1997983462}
   m_GameObject: {fileID: 1778353576}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -93001,7 +93111,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -93034,7 +93144,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -93158,7 +93268,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -93231,8 +93341,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -93244,17 +93354,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -93275,8 +93395,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -93284,7 +93404,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -94027,7 +94147,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 1997983462}
   m_GameObject: {fileID: 1778353576}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -94547,7 +94667,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 76526605}
   m_GameObject: {fileID: 1789746050}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -94558,7 +94678,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -94591,7 +94711,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -94715,7 +94835,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -94788,8 +94908,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -94801,17 +94921,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -94832,8 +94962,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -94841,7 +94971,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -95584,7 +95714,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 76526605}
   m_GameObject: {fileID: 1789746050}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -101173,7 +101303,7 @@ ParticleSystem:
     type: 2}
   m_PrefabInternal: {fileID: 432907675}
   m_GameObject: {fileID: 1921757658}
-  lengthInSec: 5
+  lengthInSec: .469999999
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -101184,7 +101314,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -101217,7 +101347,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 2
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -101341,7 +101471,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4287952127
+        rgba: 4281683564
       minMaxState: 0
     startSize:
       scalar: 1
@@ -101414,8 +101544,8 @@ ParticleSystem:
     maxNumParticles: 1000
   ShapeModule:
     enabled: 1
-    type: 4
-    radius: .400000006
+    type: 0
+    radius: .340000004
     angle: 90
     boxX: 1
     boxY: 1
@@ -101427,17 +101557,27 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 1
+      scalar: 5.46999979
       maxCurve:
         serializedVersion: 2
         m_Curve:
-        - time: 0
+        - time: .0341880359
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
+        - time: .446581185
           value: 1
+          inSlope: 9.075634
+          outSlope: 9.075634
+          tangentMode: 0
+        - time: .761395991
+          value: 0
+          inSlope: 10.1007137
+          outSlope: 10.1007137
+          tangentMode: 0
+        - time: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -101458,8 +101598,8 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
-    cnt0: 30
+      minMaxState: 1
+    cnt0: 1
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -101467,7 +101607,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:
@@ -102210,7 +102350,7 @@ ParticleSystemRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 432907675}
   m_GameObject: {fileID: 1921757658}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -109630,7 +109770,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -109915,7 +110055,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -109927,9 +110067,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -110645,7 +110785,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
@@ -111605,7 +111745,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .800000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -111890,7 +112030,7 @@ ParticleSystem:
     time3: 0
     m_BurstCount: 0
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       scalar: 1
       maxCurve:
@@ -111902,9 +112042,9 @@ ParticleSystem:
           outSlope: 0
           tangentMode: 0
         - time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
+          value: 0
+          inSlope: -2
+          outSlope: -2
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -112620,7 +112760,7 @@ ParticleSystem:
     energyLossOnCollision: 0
     minKillSpeed: 0
   SubModule:
-    enabled: 0
+    enabled: 1
     subEmitterBirth: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterCollision: {fileID: 0}
