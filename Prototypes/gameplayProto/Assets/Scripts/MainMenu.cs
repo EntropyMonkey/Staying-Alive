@@ -5,69 +5,56 @@ public class MainMenu : MonoBehaviour {
 
     // Code inspired by http://forum.unity3d.com/threads/36866-How-to-make-a-main-menu-in-Unity
 
-    public int buttonType = 0; // different types, do different things
+    public enum MenuButtons {NEW_GAME, LEVEL_ONE, LEVEL_TWO, MAIN_MENU,CONFIG, CREDITS,EXIT,MOVEMENT};
+    public MenuButtons ButtonType;
+    public Vector3 Movement;
 
     public GameObject camera;
 
-    void OnMouseEnter()
-    {
-        /* OLD
-        renderer.material.color = Color.green; // color chosen box's text white
-         * */
-        GUITexture texture = gameObject.GetComponentInChildren<GUITexture>();
-        texture.enabled = true;
-    }
-
-    void OnMouseExit()
-    {
-        /* OLD
-        renderer.material.color = Color.white; // color chosen box's text white
-         */
-        GUITexture texture = gameObject.GetComponentInChildren<GUITexture>();
-        texture.enabled = false;
-    }
-
     void OnMouseDown()
     {
-        switch(buttonType)
+        switch(ButtonType)
         {
-            case 1:
+            case MenuButtons.NEW_GAME:
                 // new game: change camera to show The Escape or The Troll Cave
                 Vector3 v = new Vector3();
-                v.x = 0.2f;
-                v.y = 11;
+                v.y = 13;
                 camera.transform.Translate(v);
                 break;
-            case 2:
+            case MenuButtons.LEVEL_ONE:
                 // the escape : start playing the first level
                 Debug.Log("Loading first level!");
                 Application.LoadLevel(1);
                 break;
-            case 3:
+            case MenuButtons.LEVEL_TWO:
                 // the troll cave : start playing the second level
                 Debug.Log("Loading second level!");
-                Application.LoadLevel(2); // WARNING: This may not set the currentLevel variable in the Player correctly!
+                Application.LoadLevel(2); 
                 break;
-            case 4:
+            case MenuButtons.MAIN_MENU:
                 // go back to main menu
                 Debug.Log("Going back to main menu");
                 Vector3 v2 = new Vector3();
-                v2.x = -0.2f;
-                v2.y = -11;
+                v2.y = -13;
                 camera.transform.Translate(v2);
                 break;
-            case 5:
+            case MenuButtons.CONFIG:
                 // config
                 Debug.Log("Config - hasn't been implemented yet");
                 break;
-            case 6:
+            case MenuButtons.CREDITS:
                 // credits
                 Debug.Log("Credits - hasn't been implemented yet");
                 break;
-            case 7:
+            case MenuButtons.EXIT:
                 // Quit the game
                 Debug.Log("Exiting!");
                 Application.Quit();
+                break;
+            case MenuButtons.MOVEMENT:
+                // Quit the game
+                Debug.Log("Moving!");
+                camera.transform.position = new Vector3(camera.transform.position.x,camera.transform.position.y+Movement.y,camera.transform.position.z);
                 break;
             default:
                 break;
