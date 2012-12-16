@@ -339,6 +339,13 @@ public class Player : MonoBehaviour
 		{
 			meshRenderer.material.color = Color.white;
         }
+
+        // Check whether player wants to return to main menu
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            LastCheckpoint = null;
+            LevelChange.changeLevel(0);
+        }
 	}
 	
 	void UpdateShushing()

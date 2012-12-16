@@ -20,4 +20,14 @@ public class LevelChange : MonoBehaviour {
 	            Application.LoadLevel(Application.loadedLevel + 1); // load next level
         }
     }
+
+    public static void changeLevel(int nxtLvlId)
+    {
+        Messenger.Invoke(MessengerEvents.ClearQueuedEvents);
+
+        if (nxtLvlId >= 0)
+            Application.LoadLevel(nxtLvlId); // load next level
+        else
+            Application.LoadLevel(Application.loadedLevel + 1); // load next level
+    }
 }
