@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TheEscape(base)
-  m_Shader: {fileID: 30, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: background_levelselection
+  m_Shader: {fileID: 7, guid: 0000000000000000e000000000000000, type: 0}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -15,21 +15,10 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: c3adbb48b5a36ce408d7f35ddb2855a0, type: 1}
+          m_Texture: {fileID: 2800000, guid: 948acc0e3b93fd448a64aad1a078aa96, type: 1}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Illum
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-    m_Floats:
-      data:
-        first:
-          name: _EmissionLM
-        second: 0
+    m_Floats: {}
     m_Colors:
       data:
         first:
